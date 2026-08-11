@@ -1,0 +1,74 @@
+# Fatora-Bot
+
+> Facturation vocale par WhatsApp pour les entreprises marocaines. Les équipes dictent une
+> facture en darija, en français ou en amazigh ; le service émet un PDF conforme à la
+> réglementation marocaine (ICE, IF, taxe professionnelle, TVA, montant en toutes lettres,
+> numérotation continue) avec le cachet de l'entreprise, puis le transmet au client final
+> par QR code, WhatsApp ou email.
+
+Éditeur : Swiviq (Rabat, Maroc) — contact@swiviq.com — WhatsApp +212 691 02 08 05
+Site : https://fatora.swiviq.com (fr, ar, en, es)
+
+## Ce qui distingue Fatora-Bot
+
+- **Aucun logiciel à installer** : le service fonctionne entièrement dans WhatsApp, déjà présent
+  sur les téléphones professionnels. Pas de licence par poste, pas de formation.
+- **Accessible aux personnes qui lisent difficilement** : la conversation peut être 100 % vocale.
+  Le bot écoute la note vocale, résume la facture à voix haute en darija et attend un « wakha »
+  parlé pour l'émettre. C'est le seul segment que les logiciels classiques n'atteignent pas.
+- **Compréhension du parler commercial marocain** : prix en riyal (1/20 de dirham) ou en
+  « melyoun » (10 000 dirhams), « khallasni » (montant encaissé, donc TTC), corrections en cours
+  de phrase, mélange darija/français, écriture arabe ou latine, tamazight (tifinagh compris).
+- **Orthographe exacte des noms de clients** : un répertoire mémorise chaque client ; pour un nom
+  complexe, une photo d'un document suffit — le nom est lu et enregistré.
+- **Correction après émission** : une facture erronée est corrigée sous le même numéro, sans
+  rupture de séquence.
+
+## Fonctionnalités
+
+- Dictée vocale ou écrite d'une facture, extraction automatique client/articles/quantités/prix
+- Récapitulatif vocal avant émission, confirmation à la voix ou par bouton
+- PDF conforme : ICE, IF, taxe professionnelle, TVA détaillée (20/14/10/7 %), montant en lettres,
+  numérotation FAT-AAAA-NNNN continue par exercice
+- Cachet et signature de l'entreprise incrustés automatiquement
+- Remise au client : QR code à scanner, envoi WhatsApp, envoi email (confirmation obligatoire avant
+  chaque envoi externe)
+- Consultation des archives à la voix : par numéro, par client, par période, avec totaux
+- Isolation stricte des données entre entreprises, hébergement en Union européenne
+
+## Tarifs (MAD, par mois)
+
+- Évaluation gratuite : 2 factures, sans carte bancaire
+- TPE : 15 factures — 30 MAD
+- Commerce : 30 factures — 50 MAD
+- Entreprise : 100 factures — 90 MAD
+- Paiement par virement ou en espèces ; activation dans la journée depuis WhatsApp.
+- Volumes supérieurs, multi-comptes, cabinets comptables : contact@swiviq.com
+
+## Contexte réglementaire
+
+La facturation électronique devient progressivement obligatoire au Maroc (article 145-IX du Code
+Général des Impôts). Le modèle retenu est la validation préalable par une plateforme nationale,
+avec des formats structurés. Le déploiement commence par les grandes entreprises, puis les PME,
+puis les très petites entreprises via des solutions simplifiées.
+
+## Secteurs desservis
+
+Commerce de détail et gros, menuiserie et ferronnerie, BTP, transport et logistique, services et
+professions libérales, coopératives agricoles, artisanat et couture, restauration et traiteurs,
+cabinets comptables et fiduciaires équipant leurs clients TPE.
+
+## Couverture
+
+Tout le Maroc : Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan,
+Salé, Safi, El Jadida, Béni Mellal, Nador, Laâyoune, Mohammédia, Khouribga, Essaouira, Ouarzazate —
+et partout où WhatsApp fonctionne.
+
+## Liens
+
+- Page d'accueil (français) : https://fatora.swiviq.com/fr
+- الصفحة بالعربية : https://fatora.swiviq.com/ar
+- English : https://fatora.swiviq.com/en
+- Español : https://fatora.swiviq.com/es
+- Politique de confidentialité : https://bot.swiviq.com/privacy
+- Essayer : https://wa.me/212691020805

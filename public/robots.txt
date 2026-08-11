@@ -1,4 +1,33 @@
+# Fatora-Bot — facturation vocale WhatsApp pour les entreprises marocaines
 User-agent: *
+Allow: /
+
+# Moteurs de recherche IA : indexation et citation autorisées
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://fatora.swiviq.com/sitemap.xml

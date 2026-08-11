@@ -28,6 +28,21 @@ const angularApp = new AngularNodeAppEngine({
  */
 
 /**
+ * Racine : redirection côté serveur vers la langue du visiteur (fr par défaut).
+ * Évite la redirection JavaScript, mauvaise pour l'indexation.
+ */
+const LANGS = ['fr', 'ar', 'en', 'es'] as const;
+app.get('/', (req, res) => {
+  const header = String(req.headers['accept-language'] || '').toLowerCase();
+  const match = header
+    .split(',')
+    .map((part) => part.split(';')[0].trim().slice(0, 2))
+    .find((code) => (LANGS as readonly string[]).includes(code));
+  res.set('Vary', 'Accept-Language');
+  res.redirect(302, `/${match || 'fr'}`);
+});
+
+/**
  * Serve static files from /browser
  */
 app.use(
