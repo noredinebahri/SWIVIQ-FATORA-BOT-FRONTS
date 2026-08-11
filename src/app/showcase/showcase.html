@@ -1,0 +1,185 @@
+<section id="demo" class="showcase">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="head">
+      <span class="sc-badge"><ico name="spark" [size]="14"/> {{ d().badge }}</span>
+      <h2>{{ d().title }}</h2>
+      <p class="sub">{{ d().sub }}</p>
+    </div>
+
+    <div class="sc-grid">
+      <!-- ── Onglets ── -->
+      <div class="tabs" role="tablist">
+        @for (it of d().items; track it.t; let i = $index) {
+          <button class="tab" [class.active]="active() === i" (click)="select(i)"
+                  role="tab" [attr.aria-selected]="active() === i">
+            <span class="tab-ic"><ico [name]="icons[i]" [size]="20"/></span>
+            <span class="tab-txt">
+              <b>{{ it.t }}</b>
+              <i>{{ it.d }}</i>
+            </span>
+            <span class="tab-bar"></span>
+          </button>
+        }
+      </div>
+
+      <!-- ── Scène animée ── -->
+      <div class="stage">
+        @switch (active()) {
+
+          <!-- 1 · Dictée vocale → extraction -->
+          @case (0) {
+            <div class="sc-in st-voice">
+              <div class="bub me">
+                <span class="mic"><ico name="mic" [size]="15"/></span>
+                <span class="eq">
+                  @for (b of bars; track b) { <i [attr.style]="'--i:' + b"></i> }
+                </span>
+                <span class="dur">0:07</span>
+              </div>
+              <p class="script" dir="ltr">
+                @for (w of words; track $index) {
+                  <span [attr.style]="'--i:' + $index">{{ w }}</span>
+                }
+                <i class="caret"></i>
+              </p>
+              <div class="thinking"><span></span><span></span><span></span></div>
+              <div class="fields">
+                <div class="f" style="--i:0">
+                  <span>{{ d().ui.client }}</span><b>Ahmed Transport</b>
+                </div>
+                <div class="f" style="--i:1">
+                  <span>{{ d().ui.article }}</span><b>Porte × 3</b>
+                </div>
+                <div class="f" style="--i:2">
+                  <span>{{ d().ui.unit }}</span><b>1 500,00 MAD</b>
+                </div>
+                <div class="f tot" style="--i:3">
+                  <span>{{ d().ui.total }}</span><b>5 400,00 MAD</b>
+                </div>
+              </div>
+              <div class="flash"><ico name="check" [size]="14"/> {{ d().ui.understood }}</div>
+            </div>
+          }
+
+          <!-- 2 · Facture PDF qui se construit -->
+          @case (1) {
+            <div class="sc-in st-pdf">
+              <div class="doc" dir="ltr">
+                <div class="doc-head">
+                  <div class="dh-l"><b>SWIVIQ</b><i>ICE 003963563000019 · IF 73099178</i></div>
+                  <div class="dh-r"><b>FACTURE</b><i>FAT-2026-0042</i></div>
+                </div>
+                <div class="doc-cli"><span>{{ d().ui.client }}</span><b>Ahmed Transport SARL</b></div>
+                <div class="doc-tab">
+                  <div class="tr th"><span>Désignation</span><span>Qté</span><span>P.U.</span><span>TVA</span></div>
+                  <div class="tr" style="--i:0"><span>Porte en bois massif</span><span>3</span><span>1 500,00</span><span>20%</span></div>
+                  <div class="tr" style="--i:1"><span>Pose et installation</span><span>1</span><span>800,00</span><span>20%</span></div>
+                </div>
+                <div class="doc-tot">
+                  <span>{{ d().ui.total }}</span>
+                  <b class="odo">
+                    @for (dg of totalDigits; track $index) {
+                      @if (dg === '#') { <i class="sp"></i> }
+                      @else {
+                        <span class="dg" [attr.style]="'--n:' + dg + ';--i:' + $index">
+                          <span class="roll">
+                            @for (r of rollDigits; track $index) { <em>{{ r }}</em> }
+                          </span>
+                        </span>
+                      }
+                    }
+                    <i class="cur">MAD</i>
+                  </b>
+                </div>
+                <div class="doc-lettre">Arrêtée à cinq mille quatre cents dirhams TTC.</div>
+                <div class="doc-seal">ف</div>
+              </div>
+              <div class="flash"><ico name="check" [size]="14"/> {{ d().ui.issued }}</div>
+            </div>
+          }
+
+          <!-- 3 · Cachet qui s'appose -->
+          @case (2) {
+            <div class="sc-in st-stamp">
+              <div class="doc mini" dir="ltr">
+                <div class="ml w70"></div>
+                <div class="ml w40"></div>
+                <div class="ml w55"></div>
+                <div class="stamp-box">
+                  <span class="lbl">{{ d().ui.stampLabel }}</span>
+                  <div class="shock"></div>
+                  <div class="stamp">
+                    <div class="ring">
+                      <b>ف</b>
+                      <i>SWIVIQ · RABAT</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flash"><ico name="stamp" [size]="14"/> {{ d().ui.stampLabel }}</div>
+            </div>
+          }
+
+          <!-- 4 · QR : assemblage + scan -->
+          @case (3) {
+            <div class="sc-in st-qr">
+              <div class="qr-frame">
+                <div class="qr">
+                  @for (c of qrCells; track $index) {
+                    <i [class.on]="c" [attr.style]="'--i:' + $index"></i>
+                  }
+                </div>
+                <span class="corner tl"></span><span class="corner tr"></span>
+                <span class="corner bl"></span><span class="corner br"></span>
+                <div class="scanline"></div>
+              </div>
+              <div class="qr-status">{{ d().ui.scanning }}</div>
+              <div class="qr-done"><ico name="check" [size]="15"/> {{ d().ui.downloaded }}</div>
+            </div>
+          }
+
+          <!-- 5 · Trois langues, un résultat -->
+          @case (4) {
+            <div class="sc-in st-lang">
+              <div class="ls l1" dir="rtl">صاوب ليا فاتورة لأحمد، تلاتة ديال البيبان ب 1500 درهم</div>
+              <div class="ls l2" dir="ltr">sayab liya fatora l Ahmed, tlata dyal l-bibane b 1500 dh</div>
+              <div class="ls l3" dir="ltr">Facture pour Ahmed, trois portes à 1 500 dh l'unité</div>
+              <div class="ls-arrow"><ico name="send" [size]="22"/></div>
+              <div class="ls-out">
+                <div class="ls-doc"><ico name="file" [size]="18"/> FAT-2026-0042 · 5 400,00 MAD</div>
+                <span>{{ d().ui.sameResult }}</span>
+              </div>
+            </div>
+          }
+
+          <!-- 6 · Mémoire clients : photo → nom exact -->
+          @default {
+            <div class="sc-in st-mem">
+              <div class="photo">
+                <div class="pl w50"></div>
+                <div class="pl w80 name">Fatima Ftimi</div>
+                <div class="pl w35"></div>
+                <div class="pl w65"></div>
+                <span class="pscan"></span>
+                <span class="ptag">{{ d().ui.reading }}</span>
+              </div>
+              <div class="fix">
+                <span class="old">Fatima Ftimo</span>
+                <span class="arrow">→</span>
+                <span class="new">Fatima Ftimi <ico name="check" [size]="14"/></span>
+              </div>
+              <div class="dir">
+                <span class="dir-t">{{ d().ui.directory }}</span>
+                <div class="dc" style="--i:0">Ahmed Transport SARL</div>
+                <div class="dc" style="--i:1">Fatima Ftimi</div>
+                <div class="dc" style="--i:2">Madrasat Al Quds</div>
+              </div>
+              <div class="flash"><ico name="check" [size]="14"/> {{ d().ui.saved }}</div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</section>
