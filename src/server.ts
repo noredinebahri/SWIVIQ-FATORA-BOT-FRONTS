@@ -10,7 +10,10 @@ import { join } from 'node:path';
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
+// Hôtes autorisés (protection SSRF d'Angular SSR)
+const angularApp = new AngularNodeAppEngine({
+  allowedHosts: ['fatora.swiviq.com', 'localhost', '127.0.0.1'],
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.

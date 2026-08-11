@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global — Fatora-Bot landing */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  font-family: 'Inter', 'Tajawal', system-ui, sans-serif;
+  background: #07070c;
+  color: #eef0f6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[dir='rtl'] body,
+[dir='rtl'] {
+  font-family: 'Tajawal', 'Inter', system-ui, sans-serif;
+}
+
+::selection { background: rgba(232, 182, 76, 0.35); }
+
+/* Scrollbar discret */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0a0a10; }
+::-webkit-scrollbar-thumb { background: #2a2c38; border-radius: 6px; }
