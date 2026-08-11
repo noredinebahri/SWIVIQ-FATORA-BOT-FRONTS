@@ -42,22 +42,12 @@ export class Landing implements OnInit, OnDestroy {
   form = { name: '', email: '', phone: '', message: '' };
   formState = signal<'idle' | 'sending' | 'ok' | 'err'>('idle');
 
-  private observer?: IntersectionObserver;
   private onScroll = () => this.scrolled.set((this.doc.defaultView?.scrollY || 0) > 24);
 
   constructor() {
-    // Animations d'apparition au scroll — côté navigateur uniquement (SSR-safe)
+    // Les animations d'apparition sont 100% CSS (animation-timeline) — ici,
+    // uniquement l'état « scrolled » de la barre de navigation (SSR-safe)
     afterNextRender(() => {
-      this.observer = new IntersectionObserver(
-        (entries) => entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            this.observer?.unobserve(e.target);
-          }
-        }),
-        { threshold: 0.12 }
-      );
-      this.doc.querySelectorAll('.reveal').forEach((el) => this.observer!.observe(el));
       this.doc.defaultView?.addEventListener('scroll', this.onScroll, { passive: true });
     });
   }
@@ -75,7 +65,6 @@ export class Landing implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.observer?.disconnect();
     this.doc.defaultView?.removeEventListener('scroll', this.onScroll);
   }
 
