@@ -1,12 +1,12 @@
-/* Global — Fatora-Bot landing */
+/* Global — Fatora-Bot landing (thème clair) */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
 body {
   font-family: 'Inter', 'Tajawal', system-ui, sans-serif;
-  background: #07070c;
-  color: #eef0f6;
+  background: #f7f8fb;
+  color: #10131c;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -16,9 +16,9 @@ body {
   font-family: 'Tajawal', 'Inter', system-ui, sans-serif;
 }
 
-::selection { background: rgba(232, 182, 76, 0.35); }
+::selection { background: rgba(232, 182, 76, 0.4); }
 
 /* Scrollbar discret */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0a0a10; }
-::-webkit-scrollbar-thumb { background: #2a2c38; border-radius: 6px; }
+::-webkit-scrollbar-track { background: #eef0f4; }
+::-webkit-scrollbar-thumb { background: #c9cdd8; border-radius: 6px; }
