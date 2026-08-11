@@ -11,7 +11,7 @@ import { DICT, LANGS, RTL, WA_LINK, type Lang, type Dict } from '../i18n';
 import { Ico } from '../icon';
 
 const SITE = 'https://fatora.swiviq.com';
-const CONTACT_API = 'https://swiviq.com/api/contact';
+const CONTACT_API = 'https://bot.swiviq.com/lead';
 
 @Component({
   selector: 'app-landing',
@@ -94,8 +94,10 @@ export class Landing implements OnInit, OnDestroy {
     this.http.post(CONTACT_API, {
       name: this.form.name,
       email: this.form.email,
-      subject: `Fatora-Bot lead${this.form.phone ? ' — ' + this.form.phone : ''}`,
-      message: this.form.message || '(landing Fatora-Bot)'
+      phone: this.form.phone,
+      message: this.form.message,
+      lang: this.lang(),
+      page: `${SITE}/${this.lang()}`
     }).subscribe({
       next: () => { this.formState.set('ok'); this.form = { name: '', email: '', phone: '', message: '' }; },
       error: () => this.formState.set('err')
