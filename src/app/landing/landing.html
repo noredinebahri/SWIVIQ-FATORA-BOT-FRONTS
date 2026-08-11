@@ -28,7 +28,7 @@
   <div class="mesh" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="badge">✨ {{ t().hero.badge }}</div>
+      <div class="badge"><ico name="spark" [size]="15"/> {{ t().hero.badge }}</div>
       <h1>
         {{ t().hero.h1a }}
         <span class="grad">{{ t().hero.h1b }}</span>
@@ -41,7 +41,7 @@
         </a>
         <a class="btn btn-ghost btn-lg" href="#pricing">{{ t().hero.cta2 }}</a>
       </div>
-      <div class="trial-note">🎁 {{ t().hero.trial }}</div>
+      <div class="trial-note"><ico name="gift" [size]="15"/> {{ t().hero.trial }}</div>
       <div class="stats">
         @for (s of t().hero.stats; track s.l) {
           <div class="stat"><b>{{ s.n }}</b><span>{{ s.l }}</span></div>
@@ -74,7 +74,7 @@
           </div>
           <div class="msg me anim a3">{{ t().chat.wakha }}</div>
           <div class="msg bot pdf anim a4" dir="ltr">
-            <span class="pdf-ic">📄</span>
+            <span class="pdf-ic"><ico name="file" [size]="24"/></span>
             <div><b>{{ t().chat.pdfName }}</b><i>{{ t().chat.delivered }}</i></div>
           </div>
         </div>
@@ -91,7 +91,9 @@
     <h2>{{ t().langsec.title }}</h2>
     <p class="sub">{{ t().langsec.sub }}</p>
     <div class="chips">
-      @for (c of t().langsec.chips; track c) { <span class="chip">{{ c }}</span> }
+      @for (c of t().langsec.chips; track c.label) {
+        <span class="chip"><ico [name]="c.icon" [size]="16"/> {{ c.label }}</span>
+      }
     </div>
   </div>
 </section>
@@ -106,7 +108,7 @@
     <div class="feat-grid">
       @for (f of t().features.items; track f.t; let i = $index) {
         <article class="card reveal" [style.transition-delay.ms]="(i % 3) * 90">
-          <span class="ic">{{ f.icon }}</span>
+          <span class="ic"><ico [name]="f.icon" [size]="26"/></span>
           <h3>{{ f.t }}</h3>
           <p>{{ f.d }}</p>
         </article>
@@ -153,7 +155,7 @@
       </article>
       @for (p of t().pricing.plans; track p.name; let i = $index) {
         <article class="pcard reveal" [class.pop]="i === 1" [style.transition-delay.ms]="(i + 1) * 110">
-          @if (i === 1) { <div class="pop-tag">⭐ {{ t().pricing.popular }}</div> }
+          @if (i === 1) { <div class="pop-tag"><ico name="star" [size]="13"/> {{ t().pricing.popular }}</div> }
           <h3>{{ p.name }}</h3>
           <div class="price"><b>{{ p.price }}</b><span> DH {{ t().pricing.permonth }}</span></div>
           <p class="qty">{{ p.n }} {{ t().pricing.invoices }}</p>
@@ -162,7 +164,7 @@
         </article>
       }
     </div>
-    <p class="center note reveal">💳 {{ t().pricing.note }}</p>
+    <p class="center note reveal"><ico name="card" [size]="15"/> {{ t().pricing.note }}</p>
   </div>
 </section>
 

@@ -8,13 +8,14 @@ import { Title, Meta } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DICT, LANGS, RTL, WA_LINK, type Lang, type Dict } from '../i18n';
+import { Ico } from '../icon';
 
 const SITE = 'https://fatora.swiviq.com';
 const CONTACT_API = 'https://swiviq.com/api/contact';
 
 @Component({
   selector: 'app-landing',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, Ico],
   templateUrl: './landing.html',
   styleUrl: './landing.scss'
 })

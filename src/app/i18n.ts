@@ -1,4 +1,4 @@
-// Dictionnaire des 4 langues — ar (RTL), fr, en, es
+// Dictionnaire des 4 langues — ar (RTL), fr, en, es — ton B2B : on parle aux entreprises
 export type Lang = 'fr' | 'ar' | 'en' | 'es';
 export const LANGS: Lang[] = ['fr', 'ar', 'en', 'es'];
 export const RTL: Record<Lang, boolean> = { fr: false, ar: true, en: false, es: false };
@@ -14,7 +14,7 @@ export interface Dict {
     stats: { n: string; l: string }[];
   };
   chat: { caption: string; voice1: string; botRecap: string; wakha: string; pdfName: string; delivered: string };
-  langsec: { title: string; sub: string; chips: string[] };
+  langsec: { title: string; sub: string; chips: { icon: string; label: string }[] };
   features: { title: string; sub: string; items: { icon: string; t: string; d: string }[] };
   how: { title: string; sub: string; steps: { t: string; d: string }[] };
   pricing: {
@@ -31,19 +31,19 @@ export interface Dict {
 export const DICT: Record<Lang, Dict> = {
   fr: {
     meta: {
-      title: 'Fatora-Bot — Factures légales par WhatsApp, à la voix, en darija',
-      desc: 'Créez des factures conformes (ICE, IF, TVA) en parlant simplement sur WhatsApp — en darija, en français ou en amazigh. PDF avec cachet, envoi par QR code ou email. Essai gratuit.',
-      kw: 'facture maroc, facturation whatsapp, facture darija, facture ICE TVA, facture électronique maroc, auto-entrepreneur maroc'
+      title: 'Fatora-Bot — La facturation vocale WhatsApp pour les entreprises marocaines',
+      desc: 'Équipez votre entreprise : vos équipes dictent une facture sur WhatsApp — en darija, français ou amazigh — et un PDF conforme (ICE, IF, TVA) part chez le client avec votre cachet. Sans logiciel, sans formation. Essai gratuit.',
+      kw: 'facturation entreprise maroc, facturation whatsapp, facture darija, facture ICE TVA, facturation électronique maroc, logiciel facturation TPE PME'
     },
     nav: { features: 'Fonctionnalités', how: 'Comment ça marche', pricing: 'Tarifs', faq: 'FAQ', cta: 'Essayer gratuitement' },
     hero: {
-      badge: 'Le premier assistant de facturation 100% vocal du Maroc',
-      h1a: 'Vos factures se font',
+      badge: 'La facturation vocale sur WhatsApp, pensée pour les entreprises marocaines',
+      h1a: 'Votre entreprise facture',
       h1b: 'en parlant sur WhatsApp',
-      sub: 'Envoyez un vocal en darija — « sayab liya fatora l Ahmed, 3 bibane b 1500 dh » — et recevez une facture PDF conforme (ICE, IF, TVA), avec votre cachet, en 30 secondes. Sans application. Sans clavier. Sans savoir lire.',
-      cta: 'Essayer sur WhatsApp', cta2: 'Voir les tarifs', trial: '2 factures gratuites — sans carte bancaire',
+      sub: 'Commerces, sociétés de services, ateliers, transporteurs, coopératives : vos équipes dictent une facture en darija ou en français — « sayab liya fatora l Ahmed, 3 bibane b 1500 dh » — et l\'entreprise émet un PDF conforme (ICE, IF, TVA) avec son cachet, en 30 secondes. Aucun logiciel à déployer, aucune formation : WhatsApp suffit.',
+      cta: 'Essayer sur WhatsApp', cta2: 'Voir les tarifs', trial: '2 factures offertes pour évaluer — sans carte bancaire, sans engagement',
       stats: [
-        { n: '30 s', l: 'du vocal au PDF' },
+        { n: '30 s', l: 'du vocal au PDF émis' },
         { n: '3', l: 'langues comprises' },
         { n: '100%', l: 'conforme ICE / TVA' }
       ]
@@ -54,88 +54,95 @@ export const DICT: Record<Lang, Dict> = {
       botRecap: 'فهمت، بغيتي فاتورة لأحمد: ثلاثة بيبان بألف وخمسميا درهم. المجموع مع الضريبة 5 400 درهم. واش نصاوبها ليك؟',
       wakha: 'Wakha ✅',
       pdfName: 'Facture-FAT-2026-0042.pdf',
-      delivered: 'Facture envoyée · cachet inclus'
+      delivered: 'Facture émise · cachet inclus'
     },
     langsec: {
-      title: 'Il parle comme vos clients parlent',
-      sub: 'Darija en lettres arabes ou latines, français, tamazight — à la voix ou à l\'écrit. Le bot répond toujours dans votre langue, et toujours en audio si vous parlez en audio.',
-      chips: ['🎤 Darija parlée', '🔤 Darija latine « fatora l Ahmed »', '🇫🇷 Français', 'ⵜ Tamazight ⵜⵉⴼⵉⵏⴰⵖ', '💰 Riyal & melyoun compris', '🗣️ Réponses vocales naturelles']
+      title: 'Il parle comme vos équipes et vos clients parlent',
+      sub: 'Vendeurs, chauffeurs, techniciens, gérants : chacun dicte dans sa langue — darija en lettres arabes ou latines, français, tamazight — à la voix ou à l\'écrit. Le bot répond toujours dans la même langue, et toujours en audio quand on lui parle en audio.',
+      chips: [
+        { icon: 'mic', label: 'Darija parlée' },
+        { icon: 'voice', label: 'Darija latine « fatora l Ahmed »' },
+        { icon: 'globe', label: 'Français' },
+        { icon: 'globe', label: 'Tamazight ⵜⵉⴼⵉⵏⴰⵖ' },
+        { icon: 'card', label: 'Riyal & melyoun compris' },
+        { icon: 'check', label: 'Réponses vocales naturelles' }
+      ]
     },
     features: {
-      title: 'Tout ce qu\'un logiciel de facturation fait.',
+      title: 'Tout ce qu\'un logiciel de facturation apporte à votre entreprise.',
       sub: 'Sans le logiciel. Juste WhatsApp.',
       items: [
-        { icon: '🎙️', t: 'Dictez, c\'est facturé', d: 'L\'IA comprend le darija parlé, les prix en riyal ou melyoun, les hésitations et les corrections — « la, joj b 200 » et le récap se corrige.' },
-        { icon: '📄', t: 'PDF conforme DGI', d: 'ICE, IF, TP, TVA, montant en toutes lettres, numérotation continue FAT-2026-0001 : tout ce que votre comptable exige.' },
-        { icon: '🖊️', t: 'Votre cachet sur chaque facture', d: 'Envoyez une photo de votre cachet une seule fois — il est incrusté sur tous vos PDF.' },
-        { icon: '📲', t: 'QR code magique', d: 'Votre client scanne, la facture se télécharge. Montrez l\'écran, ou imprimez le code sur votre comptoir.' },
-        { icon: '✉️', t: 'Envoi WhatsApp & email', d: 'La facture part directement chez votre client — avec confirmation avant chaque envoi, pour zéro erreur.' },
-        { icon: '🧠', t: 'Mémoire des clients', d: 'Le bot retient l\'orthographe exacte de vos clients. Un nom compliqué ? Envoyez la photo d\'un document, il lit le nom exact.' },
-        { icon: '🗂️', t: 'Vos archives à la voix', d: '« عطيني الفاتورة رقم 8 », « les factures de ce mois », « toutes celles d\'Ahmed » — PDF renvoyés avec résumé audio et totaux.' },
-        { icon: '✏️', t: 'Correction après émission', d: 'Une erreur détectée après coup ? Dites-le, la facture est corrigée avec le même numéro et renvoyée.' },
-        { icon: '🔒', t: 'Vos données isolées', d: 'Chaque commerce a son espace étanche, ses clients, sa numérotation. Hébergement européen.' }
+        { icon: 'mic', t: 'Vos équipes dictent, c\'est facturé', d: 'L\'IA comprend le darija parlé, les prix en riyal ou melyoun, les hésitations et les corrections — « la, joj b 200 » et le récapitulatif se corrige immédiatement.' },
+        { icon: 'file', t: 'PDF conforme aux exigences DGI', d: 'ICE, IF, TP, TVA détaillée, montant en toutes lettres, numérotation continue par exercice : le format exigé par votre comptable et l\'administration.' },
+        { icon: 'stamp', t: 'Le cachet de l\'entreprise sur chaque facture', d: 'Une photo du cachet, une seule fois — il est incrusté automatiquement sur tous les PDF émis par vos équipes.' },
+        { icon: 'qr', t: 'Remise par QR code', d: 'Votre client scanne, la facture se télécharge. Sur l\'écran du vendeur, imprimé en caisse ou collé sur le comptoir.' },
+        { icon: 'send', t: 'Envoi WhatsApp & email au client', d: 'La facture part directement chez votre client — avec une confirmation explicite avant chaque envoi. Zéro erreur de destinataire.' },
+        { icon: 'users', t: 'Référentiel clients partagé', d: 'L\'orthographe exacte de chaque client est mémorisée. Nom complexe ? Une photo d\'un document suffit, le nom exact est lu et enregistré.' },
+        { icon: 'archive', t: 'Les archives à la voix', d: '« La facture n°8 », « les factures du mois », « toutes celles d\'Ahmed » — PDF renvoyés avec résumé audio et totaux de la période.' },
+        { icon: 'edit', t: 'Correction après émission', d: 'Une erreur détectée après coup ? Elle est corrigée sous le même numéro — pas de trou dans la séquence, pas d\'avoir à gérer.' },
+        { icon: 'shield', t: 'Données cloisonnées par entreprise', d: 'Chaque société dispose de son espace étanche : ses clients, sa numérotation, son cachet. Hébergement en Union européenne.' }
       ]
     },
     how: {
-      title: '3 gestes. Zéro apprentissage.',
-      sub: 'Si vous savez envoyer un vocal WhatsApp, vous savez déjà tout.',
+      title: '3 gestes. Zéro formation.',
+      sub: 'Si vos équipes savent envoyer un vocal WhatsApp, elles savent déjà facturer.',
       steps: [
-        { t: 'Parlez', d: '« Sayab liya fatora l Karim, tlata dyal l-bibane b alf ou khamsmya l-wa7da »' },
-        { t: 'Confirmez', d: 'Le bot résume à la voix : articles, prix, total TTC. Répondez « wakha » — ou corrigez d\'un mot.' },
-        { t: 'C\'est envoyé', d: 'PDF avec cachet dans la conversation. Partagez-le par QR, WhatsApp ou email en une phrase.' }
+        { t: 'Dictez', d: '« Sayab liya fatora l Karim, tlata dyal l-bibane b alf ou khamsmya l-wa7da »' },
+        { t: 'Validez', d: 'Le bot résume à la voix : articles, prix, total TTC. « Wakha » — ou corrigez d\'un mot.' },
+        { t: 'C\'est émis', d: 'PDF avec cachet dans la conversation. Transmis au client par QR, WhatsApp ou email en une phrase.' }
       ]
     },
     pricing: {
-      title: 'Des prix de café, pas de logiciel',
-      sub: 'Commencez gratuitement. Payez seulement quand vous facturez.',
-      free: { t: 'Essai gratuit', d: '2 factures offertes pour tout tester — sans carte, sans engagement.', cta: 'Commencer maintenant' },
+      title: 'Un coût maîtrisé, indexé sur votre activité',
+      sub: 'Évaluez gratuitement. Payez selon votre volume de facturation.',
+      free: { t: 'Évaluation gratuite', d: '2 factures offertes pour valider l\'outil en conditions réelles — sans carte, sans engagement.', cta: 'Commencer l\'essai' },
       permonth: '/ mois', invoices: 'factures / mois', popular: 'Le plus choisi', cta: 'Choisir ce plan',
-      note: 'Paiement par virement ou en espèces. Activation en quelques minutes, directement dans WhatsApp.',
+      note: 'Paiement par virement ou en espèces. Activation en quelques minutes, directement dans WhatsApp. Volume supérieur ou multi-comptes : contactez-nous.',
       plans: [
-        { name: 'Artisan', n: 15, price: 30 },
-        { name: 'Commerçant', n: 30, price: 50 },
+        { name: 'TPE', n: 15, price: 30 },
+        { name: 'Commerce', n: 30, price: 50 },
         { name: 'Entreprise', n: 100, price: 90 }
       ]
     },
     faq: {
       title: 'Questions fréquentes',
       items: [
-        { q: 'Je ne sais pas bien lire ni écrire, ça marche pour moi ?', a: 'C\'est exactement pour vous que Fatora-Bot existe. Tout se fait à la voix : vous parlez, il répond en audio, vous dites « wakha » pour confirmer. Pour un nom compliqué, envoyez la photo d\'un papier où il est écrit.' },
-        { q: 'Les factures sont-elles valables légalement ?', a: 'Oui. Chaque PDF contient votre ICE, IF, taxe professionnelle, la TVA détaillée, le montant en toutes lettres et une numérotation continue — le format exigé par les comptables et l\'administration marocaine.' },
-        { q: 'Faut-il installer une application ?', a: 'Non. Fatora-Bot vit dans WhatsApp, que vous avez déjà. Aucune installation, aucune mise à jour, aucun mot de passe.' },
-        { q: 'Comment mon client reçoit-il sa facture ?', a: 'Trois façons : il scanne un QR code, vous l\'envoyez sur son WhatsApp, ou par email. Toujours avec votre confirmation avant l\'envoi.' },
-        { q: 'Et si le bot se trompe ?', a: 'Il résume toujours avant de générer, et vous corrigez d\'un mot — même après l\'émission, la facture est réparée avec le même numéro. Il apprend vos clients pour ne plus jamais écorcher un nom.' },
-        { q: 'Comment payer mon abonnement ?', a: 'Par virement bancaire ou en espèces. Répondez simplement « 15 », « 30 » ou « 100 » dans WhatsApp et nous activons votre compte dans la journée.' }
+        { q: 'Certains de nos collaborateurs lisent difficilement — est-ce un obstacle ?', a: 'C\'est précisément la force de Fatora-Bot : tout se fait à la voix. Vos équipes parlent, le bot répond en audio, la confirmation se dit — « wakha ». Pour un nom de client complexe, une photo d\'un document suffit : le nom exact est lu et enregistré.' },
+        { q: 'Les factures émises sont-elles valables légalement ?', a: 'Oui. Chaque PDF porte l\'ICE, l\'IF, la taxe professionnelle, la TVA détaillée, le montant en toutes lettres et une numérotation continue — le format attendu par les experts-comptables et l\'administration marocaine.' },
+        { q: 'Faut-il déployer un logiciel ou former les équipes ?', a: 'Non. Fatora-Bot fonctionne dans WhatsApp, déjà installé sur tous les téléphones de vos collaborateurs. Aucune installation, aucune licence par poste, aucune formation.' },
+        { q: 'Comment nos clients reçoivent-ils leurs factures ?', a: 'Trois canaux : QR code à scanner, envoi direct sur leur WhatsApp, ou email. Chaque envoi externe est précédé d\'une confirmation explicite (numéro, client, montant, destinataire).' },
+        { q: 'Que se passe-t-il en cas d\'erreur de saisie ?', a: 'Le bot résume toujours avant d\'émettre, et une correction se dit en un mot — même après émission, la facture est réparée sous le même numéro. Le référentiel clients évite définitivement les noms écorchés.' },
+        { q: 'Comment fonctionne la facturation du service ?', a: 'Par virement bancaire ou en espèces, au mois. Votre gérant répond « 15 », « 30 » ou « 100 » dans WhatsApp et le compte est activé dans la journée. Besoin de plusieurs comptes ou d\'un volume supérieur ? Écrivez-nous.' }
       ]
     },
     lead: {
-      title: 'Une question ? Un projet pour votre coopérative ou vos clients ?',
-      sub: 'Comptables et fiduciaires : équipez tous vos clients TPE, on s\'occupe de tout.',
-      name: 'Votre nom', email: 'Votre email', phone: 'Votre téléphone (optionnel)', msg: 'Votre message',
-      send: 'Envoyer', ok: 'Merci ! Nous revenons vers vous très vite.', err: 'Oups, réessayez ou écrivez-nous sur WhatsApp.'
+      title: 'Déployez Fatora-Bot dans votre entreprise — ou chez vos clients',
+      sub: 'Cabinets comptables, fiduciaires, fédérations et coopératives : équipez l\'ensemble de vos adhérents ou clients TPE/PME, nous prenons en charge l\'intégration.',
+      name: 'Nom et société', email: 'Email professionnel', phone: 'Téléphone (optionnel)', msg: 'Votre besoin',
+      send: 'Envoyer', ok: 'Merci ! Notre équipe vous recontacte très vite.', err: 'Une erreur est survenue — réessayez ou écrivez-nous sur WhatsApp.'
     },
     footer: {
-      tag: 'La facturation qui parle darija.',
-      privacy: 'Politique de confidentialité', rights: 'Tous droits réservés.', made: 'Fait avec ❤️ au Maroc'
+      tag: 'La facturation qui parle la langue de vos équipes.',
+      privacy: 'Politique de confidentialité', rights: 'Tous droits réservés.', made: 'Conçu au Maroc'
     },
     floating: 'Essayer sur WhatsApp'
   },
 
   ar: {
     meta: {
-      title: 'فاتورة بوت — فواتير قانونية بالصوت على الواتساب، بالدارجة',
-      desc: 'صاوب فواتير قانونية (ICE، IF، TVA) غير بالهضرة على الواتساب — بالدارجة، بالفرنسية ولا بالأمازيغية. PDF بالطابع ديالك، إرسال بالـQR ولا الإيميل. تجربة مجانية.',
-      kw: 'فاتورة المغرب, فواتير واتساب, فاتورة بالدارجة, فاتورة ICE TVA, الفوترة الإلكترونية المغرب'
+      title: 'فاتورة بوت — الفوترة الصوتية عبر الواتساب للمقاولات المغربية',
+      desc: 'جهّز مقاولتك: فرق العمل ديالك كيدكتيو الفاتورة على الواتساب — بالدارجة، الفرنسية ولا الأمازيغية — وPDF قانوني (ICE، IF، TVA) كيوصل للعميل بطابع الشركة. بلا برنامج، بلا تكوين. تجربة مجانية.',
+      kw: 'فوترة المقاولات المغرب, فواتير واتساب, فاتورة بالدارجة, الفوترة الإلكترونية المغرب, برنامج فوترة'
     },
     nav: { features: 'المميزات', how: 'كيفاش خدام', pricing: 'الأثمنة', faq: 'أسئلة', cta: 'جرب مجانا' },
     hero: {
-      badge: 'أول مساعد فوترة بالصوت في المغرب',
-      h1a: 'الفواتير ديالك تصاوب',
+      badge: 'الفوترة الصوتية عبر الواتساب، مصممة للمقاولات المغربية',
+      h1a: 'المقاولة ديالك كتفوتر',
       h1b: 'غير بالهضرة فالواتساب',
-      sub: 'صيفط فوكال بالدارجة — « صاوب ليا فاتورة لأحمد، 3 بيبان ب 1500 درهم » — وتوصل بفاتورة PDF قانونية (ICE، IF، TVA) بالطابع ديالك، في 30 ثانية. بلا تطبيق. بلا كتابة. حتى إلا ما كتعرفش تقرا.',
-      cta: 'جرب على الواتساب', cta2: 'شوف الأثمنة', trial: 'جوج فواتير مجانا — بلا بطاقة بنكية',
+      sub: 'المحلات التجارية، شركات الخدمات، الورشات، النقل، التعاونيات: فرق العمل ديالك كيدكتيو الفاتورة بالدارجة ولا بالفرنسية — « صاوب ليا فاتورة لأحمد، 3 بيبان ب 1500 درهم » — والمقاولة كتصدر PDF قانوني (ICE، IF، TVA) بالطابع ديالها، في 30 ثانية. بلا برنامج، بلا تكوين: الواتساب كافي.',
+      cta: 'جرب على الواتساب', cta2: 'شوف الأثمنة', trial: 'جوج فواتير مجانية للتقييم — بلا بطاقة بنكية، بلا التزام',
       stats: [
-        { n: '30 ث', l: 'من الفوكال للـPDF' },
+        { n: '30 ث', l: 'من الصوت للفاتورة' },
         { n: '3', l: 'لغات مفهومة' },
         { n: '100%', l: 'قانونية ICE / TVA' }
       ]
@@ -146,88 +153,95 @@ export const DICT: Record<Lang, Dict> = {
       botRecap: 'فهمت، بغيتي فاتورة لأحمد: ثلاثة بيبان بألف وخمسميا درهم. المجموع مع الضريبة 5,400 درهم. واش نصاوبها ليك؟',
       wakha: 'واخا ✅',
       pdfName: 'Facture-FAT-2026-0042.pdf',
-      delivered: 'الفاتورة تصيفطات · بالطابع'
+      delivered: 'الفاتورة صدرات · بالطابع'
     },
     langsec: {
-      title: 'كيهضر بحال الكليان ديالك',
-      sub: 'الدارجة بالحروف العربية ولا اللاتينية، الفرنسية، الأمازيغية — بالصوت ولا بالكتابة. البوت كيجاوب ديما بلغتك، وديما بالصوت إلا هضرتي بالصوت.',
-      chips: ['🎤 الدارجة بالصوت', '🔤 الدارجة اللاتينية', '🇫🇷 الفرنسية', 'ⵜ الأمازيغية ⵜⵉⴼⵉⵏⴰⵖ', '💰 كيفهم الريال والمليون', '🗣️ أجوبة صوتية طبيعية']
+      title: 'كيهضر بحال فرق العمل والعملاء ديالك',
+      sub: 'البائعون، السائقون، التقنيون، المسيرون: كل واحد كيدكتي بلغتو — الدارجة بالحروف العربية ولا اللاتينية، الفرنسية، الأمازيغية — بالصوت ولا بالكتابة. البوت كيجاوب ديما بنفس اللغة، وديما بالصوت ملي كيتهضر ليه بالصوت.',
+      chips: [
+        { icon: 'mic', label: 'الدارجة بالصوت' },
+        { icon: 'voice', label: 'الدارجة اللاتينية' },
+        { icon: 'globe', label: 'الفرنسية' },
+        { icon: 'globe', label: 'الأمازيغية ⵜⵉⴼⵉⵏⴰⵖ' },
+        { icon: 'card', label: 'كيفهم الريال والمليون' },
+        { icon: 'check', label: 'أجوبة صوتية طبيعية' }
+      ]
     },
     features: {
-      title: 'كلشي اللي كيدير برنامج الفوترة.',
+      title: 'كلشي اللي كيقدمو برنامج الفوترة للمقاولة ديالك.',
       sub: 'بلا برنامج. غير الواتساب.',
       items: [
-        { icon: '🎙️', t: 'هضر، والفاتورة تصاوب', d: 'الذكاء الاصطناعي كيفهم الدارجة المهضورة، الأثمنة بالريال والمليون، والتصحيحات — « لا، جوج ب 200 » والملخص كيتصحح.' },
-        { icon: '📄', t: 'PDF قانوني', d: 'ICE، IF، TP، TVA، المبلغ بالحروف، ترقيم متسلسل: كلشي اللي كيطلبو المحاسب والإدارة.' },
-        { icon: '🖊️', t: 'الطابع ديالك فكل فاتورة', d: 'صيفط صورة الطابع مرة وحدة — كيتحط أوتوماتيكيا فجميع الفواتير.' },
-        { icon: '📲', t: 'كود QR سحري', d: 'الكليان كيسكاني، والفاتورة كتتحمل ليه. ورّي الشاشة، ولا طبع الكود فالمحل.' },
-        { icon: '✉️', t: 'إرسال واتساب وإيميل', d: 'الفاتورة كتمشي نيشان للكليان — مع تأكيد قبل كل إرسال، باش ما يوقع حتى غلط.' },
-        { icon: '🧠', t: 'كيعقل على الكليان', d: 'كيحفظ السمية الصحيحة ديال كل كليان. سمية صعيبة؟ صيفط صورة ديال ورقة فيها السمية.' },
-        { icon: '🗂️', t: 'الأرشيف بالصوت', d: '« عطيني الفاتورة رقم 8 »، « فواتير هاد الشهر »، « ديال أحمد كاملين » — PDF مع ملخص صوتي والمجموع.' },
-        { icon: '✏️', t: 'تصحيح من بعد', d: 'بانت شي غلطة من بعد؟ قولها، والفاتورة كتتصحح بنفس الرقم وكتصيفط من جديد.' },
-        { icon: '🔒', t: 'البيانات ديالك محمية', d: 'كل تاجر عندو الفضاء ديالو، الكليان ديالو، الترقيم ديالو. استضافة أوروبية.' }
+        { icon: 'mic', t: 'فرقك كتدكتي، والفاتورة كتصدر', d: 'الذكاء الاصطناعي كيفهم الدارجة المهضورة، الأثمنة بالريال والمليون، والتصحيحات — « لا، جوج ب 200 » والملخص كيتصحح فالحين.' },
+        { icon: 'file', t: 'PDF مطابق لمتطلبات الضرائب', d: 'ICE، IF، TP، TVA مفصلة، المبلغ بالحروف، ترقيم متسلسل بالسنة المالية: الشكل اللي كيطلبو المحاسب والإدارة.' },
+        { icon: 'stamp', t: 'طابع الشركة فكل فاتورة', d: 'صورة وحدة للطابع، مرة وحدة — كيتحط أوتوماتيكيا فجميع الفواتير اللي كتصدرها الفرق ديالك.' },
+        { icon: 'qr', t: 'التسليم بكود QR', d: 'العميل كيسكاني، والفاتورة كتتحمل. فشاشة البائع، مطبوع فالصندوق ولا ملصق فالمحل.' },
+        { icon: 'send', t: 'إرسال واتساب وإيميل للعميل', d: 'الفاتورة كتوصل نيشان للعميل ديالك — مع تأكيد صريح قبل كل إرسال. صفر خطأ فالمرسل إليه.' },
+        { icon: 'users', t: 'سجل عملاء مشترك', d: 'الإملاء الصحيح ديال كل عميل محفوظ. سمية معقدة؟ صورة ديال وثيقة كافية، السمية الصحيحة كتقرا وكتسجل.' },
+        { icon: 'archive', t: 'الأرشيف بالصوت', d: '« الفاتورة رقم 8 »، « فواتير الشهر »، « ديال أحمد كاملين » — PDF مع ملخص صوتي ومجاميع الفترة.' },
+        { icon: 'edit', t: 'التصحيح بعد الإصدار', d: 'خطأ مكتشف من بعد؟ كيتصحح بنفس الرقم — بلا فراغ فالتسلسل، بلا تعقيدات.' },
+        { icon: 'shield', t: 'بيانات معزولة لكل مقاولة', d: 'كل شركة عندها فضاء محكم: عملاؤها، ترقيمها، طابعها. استضافة فالاتحاد الأوروبي.' }
       ]
     },
     how: {
-      title: '3 حركات. بلا تعلّم.',
-      sub: 'إلا كتعرف تصيفط فوكال فالواتساب، راك عارف كلشي.',
+      title: '3 حركات. صفر تكوين.',
+      sub: 'إلا كانت الفرق ديالك كتعرف تصيفط فوكال فالواتساب، راها عارفة تفوتر.',
       steps: [
-        { t: 'هضر', d: '« صاوب ليا فاتورة لكريم، تلاتة ديال البيبان بألف وخمسميا الوحدة »' },
-        { t: 'أكّد', d: 'البوت كيلخص بالصوت: السلعة، الثمن، المجموع. قول « واخا » — ولا صحح بكلمة.' },
-        { t: 'تصيفطات', d: 'PDF بالطابع فالمحادثة. شاركها بالـQR، الواتساب ولا الإيميل بجملة وحدة.' }
+        { t: 'دكتي', d: '« صاوب ليا فاتورة لكريم، تلاتة ديال البيبان بألف وخمسميا الوحدة »' },
+        { t: 'صادق', d: 'البوت كيلخص بالصوت: السلعة، الثمن، المجموع. « واخا » — ولا صحح بكلمة.' },
+        { t: 'صدرات', d: 'PDF بالطابع فالمحادثة. كتوصل للعميل بالـQR، الواتساب ولا الإيميل بجملة وحدة.' }
       ]
     },
     pricing: {
-      title: 'ثمن قهوة، ماشي ثمن برنامج',
-      sub: 'بدا مجانا. خلص غير ملي كتفوتر.',
-      free: { t: 'تجربة مجانية', d: 'جوج فواتير بلاش باش تجرب كلشي — بلا بطاقة، بلا التزام.', cta: 'بدا دابا' },
-      permonth: '/ الشهر', invoices: 'فاتورة / الشهر', popular: 'الأكثر اختيارا', cta: 'ختار هاد البلان',
-      note: 'الخلاص بالتحويل البنكي ولا كاش. التفعيل فدقائق، نيشان فالواتساب.',
+      title: 'تكلفة مضبوطة، على قياس النشاط ديالك',
+      sub: 'قيّم مجانا. خلص على حساب حجم الفوترة ديالك.',
+      free: { t: 'تقييم مجاني', d: 'جوج فواتير مجانية باش تختبر الأداة فظروف حقيقية — بلا بطاقة، بلا التزام.', cta: 'بدا التجربة' },
+      permonth: '/ الشهر', invoices: 'فاتورة / الشهر', popular: 'الأكثر اختيارا', cta: 'ختار هاد العرض',
+      note: 'الخلاص بالتحويل البنكي ولا نقدا، شهريا. التفعيل فدقائق، نيشان فالواتساب. حجم أكبر ولا حسابات متعددة؟ تواصل معنا.',
       plans: [
-        { name: 'الصانع', n: 15, price: 30 },
-        { name: 'التاجر', n: 30, price: 50 },
-        { name: 'المقاولة', n: 100, price: 90 }
+        { name: 'TPE', n: 15, price: 30 },
+        { name: 'تجارة', n: 30, price: 50 },
+        { name: 'مقاولة', n: 100, price: 90 }
       ]
     },
     faq: {
       title: 'أسئلة متكررة',
       items: [
-        { q: 'ما كنعرفش نقرا ونكتب مزيان، واش يخدم ليا؟', a: 'فاتورة بوت تصاوب بالضبط ليك. كلشي بالصوت: كتهضر، كيجاوبك بالصوت، كتقول « واخا » باش تأكد. وإلا كانت شي سمية صعيبة، صيفط صورة ديال ورقة فيها السمية.' },
-        { q: 'واش الفواتير قانونية؟', a: 'نعم. كل PDF فيه ICE، IF، الضريبة المهنية، TVA مفصلة، المبلغ بالحروف وترقيم متسلسل — الشكل اللي كيطلبو المحاسبون والإدارة المغربية.' },
-        { q: 'واش خاصني نثبّت شي تطبيق؟', a: 'لا. فاتورة بوت كيخدم فالواتساب اللي عندك ديجا. بلا تثبيت، بلا تحديثات، بلا كلمة سر.' },
-        { q: 'كيفاش كيوصل الكليان بالفاتورة؟', a: 'ثلاث طرق: كيسكاني كود QR، ولا كتصيفطها ليه فالواتساب، ولا بالإيميل. ديما بالتأكيد ديالك قبل الإرسال.' },
-        { q: 'وإلا غلط البوت؟', a: 'كيلخص ديما قبل ما يصاوب، وكتصحح بكلمة — حتى من بعد الإصدار، الفاتورة كتتصحح بنفس الرقم. وكيتعلم سميات الكليان باش ما يغلط فيهم عمرو.' },
-        { q: 'كيفاش نخلص الاشتراك؟', a: 'بالتحويل البنكي ولا كاش. جاوب غير ب « 15 »، « 30 » ولا « 100 » فالواتساب وكنفعّلو ليك الحساب فنفس النهار.' }
+        { q: 'بعض المتعاونين ديالنا كيقراو بصعوبة — واش هادي مشكلة؟', a: 'هادي بالضبط القوة ديال فاتورة بوت: كلشي بالصوت. الفرق ديالك كتهضر، البوت كيجاوب بالصوت، والمصادقة كتقال — « واخا ». وللسميات المعقدة، صورة ديال وثيقة كافية: السمية الصحيحة كتقرا وكتسجل.' },
+        { q: 'واش الفواتير الصادرة قانونية؟', a: 'نعم. كل PDF فيه ICE، IF، الضريبة المهنية، TVA مفصلة، المبلغ بالحروف وترقيم متسلسل — الشكل اللي كينتظروه الخبراء المحاسبون والإدارة المغربية.' },
+        { q: 'واش خاص نثبتو برنامج ولا نكوّنو الفرق؟', a: 'لا. فاتورة بوت كيخدم فالواتساب، المثبت أصلا فهواتف جميع المتعاونين ديالك. بلا تثبيت، بلا رخصة لكل جهاز، بلا تكوين.' },
+        { q: 'كيفاش كيتوصلو العملاء ديالنا بالفواتير؟', a: 'ثلاث قنوات: كود QR للمسح، إرسال مباشر لواتسابهم، ولا الإيميل. كل إرسال خارجي مسبوق بتأكيد صريح (الرقم، العميل، المبلغ، المرسل إليه).' },
+        { q: 'وشنو كيوقع فحالة خطأ فالإدخال؟', a: 'البوت كيلخص ديما قبل الإصدار، والتصحيح كيتقال بكلمة — حتى بعد الإصدار، الفاتورة كتصلح بنفس الرقم. وسجل العملاء كيقضي نهائيا على الأخطاء فالسميات.' },
+        { q: 'كيفاش كيتم أداء ثمن الخدمة؟', a: 'بالتحويل البنكي ولا نقدا، شهريا. المسير كيجاوب « 15 »، « 30 » ولا « 100 » فالواتساب والحساب كيتفعل فنفس اليوم. محتاج حسابات متعددة ولا حجم أكبر؟ كتب لينا.' }
       ]
     },
     lead: {
-      title: 'عندك سؤال؟ مشروع لتعاونية ولا للكليان ديالك؟',
-      sub: 'المحاسبون والائتمانيات: جهزو جميع الكليان TPE ديالكم، حنا نتكلفو بكلشي.',
-      name: 'السمية ديالك', email: 'الإيميل ديالك', phone: 'التيليفون (اختياري)', msg: 'الرسالة ديالك',
-      send: 'صيفط', ok: 'شكرا! غادي نتواصلو معاك دغيا.', err: 'وقع مشكل، عاود ولا كتب لينا فالواتساب.'
+      title: 'اعتمد فاتورة بوت فالمقاولة ديالك — ولا عند عملائك',
+      sub: 'مكاتب المحاسبة، الائتمانيات، الفدراليات والتعاونيات: جهزو جميع المنخرطين ولا العملاء TPE/PME ديالكم، وحنا نتكلفو بالإدماج.',
+      name: 'الاسم والشركة', email: 'الإيميل المهني', phone: 'الهاتف (اختياري)', msg: 'الحاجة ديالكم',
+      send: 'إرسال', ok: 'شكرا! الفريق ديالنا غادي يتواصل معكم قريبا.', err: 'وقع خطأ — عاودو ولا كتبو لينا فالواتساب.'
     },
     footer: {
-      tag: 'الفوترة اللي كتهضر بالدارجة.',
-      privacy: 'سياسة الخصوصية', rights: 'جميع الحقوق محفوظة.', made: 'صنع بـ❤️ فالمغرب'
+      tag: 'الفوترة اللي كتهضر بلغة الفرق ديالك.',
+      privacy: 'سياسة الخصوصية', rights: 'جميع الحقوق محفوظة.', made: 'صُمم فالمغرب'
     },
     floating: 'جرب على الواتساب'
   },
 
   en: {
     meta: {
-      title: 'Fatora-Bot — Legal invoices by voice on WhatsApp, in Moroccan Darija',
-      desc: 'Create compliant invoices (ICE, IF, VAT) just by talking on WhatsApp — in Darija, French or Amazigh. PDF with your stamp, shared via QR code or email. Free trial.',
-      kw: 'morocco invoicing, whatsapp invoice, darija invoice, voice invoicing, morocco e-invoicing, ICE VAT invoice'
+      title: 'Fatora-Bot — Voice invoicing on WhatsApp for Moroccan businesses',
+      desc: 'Equip your business: your teams dictate an invoice on WhatsApp — in Darija, French or Amazigh — and a compliant PDF (ICE, IF, VAT) reaches your customer with your company stamp. No software, no training. Free trial.',
+      kw: 'business invoicing morocco, whatsapp invoicing, darija invoice, morocco e-invoicing, SME invoicing software'
     },
     nav: { features: 'Features', how: 'How it works', pricing: 'Pricing', faq: 'FAQ', cta: 'Try for free' },
     hero: {
-      badge: 'Morocco\'s first 100% voice-driven invoicing assistant',
-      h1a: 'Your invoices are made',
+      badge: 'Voice invoicing on WhatsApp, built for Moroccan businesses',
+      h1a: 'Your business invoices',
       h1b: 'by talking on WhatsApp',
-      sub: 'Send a voice note in Darija — "sayab liya fatora l Ahmed, 3 doors at 1500 dh" — and receive a compliant PDF invoice (ICE, IF, VAT) with your stamp, in 30 seconds. No app. No keyboard. No literacy required.',
-      cta: 'Try it on WhatsApp', cta2: 'See pricing', trial: '2 free invoices — no credit card',
+      sub: 'Retail, services, workshops, transport, cooperatives: your teams dictate an invoice in Darija or French — "sayab liya fatora l Ahmed, 3 doors at 1500 dh" — and the company issues a compliant PDF (ICE, IF, VAT) with its stamp, in 30 seconds. No software to deploy, no training: WhatsApp is enough.',
+      cta: 'Try it on WhatsApp', cta2: 'See pricing', trial: '2 invoices free to evaluate — no card, no commitment',
       stats: [
-        { n: '30 s', l: 'from voice to PDF' },
+        { n: '30 s', l: 'from voice to issued PDF' },
         { n: '3', l: 'languages understood' },
         { n: '100%', l: 'ICE / VAT compliant' }
       ]
@@ -238,88 +252,95 @@ export const DICT: Record<Lang, Dict> = {
       botRecap: 'فهمت، بغيتي فاتورة لأحمد: ثلاثة بيبان بألف وخمسميا درهم. المجموع مع الضريبة 5,400 درهم. واش نصاوبها ليك؟',
       wakha: 'Wakha ✅',
       pdfName: 'Invoice-FAT-2026-0042.pdf',
-      delivered: 'Invoice sent · stamp included'
+      delivered: 'Invoice issued · stamp included'
     },
     langsec: {
-      title: 'It speaks the way your customers speak',
-      sub: 'Darija in Arabic or Latin script, French, Tamazight — spoken or written. The bot always answers in your language, and always with audio if you speak audio.',
-      chips: ['🎤 Spoken Darija', '🔤 Latin Darija "fatora l Ahmed"', '🇫🇷 French', 'ⵜ Tamazight ⵜⵉⴼⵉⵏⴰⵖ', '💰 Riyal & melyoun understood', '🗣️ Natural voice replies']
+      title: 'It speaks the way your teams and customers speak',
+      sub: 'Sales staff, drivers, technicians, managers: everyone dictates in their own language — Darija in Arabic or Latin script, French, Tamazight — spoken or written. The bot always replies in the same language, and always with audio when spoken to.',
+      chips: [
+        { icon: 'mic', label: 'Spoken Darija' },
+        { icon: 'voice', label: 'Latin Darija "fatora l Ahmed"' },
+        { icon: 'globe', label: 'French' },
+        { icon: 'globe', label: 'Tamazight ⵜⵉⴼⵉⵏⴰⵖ' },
+        { icon: 'card', label: 'Riyal & melyoun understood' },
+        { icon: 'check', label: 'Natural voice replies' }
+      ]
     },
     features: {
-      title: 'Everything invoicing software does.',
+      title: 'Everything invoicing software brings to your business.',
       sub: 'Without the software. Just WhatsApp.',
       items: [
-        { icon: '🎙️', t: 'Dictate it, it\'s invoiced', d: 'The AI understands spoken Darija, prices in riyal or melyoun, hesitations and corrections — "la, joj b 200" and the summary fixes itself.' },
-        { icon: '📄', t: 'Tax-compliant PDF', d: 'ICE, IF, TP, VAT, amount in words, continuous numbering: everything your accountant demands.' },
-        { icon: '🖊️', t: 'Your stamp on every invoice', d: 'Send a photo of your stamp once — it\'s embedded on every PDF forever.' },
-        { icon: '📲', t: 'Magic QR code', d: 'Your customer scans, the invoice downloads. Show your screen, or print the code on your counter.' },
-        { icon: '✉️', t: 'WhatsApp & email delivery', d: 'The invoice goes straight to your customer — with confirmation before every send. Zero mistakes.' },
-        { icon: '🧠', t: 'Customer memory', d: 'The bot remembers exact spellings. Tricky name? Send a photo of any document and it reads the exact name.' },
-        { icon: '🗂️', t: 'Voice-driven archives', d: '"Give me invoice #8", "this month\'s invoices", "all of Ahmed\'s" — PDFs re-sent with audio summaries and totals.' },
-        { icon: '✏️', t: 'Fix after issuing', d: 'Spotted an error later? Say it — the invoice is corrected under the same number and re-sent.' },
-        { icon: '🔒', t: 'Isolated data', d: 'Every business gets its own sealed space, customers and numbering. EU hosting.' }
+        { icon: 'mic', t: 'Your teams dictate, it\'s invoiced', d: 'The AI understands spoken Darija, prices in riyal or melyoun, hesitations and corrections — "la, joj b 200" and the summary fixes itself instantly.' },
+        { icon: 'file', t: 'Tax-authority-compliant PDF', d: 'ICE, IF, TP, itemized VAT, amount in words, continuous numbering per fiscal year: the format your accountant and the administration expect.' },
+        { icon: 'stamp', t: 'Company stamp on every invoice', d: 'One photo of your stamp, once — automatically embedded on every PDF your teams issue.' },
+        { icon: 'qr', t: 'Delivery by QR code', d: 'Your customer scans, the invoice downloads. On the salesperson\'s screen, printed at the register, or posted at the counter.' },
+        { icon: 'send', t: 'WhatsApp & email delivery', d: 'The invoice goes straight to your customer — with an explicit confirmation before every send. Zero recipient errors.' },
+        { icon: 'users', t: 'Shared customer directory', d: 'Exact spelling of every customer is remembered. Complex name? A photo of any document is enough — the exact name is read and stored.' },
+        { icon: 'archive', t: 'Voice-driven archives', d: '"Invoice #8", "this month\'s invoices", "all of Ahmed\'s" — PDFs re-sent with audio summaries and period totals.' },
+        { icon: 'edit', t: 'Post-issuance correction', d: 'Error spotted later? Fixed under the same number — no sequence gaps, no credit notes to juggle.' },
+        { icon: 'shield', t: 'Data isolated per company', d: 'Each business gets a sealed space: its customers, numbering and stamp. EU hosting.' }
       ]
     },
     how: {
-      title: '3 gestures. Zero learning curve.',
-      sub: 'If you can send a WhatsApp voice note, you already know everything.',
+      title: '3 gestures. Zero training.',
+      sub: 'If your teams can send a WhatsApp voice note, they already know how to invoice.',
       steps: [
-        { t: 'Talk', d: '"Sayab liya fatora l Karim, three doors at one thousand five hundred each"' },
-        { t: 'Confirm', d: 'The bot summarizes out loud: items, prices, total. Say "wakha" — or correct it with one word.' },
-        { t: 'It\'s sent', d: 'Stamped PDF in your chat. Share it by QR, WhatsApp or email in one sentence.' }
+        { t: 'Dictate', d: '"Sayab liya fatora l Karim, three doors at one thousand five hundred each"' },
+        { t: 'Approve', d: 'The bot summarizes out loud: items, prices, total. "Wakha" — or correct with one word.' },
+        { t: 'It\'s issued', d: 'Stamped PDF in the chat. Delivered to the customer by QR, WhatsApp or email in one sentence.' }
       ]
     },
     pricing: {
-      title: 'Coffee prices, not software prices',
-      sub: 'Start free. Pay only when you invoice.',
-      free: { t: 'Free trial', d: '2 invoices on us to try everything — no card, no commitment.', cta: 'Start now' },
+      title: 'Predictable cost, indexed to your activity',
+      sub: 'Evaluate for free. Pay according to your invoicing volume.',
+      free: { t: 'Free evaluation', d: '2 invoices on us to validate the tool in real conditions — no card, no commitment.', cta: 'Start the trial' },
       permonth: '/ month', invoices: 'invoices / month', popular: 'Most popular', cta: 'Choose this plan',
-      note: 'Pay by bank transfer or cash. Activation within minutes, right inside WhatsApp.',
+      note: 'Pay by bank transfer or cash, monthly. Activation within minutes, right inside WhatsApp. Higher volume or multiple accounts: contact us.',
       plans: [
-        { name: 'Artisan', n: 15, price: 30 },
-        { name: 'Merchant', n: 30, price: 50 },
-        { name: 'Business', n: 100, price: 90 }
+        { name: 'Small biz', n: 15, price: 30 },
+        { name: 'Commerce', n: 30, price: 50 },
+        { name: 'Enterprise', n: 100, price: 90 }
       ]
     },
     faq: {
       title: 'Frequently asked questions',
       items: [
-        { q: 'I can\'t read or write well — will it work for me?', a: 'Fatora-Bot was built exactly for you. Everything is voice: you talk, it answers in audio, you say "wakha" to confirm. For a tricky name, send a photo of any paper where it\'s written.' },
-        { q: 'Are the invoices legally valid?', a: 'Yes. Every PDF carries your ICE, IF, professional tax, itemized VAT, the amount in words and continuous numbering — the format Moroccan accountants and authorities require.' },
-        { q: 'Do I need to install an app?', a: 'No. Fatora-Bot lives inside WhatsApp, which you already have. No installs, no updates, no passwords.' },
-        { q: 'How does my customer receive the invoice?', a: 'Three ways: they scan a QR code, you send it to their WhatsApp, or by email. Always with your confirmation before sending.' },
-        { q: 'What if the bot gets something wrong?', a: 'It always summarizes before generating, and you fix it with a word — even after issuing, the invoice is repaired under the same number. It learns your customers so names are never mangled again.' },
-        { q: 'How do I pay for my plan?', a: 'Bank transfer or cash. Just reply "15", "30" or "100" inside WhatsApp and we activate your account the same day.' }
+        { q: 'Some of our staff struggle with reading — is that a problem?', a: 'That\'s exactly Fatora-Bot\'s strength: everything happens by voice. Your teams talk, the bot replies in audio, approval is spoken — "wakha". For complex customer names, a photo of any document is enough: the exact name is read and stored.' },
+        { q: 'Are the issued invoices legally valid?', a: 'Yes. Every PDF carries the ICE, IF, professional tax, itemized VAT, the amount in words and continuous numbering — the format Moroccan chartered accountants and authorities expect.' },
+        { q: 'Do we need to deploy software or train staff?', a: 'No. Fatora-Bot runs inside WhatsApp, already installed on every employee\'s phone. No installs, no per-seat licences, no training.' },
+        { q: 'How do our customers receive their invoices?', a: 'Three channels: a QR code to scan, direct delivery to their WhatsApp, or email. Every external send is preceded by an explicit confirmation (number, customer, amount, recipient).' },
+        { q: 'What happens if something is entered wrong?', a: 'The bot always summarizes before issuing, and a correction takes one word — even after issuance, the invoice is repaired under the same number. The customer directory permanently eliminates misspelled names.' },
+        { q: 'How is the service billed?', a: 'Bank transfer or cash, monthly. Your manager replies "15", "30" or "100" inside WhatsApp and the account is activated the same day. Multiple accounts or higher volume? Write to us.' }
       ]
     },
     lead: {
-      title: 'A question? A project for your cooperative or your clients?',
-      sub: 'Accountants & fiduciaries: equip all your small-business clients, we handle everything.',
-      name: 'Your name', email: 'Your email', phone: 'Your phone (optional)', msg: 'Your message',
-      send: 'Send', ok: 'Thanks! We\'ll get back to you very soon.', err: 'Oops — try again or ping us on WhatsApp.'
+      title: 'Deploy Fatora-Bot in your company — or across your client base',
+      sub: 'Accounting firms, fiduciaries, federations and cooperatives: equip all your SME members or clients, we handle the rollout.',
+      name: 'Name & company', email: 'Work email', phone: 'Phone (optional)', msg: 'Your needs',
+      send: 'Send', ok: 'Thank you! Our team will get back to you shortly.', err: 'Something went wrong — try again or ping us on WhatsApp.'
     },
     footer: {
-      tag: 'Invoicing that speaks Darija.',
-      privacy: 'Privacy policy', rights: 'All rights reserved.', made: 'Made with ❤️ in Morocco'
+      tag: 'Invoicing that speaks your teams\' language.',
+      privacy: 'Privacy policy', rights: 'All rights reserved.', made: 'Designed in Morocco'
     },
     floating: 'Try on WhatsApp'
   },
 
   es: {
     meta: {
-      title: 'Fatora-Bot — Facturas legales por voz en WhatsApp, en dariya marroquí',
-      desc: 'Crea facturas conformes (ICE, IF, IVA) simplemente hablando por WhatsApp — en dariya, francés o amazigh. PDF con tu sello, envío por código QR o email. Prueba gratis.',
-      kw: 'facturación marruecos, factura whatsapp, factura dariya, factura por voz, facturación electrónica marruecos'
+      title: 'Fatora-Bot — Facturación por voz en WhatsApp para empresas marroquíes',
+      desc: 'Equipa tu empresa: tus equipos dictan una factura por WhatsApp — en dariya, francés o amazigh — y un PDF conforme (ICE, IF, IVA) llega a tu cliente con el sello de la empresa. Sin software, sin formación. Prueba gratuita.',
+      kw: 'facturación empresas marruecos, facturación whatsapp, factura dariya, facturación electrónica marruecos'
     },
     nav: { features: 'Funciones', how: 'Cómo funciona', pricing: 'Precios', faq: 'FAQ', cta: 'Probar gratis' },
     hero: {
-      badge: 'El primer asistente de facturación 100% por voz de Marruecos',
-      h1a: 'Tus facturas se hacen',
+      badge: 'Facturación por voz en WhatsApp, diseñada para empresas marroquíes',
+      h1a: 'Tu empresa factura',
       h1b: 'hablando por WhatsApp',
-      sub: 'Envía un audio en dariya — «sayab liya fatora l Ahmed, 3 puertas a 1500 dh» — y recibe una factura PDF conforme (ICE, IF, IVA) con tu sello, en 30 segundos. Sin app. Sin teclado. Sin saber leer.',
-      cta: 'Probar en WhatsApp', cta2: 'Ver precios', trial: '2 facturas gratis — sin tarjeta',
+      sub: 'Comercios, servicios, talleres, transporte, cooperativas: tus equipos dictan una factura en dariya o francés — «sayab liya fatora l Ahmed, 3 puertas a 1500 dh» — y la empresa emite un PDF conforme (ICE, IF, IVA) con su sello, en 30 segundos. Sin software que desplegar, sin formación: WhatsApp basta.',
+      cta: 'Probar en WhatsApp', cta2: 'Ver precios', trial: '2 facturas gratis para evaluar — sin tarjeta, sin compromiso',
       stats: [
-        { n: '30 s', l: 'del audio al PDF' },
+        { n: '30 s', l: 'de la voz al PDF emitido' },
         { n: '3', l: 'idiomas comprendidos' },
         { n: '100%', l: 'conforme ICE / IVA' }
       ]
@@ -330,69 +351,76 @@ export const DICT: Record<Lang, Dict> = {
       botRecap: 'فهمت، بغيتي فاتورة لأحمد: ثلاثة بيبان بألف وخمسميا درهم. المجموع مع الضريبة 5,400 درهم. واش نصاوبها ليك؟',
       wakha: 'Wakha ✅',
       pdfName: 'Factura-FAT-2026-0042.pdf',
-      delivered: 'Factura enviada · sello incluido'
+      delivered: 'Factura emitida · sello incluido'
     },
     langsec: {
-      title: 'Habla como hablan tus clientes',
-      sub: 'Dariya en letras árabes o latinas, francés, tamazight — por voz o por escrito. El bot responde siempre en tu idioma, y siempre en audio si hablas en audio.',
-      chips: ['🎤 Dariya hablado', '🔤 Dariya latino «fatora l Ahmed»', '🇫🇷 Francés', 'ⵜ Tamazight ⵜⵉⴼⵉⵏⴰⵖ', '💰 Riyal y melyoun comprendidos', '🗣️ Respuestas de voz naturales']
+      title: 'Habla como hablan tus equipos y tus clientes',
+      sub: 'Vendedores, conductores, técnicos, gerentes: cada uno dicta en su idioma — dariya en letras árabes o latinas, francés, tamazight — por voz o por escrito. El bot responde siempre en el mismo idioma, y siempre en audio cuando se le habla en audio.',
+      chips: [
+        { icon: 'mic', label: 'Dariya hablado' },
+        { icon: 'voice', label: 'Dariya latino «fatora l Ahmed»' },
+        { icon: 'globe', label: 'Francés' },
+        { icon: 'globe', label: 'Tamazight ⵜⵉⴼⵉⵏⴰⵖ' },
+        { icon: 'card', label: 'Riyal y melyoun comprendidos' },
+        { icon: 'check', label: 'Respuestas de voz naturales' }
+      ]
     },
     features: {
-      title: 'Todo lo que hace un software de facturación.',
+      title: 'Todo lo que un software de facturación aporta a tu empresa.',
       sub: 'Sin el software. Solo WhatsApp.',
       items: [
-        { icon: '🎙️', t: 'Díctalo y está facturado', d: 'La IA entiende el dariya hablado, precios en riyal o melyoun, dudas y correcciones — «la, joj b 200» y el resumen se corrige.' },
-        { icon: '📄', t: 'PDF conforme', d: 'ICE, IF, TP, IVA, importe en letras, numeración continua: todo lo que exige tu contable.' },
-        { icon: '🖊️', t: 'Tu sello en cada factura', d: 'Envía una foto de tu sello una sola vez — quedará incrustado en todos tus PDF.' },
-        { icon: '📲', t: 'Código QR mágico', d: 'Tu cliente escanea y la factura se descarga. Muestra la pantalla o imprime el código en tu mostrador.' },
-        { icon: '✉️', t: 'Envío por WhatsApp y email', d: 'La factura llega directa a tu cliente — con confirmación antes de cada envío. Cero errores.' },
-        { icon: '🧠', t: 'Memoria de clientes', d: 'El bot recuerda la ortografía exacta. ¿Nombre difícil? Envía la foto de un documento y lee el nombre exacto.' },
-        { icon: '🗂️', t: 'Tu archivo por voz', d: '«Dame la factura n°8», «las de este mes», «todas las de Ahmed» — PDF reenviados con resumen de audio y totales.' },
-        { icon: '✏️', t: 'Corrección tras emisión', d: '¿Un error detectado después? Dilo — la factura se corrige con el mismo número y se reenvía.' },
-        { icon: '🔒', t: 'Datos aislados', d: 'Cada negocio tiene su espacio sellado, sus clientes y su numeración. Alojamiento europeo.' }
+        { icon: 'mic', t: 'Tus equipos dictan, está facturado', d: 'La IA entiende el dariya hablado, precios en riyal o melyoun, dudas y correcciones — «la, joj b 200» y el resumen se corrige al instante.' },
+        { icon: 'file', t: 'PDF conforme a Hacienda', d: 'ICE, IF, TP, IVA detallado, importe en letras, numeración continua por ejercicio: el formato que exigen tu contable y la administración.' },
+        { icon: 'stamp', t: 'El sello de la empresa en cada factura', d: 'Una foto del sello, una sola vez — se incrusta automáticamente en todos los PDF que emiten tus equipos.' },
+        { icon: 'qr', t: 'Entrega por código QR', d: 'Tu cliente escanea y la factura se descarga. En la pantalla del vendedor, impreso en caja o fijado en el mostrador.' },
+        { icon: 'send', t: 'Envío por WhatsApp y email', d: 'La factura llega directa a tu cliente — con confirmación explícita antes de cada envío. Cero errores de destinatario.' },
+        { icon: 'users', t: 'Directorio de clientes compartido', d: 'Se memoriza la ortografía exacta de cada cliente. ¿Nombre complejo? Basta la foto de un documento: el nombre exacto se lee y se guarda.' },
+        { icon: 'archive', t: 'Archivo por voz', d: '«La factura n°8», «las de este mes», «todas las de Ahmed» — PDF reenviados con resumen de audio y totales del período.' },
+        { icon: 'edit', t: 'Corrección tras emisión', d: '¿Error detectado después? Se corrige con el mismo número — sin huecos en la secuencia, sin abonos que gestionar.' },
+        { icon: 'shield', t: 'Datos aislados por empresa', d: 'Cada sociedad tiene su espacio sellado: sus clientes, su numeración, su sello. Alojamiento en la UE.' }
       ]
     },
     how: {
-      title: '3 gestos. Cero aprendizaje.',
-      sub: 'Si sabes enviar un audio de WhatsApp, ya lo sabes todo.',
+      title: '3 gestos. Cero formación.',
+      sub: 'Si tus equipos saben enviar un audio de WhatsApp, ya saben facturar.',
       steps: [
-        { t: 'Habla', d: '«Sayab liya fatora l Karim, tres puertas a mil quinientos cada una»' },
-        { t: 'Confirma', d: 'El bot resume en voz alta: artículos, precios, total. Di «wakha» — o corrige con una palabra.' },
-        { t: 'Enviada', d: 'PDF con sello en tu chat. Compártela por QR, WhatsApp o email en una frase.' }
+        { t: 'Dicta', d: '«Sayab liya fatora l Karim, tres puertas a mil quinientos cada una»' },
+        { t: 'Valida', d: 'El bot resume en voz alta: artículos, precios, total. «Wakha» — o corrige con una palabra.' },
+        { t: 'Emitida', d: 'PDF con sello en el chat. Entregada al cliente por QR, WhatsApp o email en una frase.' }
       ]
     },
     pricing: {
-      title: 'Precio de café, no de software',
-      sub: 'Empieza gratis. Paga solo cuando facturas.',
-      free: { t: 'Prueba gratis', d: '2 facturas de regalo para probarlo todo — sin tarjeta, sin compromiso.', cta: 'Empezar ahora' },
+      title: 'Un coste previsible, indexado a tu actividad',
+      sub: 'Evalúa gratis. Paga según tu volumen de facturación.',
+      free: { t: 'Evaluación gratuita', d: '2 facturas de regalo para validar la herramienta en condiciones reales — sin tarjeta, sin compromiso.', cta: 'Empezar la prueba' },
       permonth: '/ mes', invoices: 'facturas / mes', popular: 'El más elegido', cta: 'Elegir este plan',
-      note: 'Pago por transferencia o en efectivo. Activación en minutos, directamente en WhatsApp.',
+      note: 'Pago por transferencia o en efectivo, mensual. Activación en minutos, directamente en WhatsApp. ¿Mayor volumen o varias cuentas? Contáctanos.',
       plans: [
-        { name: 'Artesano', n: 15, price: 30 },
-        { name: 'Comerciante', n: 30, price: 50 },
+        { name: 'Pyme', n: 15, price: 30 },
+        { name: 'Comercio', n: 30, price: 50 },
         { name: 'Empresa', n: 100, price: 90 }
       ]
     },
     faq: {
       title: 'Preguntas frecuentes',
       items: [
-        { q: 'No sé leer ni escribir bien, ¿me sirve?', a: 'Fatora-Bot existe exactamente para ti. Todo es por voz: hablas, responde en audio, dices «wakha» para confirmar. Para un nombre difícil, envía la foto de un papel donde esté escrito.' },
-        { q: '¿Las facturas son legalmente válidas?', a: 'Sí. Cada PDF lleva tu ICE, IF, tasa profesional, IVA detallado, el importe en letras y numeración continua — el formato que exigen los contables y la administración marroquí.' },
-        { q: '¿Hay que instalar una app?', a: 'No. Fatora-Bot vive en WhatsApp, que ya tienes. Sin instalaciones, sin actualizaciones, sin contraseñas.' },
-        { q: '¿Cómo recibe mi cliente su factura?', a: 'De tres formas: escanea un código QR, se la envías a su WhatsApp, o por email. Siempre con tu confirmación antes del envío.' },
-        { q: '¿Y si el bot se equivoca?', a: 'Siempre resume antes de generar, y corriges con una palabra — incluso después de emitir, la factura se repara con el mismo número. Aprende tus clientes para no volver a deformar un nombre.' },
-        { q: '¿Cómo pago mi plan?', a: 'Por transferencia bancaria o en efectivo. Responde «15», «30» o «100» en WhatsApp y activamos tu cuenta el mismo día.' }
+        { q: 'Parte de nuestro personal lee con dificultad — ¿es un obstáculo?', a: 'Esa es precisamente la fuerza de Fatora-Bot: todo se hace por voz. Tus equipos hablan, el bot responde en audio, la validación se dice — «wakha». Para nombres complejos, basta la foto de un documento: el nombre exacto se lee y se guarda.' },
+        { q: '¿Las facturas emitidas son legalmente válidas?', a: 'Sí. Cada PDF lleva el ICE, IF, la tasa profesional, el IVA detallado, el importe en letras y numeración continua — el formato que esperan los contables y la administración marroquí.' },
+        { q: '¿Hay que desplegar software o formar al personal?', a: 'No. Fatora-Bot funciona dentro de WhatsApp, ya instalado en los teléfonos de todos tus colaboradores. Sin instalaciones, sin licencias por puesto, sin formación.' },
+        { q: '¿Cómo reciben nuestros clientes sus facturas?', a: 'Tres canales: código QR para escanear, envío directo a su WhatsApp, o email. Cada envío externo va precedido de una confirmación explícita (número, cliente, importe, destinatario).' },
+        { q: '¿Qué pasa si se introduce algo mal?', a: 'El bot siempre resume antes de emitir, y una corrección se dice con una palabra — incluso tras la emisión, la factura se repara con el mismo número. El directorio de clientes elimina definitivamente los nombres deformados.' },
+        { q: '¿Cómo se factura el servicio?', a: 'Por transferencia bancaria o en efectivo, mensualmente. Tu gerente responde «15», «30» o «100» en WhatsApp y la cuenta se activa el mismo día. ¿Varias cuentas o mayor volumen? Escríbenos.' }
       ]
     },
     lead: {
-      title: '¿Una pregunta? ¿Un proyecto para tu cooperativa o tus clientes?',
-      sub: 'Contables y gestorías: equipad a todos vuestros clientes TPE, nos ocupamos de todo.',
-      name: 'Tu nombre', email: 'Tu email', phone: 'Tu teléfono (opcional)', msg: 'Tu mensaje',
-      send: 'Enviar', ok: '¡Gracias! Te contactamos muy pronto.', err: 'Ups — inténtalo de nuevo o escríbenos por WhatsApp.'
+      title: 'Despliega Fatora-Bot en tu empresa — o en tu cartera de clientes',
+      sub: 'Despachos contables, gestorías, federaciones y cooperativas: equipad a todos vuestros miembros o clientes pyme, nosotros nos ocupamos de la integración.',
+      name: 'Nombre y empresa', email: 'Email profesional', phone: 'Teléfono (opcional)', msg: 'Vuestra necesidad',
+      send: 'Enviar', ok: '¡Gracias! Nuestro equipo os contactará muy pronto.', err: 'Algo falló — inténtalo de nuevo o escríbenos por WhatsApp.'
     },
     footer: {
-      tag: 'La facturación que habla dariya.',
-      privacy: 'Política de privacidad', rights: 'Todos los derechos reservados.', made: 'Hecho con ❤️ en Marruecos'
+      tag: 'La facturación que habla el idioma de tus equipos.',
+      privacy: 'Política de privacidad', rights: 'Todos los derechos reservados.', made: 'Diseñado en Marruecos'
     },
     floating: 'Probar en WhatsApp'
   }
