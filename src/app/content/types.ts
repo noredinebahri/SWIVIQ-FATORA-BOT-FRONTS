@@ -58,6 +58,14 @@ export interface Article {
   updated: string;
   /** Temps de lecture affiché, en minutes */
   readMin: number;
+
+  /**
+   * Page de type glossaire. Fait émettre un `DefinedTermSet` en plus de
+   * l'`Article`, chaque tableau à deux colonnes devenant un `DefinedTerm`.
+   * C'est le balisage que les moteurs génératifs exploitent le plus
+   * directement : une définition isolée est citable telle quelle.
+   */
+  glossary?: boolean;
 }
 
 /** Libellés d'interface des pages éditoriales (hors contenu des articles). */

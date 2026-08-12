@@ -10,8 +10,8 @@ Dernière mise à jour : 12 août 2026
 
 | | Avant | Après |
 |---|---|---|
-| URL indexables | 4 | **30** |
-| Guides éditoriaux | 0 | 12 (fr) + 6 (ar) |
+| URL indexables | 4 | **41** |
+| Guides éditoriaux | 0 | 17 (fr) + 12 (ar) |
 | Pages E-E-A-T | 0 | 4 (`/:lang/a-propos`) |
 | Hub éditorial | 0 | 4 (`/:lang/guides`) |
 
@@ -25,11 +25,17 @@ Arborescence des URL :
 ```
 /:lang                              landing
 /:lang/guides                       hub éditorial
-/:lang/guides/:slug                 guides réglementaires (7 fr, 5 ar)
-/:lang/secteurs/:slug               pages métier (3 fr)
-/:lang/comparatif/:slug             comparatifs (2 fr, 1 ar)
+/:lang/guides/:slug                 guides réglementaires et pratiques (12 fr, 8 ar)
+/:lang/secteurs/:slug               pages métier (3 fr, 3 ar)
+/:lang/comparatif/:slug             comparatifs (2 fr, 2 ar)
 /:lang/a-propos                     éditeur, méthode de rédaction (4 langues)
 ```
+
+Un garde-fou tourne à chaque build : `scripts/seo-assets.js` relit tout le HTML
+généré et fait échouer la compilation si un lien interne pointe vers une page qui
+n'existe pas. Un slug renommé dans `content/` mais oublié dans `links.ts`
+produirait sinon une redirection silencieuse vers le hub — donc un lien qui ne
+transmet rien et une page orpheline.
 
 ### Signaux techniques
 
@@ -51,6 +57,12 @@ Un `@graph` unique par page, sans nœud orphelin : `Organization` (avec `knowsAb
 `WebSite`, `SoftwareApplication`, `BreadcrumbList`, et selon le type de page `Article`
 (+ `wordCount`, `datePublished`, `dateModified`, `speakable`), `FAQPage`, `CollectionPage`,
 `ItemList`, `AboutPage`.
+
+Le glossaire émet en plus un `DefinedTermSet` de 35 `DefinedTerm` — chaque ligne de
+tableau « terme / définition » devient un nœud citable isolément. C'est le balisage
+que les moteurs génératifs exploitent le plus directement : une définition ainsi
+extraite se reprend telle quelle, sans avoir à être devinée dans le corps du texte.
+Il suffit de poser `glossary: true` sur un article pour l'activer.
 
 ### Optimisation moteurs IA (GEO)
 
@@ -171,19 +183,17 @@ marocain. Ce sera le nombre de domaines de qualité qui pointent vers lui.
 Par ordre de valeur estimée. Chaque entrée est un objet `Article` à ajouter — aucun travail
 technique associé.
 
-**Traduire en arabe** (le contenu existe déjà en français) : `numerotation-factures`,
-`facture-auto-entrepreneur-maroc`, `excel-vs-facturation-whatsapp`, et les trois pages secteurs.
-C'est le meilleur rapport effort/résultat du lot : la recherche en arabe et en darija est
-nettement moins concurrentielle que la recherche en français au Maroc.
+**Traduire en arabe** (le contenu existe déjà en français) : `devis-conforme-maroc`,
+`facture-avoir-maroc`, `delais-paiement-maroc`, `archivage-factures-maroc` et
+`glossaire-facturation-maroc`. C'est le meilleur rapport effort/résultat du lot : la recherche
+en arabe et en darija est nettement moins concurrentielle que la recherche en français au Maroc.
 
 **Nouveaux guides français :**
 
-- Devis conforme au Maroc et passage devis → facture
-- Facture d'avoir : quand l'émettre, comment la rédiger
-- Délais de paiement et pénalités de retard entre entreprises
 - Facturer un client étranger depuis le Maroc (export, exonération, devise)
-- Durée de conservation des factures et obligations d'archivage
-- Glossaire de la facturation marocaine (ICE, IF, TP, TVA, avoir, situation, retenue de garantie)
+- Facture d'acompte et situation de travaux : le cycle complet d'un chantier
+- Conditions générales de vente : ce qu'il faut y mettre au Maroc
+- Récupérer une créance impayée : la procédure, étape par étape
 
 **Nouvelles pages secteurs :** restauration et traiteurs, coopératives agricoles, artisanat et
 couture, cabinets comptables (page prescripteur, à traiter comme une page de partenariat).

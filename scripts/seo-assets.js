@@ -65,6 +65,27 @@ const pages = routes.map(readPage).filter(Boolean);
 const isArticle = (p) => /^\/[a-z]{2}\/(guides|secteurs|comparatif)\/./.test(p.route);
 const isHome = (p) => /^\/[a-z]{2}$/.test(p.route);
 
+// ── Garde-fou : aucun lien interne ne doit pointer vers une page inexistante ──
+// Un slug renommé dans `content/` mais oublié dans `links.ts` produirait une
+// redirection silencieuse vers le hub — donc un lien qui ne transmet rien et
+// une page orpheline. Autant que le build s'arrête.
+{
+  const known = new Set(routes);
+  const broken = [];
+  for (const p of pages) {
+    for (const m of p.html.matchAll(/href="(\/[^"#?]*)"/g)) {
+      const target = m[1].replace(/\/$/, '') || '/';
+      if (target === '/' || known.has(target)) continue;
+      if (fs.existsSync(path.join(BROWSER, target.replace(/^\//, '')))) continue; // fichier statique
+      broken.push(`${p.route} → ${target}`);
+    }
+  }
+  if (broken.length) {
+    console.error('seo-assets : liens internes cassés —\n  ' + [...new Set(broken)].join('\n  '));
+    process.exit(1);
+  }
+}
+
 // ── sitemap.xml ──────────────────────────────────────────────────────────────
 function priority(p) {
   if (isHome(p)) return p.route === '/fr' || p.route === '/ar' ? '1.0' : '0.9';

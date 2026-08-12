@@ -133,9 +133,43 @@ export class Article implements OnInit {
             name: f.q,
             acceptedAnswer: { '@type': 'Answer', text: f.a }
           }))
-        }
+        },
+        ...this.glossaryGraph(art, url)
       ]
     });
+  }
+
+  /**
+   * Sur une page de glossaire, chaque ligne de tableau « terme / définition »
+   * devient un DefinedTerm. Une définition ainsi isolée peut être reprise telle
+   * quelle par un moteur génératif, sans qu'il ait à la deviner dans le corps
+   * du texte.
+   */
+  private glossaryGraph(art: Art, url: string): Record<string, unknown>[] {
+    if (!art.glossary) return [];
+    const terms = art.blocks
+      .filter((b) => b.table?.head.length === 2)
+      .flatMap((b) =>
+        b.table!.rows.map((row) => ({
+          '@type': 'DefinedTerm',
+          name: row[0],
+          description: row[1],
+          inDefinedTermSet: { '@id': `${url}#glossary` }
+        }))
+      );
+    if (!terms.length) return [];
+    return [
+      {
+        '@type': 'DefinedTermSet',
+        '@id': `${url}#glossary`,
+        name: art.title,
+        description: art.metaDesc,
+        url,
+        inLanguage: art.lang,
+        publisher: { '@id': `${SITE}/#org` },
+        hasDefinedTerm: terms
+      }
+    ];
   }
 
   private wordCount(art: Art): number {

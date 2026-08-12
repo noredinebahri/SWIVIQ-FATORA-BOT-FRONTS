@@ -27,6 +27,10 @@ export const HOME_LINKS: Record<Lang, HomeLink[]> = {
     { section: 'guides', slug: 'numerotation-factures', label: 'Numéroter ses factures sans trou dans la série' },
     { section: 'guides', slug: 'facture-auto-entrepreneur-maroc', label: 'Facturer en auto-entrepreneur' },
     { section: 'guides', slug: 'facture-whatsapp-comment-faire', label: 'Faire une facture sur WhatsApp' },
+    { section: 'guides', slug: 'devis-conforme-maroc', label: 'Le devis : ce qu’il doit contenir' },
+    { section: 'guides', slug: 'facture-avoir-maroc', label: 'La facture d’avoir : annuler sans effacer' },
+    { section: 'guides', slug: 'delais-paiement-maroc', label: 'Délais de paiement et pénalités de retard' },
+    { section: 'guides', slug: 'glossaire-facturation-maroc', label: 'Glossaire de la facturation marocaine' },
     { section: 'comparatif', slug: 'excel-vs-facturation-whatsapp', label: 'Facturer sur Excel : les risques' }
   ],
   ar: [
@@ -34,8 +38,10 @@ export const HOME_LINKS: Record<Lang, HomeLink[]> = {
     { section: 'guides', slug: 'mentions-obligatoires-facture', label: 'البيانات الإجبارية فالفاتورة' },
     { section: 'guides', slug: 'ice-if-taxe-professionnelle', label: 'ICE، الرقم الضريبي، الضريبة المهنية' },
     { section: 'guides', slug: 'taux-tva-maroc', label: 'أشنا نسبة ديال TVA تطبق' },
+    { section: 'guides', slug: 'numerotation-factures', label: 'ترقيم الفواتير بلا ثقوب' },
+    { section: 'guides', slug: 'facture-auto-entrepreneur-maroc', label: 'الفوترة كمقاول ذاتي' },
     { section: 'guides', slug: 'facture-whatsapp-comment-faire', label: 'كيفاش دير فاتورة من الواتساب' },
-    { section: 'comparatif', slug: 'alternative-logiciel-facturation', label: 'بديل برامج الفوترة: مقارنة صريحة' }
+    { section: 'comparatif', slug: 'excel-vs-facturation-whatsapp', label: 'الفوترة فـExcel: المخاطر' }
   ],
   en: [
     { section: 'guides', slug: 'facturation-electronique-maroc', label: 'E-invoicing in Morocco (in French)' },

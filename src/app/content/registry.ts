@@ -2,12 +2,20 @@ import type { Lang } from '../i18n';
 import type { Article, Section } from './types';
 import { GUIDES_FR } from './guides.fr';
 import { METIERS_FR } from './metiers.fr';
+import { PRATIQUE_FR } from './pratique.fr';
 import { GUIDES_AR } from './guides.ar';
+import { METIERS_AR } from './metiers.ar';
 
 export { CONTENT_UI } from './ui';
 export const SITE = 'https://fatora.swiviq.com';
 
-export const ALL_ARTICLES: Article[] = [...GUIDES_FR, ...METIERS_FR, ...GUIDES_AR];
+export const ALL_ARTICLES: Article[] = [
+  ...GUIDES_FR,
+  ...PRATIQUE_FR,
+  ...METIERS_FR,
+  ...GUIDES_AR,
+  ...METIERS_AR
+];
 
 /** Langues qui disposent d'un pôle éditorial. Les autres renvoient vers /fr. */
 export const CONTENT_LANGS: Lang[] = ['fr', 'ar'];

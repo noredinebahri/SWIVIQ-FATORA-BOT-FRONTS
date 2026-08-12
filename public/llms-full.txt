@@ -136,6 +136,81 @@ Titre : بديل برامج الفوترة بالمغرب: مقارنة صريح
 
 ---
 
+URL : https://fatora.swiviq.com/ar/comparatif/excel-vs-facturation-whatsapp
+Langue : ar
+Titre : الفوترة فـExcel: المخاطر وإمتى خاصك تخرج منها
+
+مقارنات
+# الفوترة فـExcel: شنو كيكسر الجدول بلا ما يقول ليك
+
+الجدول هو أداة الفوترة الأكثر انتشارا فالبلاد، وكيقدم خدمة. ولكن عندو تلاتة ديال العيوب البنيوية اللي كتتخلص فوقت المراقبة ولا فوقت الدوزان للفوترة الإلكترونية.
+
+من إعداد فريق فاتورة بوت — Swiviq، الرباط · آخر تحديث 12 غشت 2026 · 7 دقيقة ديال القراية
+باختصار
+الفوترة فجدول Excel كتعرضك لثلاث مخاطر: الـICE كيضيعو أصفار البداية حيت الخانة كتعامل الأرقام كعدد، الترقيم كيتثقب بمجرد ما ينسخ ملف ولا يتمسح، وصيغ TVA ما كتنتقلش مزيان ملي كيكونو بزاف ديال النسب. هاد الأخطاء ما كتبانش غير من بعد.
+
+## العيب الأول — الجدول كيهرس الـICE
+
+وهادا هو الأخطر، حيت صامت. الـICE بزاف ديال المرات كيبدا بصفر ولا جوج: « 001234567000089 ». ملي كيتكتب فخانة عادية، الجدول كيفهمو كعدد وكيحيد الأصفار. الفاتورة كتخرج ب « 1234567000089 » — 13 رقم عوض 15.
+
+حتى رسالة ديال الخطأ ما كتبان. الغلطة كيكتشفها الكليان اللي كيرجع الفاتورة، ولا كتبان فالمراقبة، فين كتخص سلسلة كاملة.
+
+كاين حل — تخلي الخانة نص، ولا تحط فاصلة عليا قبل الرقم — ولكن كيفرض أن كل واحد كيكتب فاتورة يتفكرو فكل مرة. وعمليا، هادشي ما كيدومش.
+
+تحقق دابا من الفواتير ديال آخر اثناش شهر: إلا كان شي ICE فيه أقل من 15 رقم، الغلطة على الأرجح منهجية ماشي معزولة.
+
+## العيب الثاني — الترقيم ما كيصمدش
+
+الطريقة المعتادة هي أنك تنسخ ملف آخر فاتورة وتزيد الرقم بيدك. وكل خطوة فهاد العملية هي خطر.
+
+ملف منسوخ ومتخلى عليه كياكل رقم عمرو ما غادي يبان: السلسلة تثقبات. وملف تمسح بالغلط كيدي فاتورة مصدرة. وجوج ناس كيفوترو نفس النهار كيعطيو نفس الرقم لجوج عمليات مختلفة.
+
+وهادشي بالضبط هو اللي نظام المصادقة القبلية كيكشفو بشكل آلي. اللي كان كيدوز بلا ما يبان فمراقبة عرضية غادي يولي ظاهر بشكل مستمر.
+
+## العيب الثالث — حساب TVA ما كينتقلش مزيان
+
+مادامت الفاتورة فيها نسبة وحدة، الصيغة كتمشي. ولكن بمجرد ما يكونو بزاف ديال النسب، خاص التوزيع حسب النسبة فأسفل الفاتورة: الأساس بلا ضريبة، TVA، المجموع، لكل نسبة.
+
+وفنموذج Excel، هاد التوزيع تقريبا ديما مكتوب بشكل ثابت لحالة معينة، ومن بعد كيتنسخ بلا ما يتعدل. والنتيجة هي فاتورة مجموع TVA ديالها صحيح إجماليا وغالط فالتفصيل — يعني قابلة للطعن.
+
+وكيزيد المبلغ بالحروف، اللي الجدول ما كيعرفش ينتجو: كيتكتب باليد، بالأخطاء المعتادة.
+
+## العتبة الحقيقية ديال الخروج
+
+الجدول مازال معقول لشي فواتير فالعام، بنسبة TVA وحدة وشخص واحد كيفوتر. تلاتة ديال الإشارات كيقولو ليك خرج منو.
+
+- أكثر من شخص كيصدر الفواتير — تصادم الأرقام ولى مسألة وقت.
+- الفواتير ديالك كتخلط بزاف ديال نسب TVA — التوزيع فالأسفل ما بقاش موثوق.
+- كتفوتر أكثر من عشر وثائق فالشهر — وقت المناولة كيفوت بزاف تكلفة أي أداة.
+- الفرق ديالك كتفوتر برا المكتب — الجدول كيفرض محطة عمل، والبيعة كتوقع فبلاصة أخرى.
+## شنو كيبدل العداد الآلي
+
+العيوب الثلاثة عندهم نفس الأصل: الجدول ما كيعرفش شنو هي الفاتورة. هو شبكة ديال خانات، وكل المعنى — الـICE هو سلسلة ديال 15 خانة، الرقم كيزيد وما كيتعاودش، TVA كتتوزع حسب النسبة — كيرجع لانضباط اللي كيكتب.
+
+أما أداة الفوترة فكتحمل هاد المعنى بوحدها: الـICE مخزن كنص، الرقم كيتعطى من عداد وحيد لكل مقاولة، التوزيع حسب النسبة كيتحسب، والمبلغ بالحروف كيتولد. وماشي مسألة راحة ولكن صنف كامل ديال الأخطاء كيتحيد.
+
+## أسئلة متكررة
+
+### واش فاتورة Excel قانونية بالمغرب؟
+
+حتى حاجة ما كتمنع اليوم أنك تصاوب فاتورة بجدول، مادام فيها جميع البيانات الإجبارية وداخلة فترقيم متصل. المشكل ماشي فقانونية الصيغة ولكن فموثوقية اللي كتنتجو مع الوقت — وفدخول الفوترة الإلكترونية الإجبارية، اللي غادي تفرض ملفات مهيكلة.
+
+### كيفاش نمنع Excel يحيد الأصفار من الـICE؟
+
+خاصك تخلي الخانة نص قبل الكتابة، ولا تحط فاصلة عليا قبل الرقم. الحل كيمشي، ولكن كيفرض أن كل واحد يتفكرو فكل مرة — وهادشي ما كيدومش.
+
+### واش نقدر نسترجع الفواتير القديمة ملي نبدل الأداة؟
+
+الملفات القديمة كتبقى هي الأرشيف ديالك وخاصك تحتافظ بيها حسب الالتزامات المحاسبية. اللي خاصك تعالج هو استمرارية السلسلة: عطي آخر رقم مستعمل باش الترقيم الجديد يكمل من بعدو، بلا تكرار وبلا ثقب.
+
+### من شحال من فاتورة خاصني نخرج من الجدول؟
+
+ما كايناش عتبة قانونية. عمليا، بمجرد ما يفوترو بزاف ديال الناس، ولا يكونو بزاف ديال نسب TVA، ولا تفوت عشر فواتير فالشهر، الوقت اللي كيضيع وخطر الغلط كيفوتو تكلفة أداة مخصصة.
+
+هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
+
+---
+
 URL : https://fatora.swiviq.com/ar/guides/facturation-electronique-maroc
 Langue : ar
 Titre : الفوترة الإلكترونية بالمغرب: دليل 2026
@@ -204,6 +279,75 @@ Titre : الفوترة الإلكترونية بالمغرب: دليل 2026
 ### واش خاصني نشري برنامج من دابا؟
 
 ماشي بالضرورة. اللي مستعجل هو أن الفواتير ديالك تكون فيها جميع البيانات الإجبارية وترقيم متصل. الربط التقني بالمنصة الوطنية غادي يجي من بعد وكيرجع للمزود ديالك. البداية بأداة بسيطة كتصدر فواتير مطابقة هي أساس سليم.
+
+هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
+
+---
+
+URL : https://fatora.swiviq.com/ar/guides/facture-auto-entrepreneur-maroc
+Langue : ar
+Titre : فاتورة المقاول الذاتي بالمغرب: القواعد والنموذج
+
+أدلة
+# الفوترة كمقاول ذاتي بالمغرب
+
+نظام المقاول الذاتي كيبسط بزاف ديال الحوايج، ولكن ماشي الفاتورة: كتبقى وثيقة رسمية خاصها تحمل البيانات المنتظرة. هاكم شنو كيتبدل مقارنة مع شركة، وشنو ما كيتبدلش.
+
+من إعداد فريق فاتورة بوت — Swiviq، الرباط · آخر تحديث 12 غشت 2026 · 7 دقيقة ديال القراية
+باختصار
+المقاول الذاتي المغربي خاصو يصدر فواتير مرقمة فيها الـICE ديالو، الهوية الكاملة ديالو وديال الكليان، تسمية دقيقة للخدمة والمبلغ. النظام كيرتكز على ضريبة جزافية على رقم المعاملات، بسقوف سنوية مختلفة بين أنشطة الخدمات والأنشطة التجارية والصناعية والحرفية.
+
+## شنو ما كيتبدلش مقارنة مع شركة
+
+الأساسي. المقاول الذاتي مسجل فالسجل الوطني للمقاول الذاتي وكياخد ICE، بالضبط بحال الشركة. والفاتورة ديالو وثيقة تجارية رسمية، والكليان ديالو محتاجها باش يبرر التحملة ديالو.
+
+إذن بيانات التعريف، والتسمية الدقيقة للخدمة، والتاريخ، والرقم التسلسلي المتصل، والمبلغ الإجمالي كلهم منتظرين بنفس الشروط. وسلسلة الترقيم كتخضع لنفس القواعد: متصلة، بلا ثقب، بلا تكرار.
+
+## شنو كيتبدل: النظام الضريبي
+
+نظام المقاول الذاتي مبني على ضريبة على رقم المعاملات المحصل، بنسبة جزافية منخفضة، مع تمييز بين أنشطة الخدمات من جهة، والأنشطة التجارية والصناعية والحرفية من جهة أخرى. النسب والسقوف السنوية ديال رقم المعاملات كتختلف حسب هاد الصنف.
+
+وكاينين قواعد خاصة كتأطر مداخيل الخدمات المتوصل بها من نفس الكليان فوق عتبة سنوية معينة — نظام تدار باش النظام ما يتستعملش لتغطية علاقة شغل. والجزء المعني كيدخل فمعالجة ضريبية مختلفة.
+
+النسب الجزافية، وسقوف رقم المعاملات، والعتبة لكل كليان كيتبدلو مع قوانين المالية. أكد القيم ديال السنة الجارية عند المديرية العامة للضرائب ولا عند المحاسب ديالك قبل ما تلتزم بحجم ديال النشاط.
+
+## مسألة TVA
+
+وهادا هو مصدر الخلط الأكثر تكرارا. النظام الجزافي ديال المقاول الذاتي كيخص فرض الضريبة على الدخل؛ ما كيعفيش بشكل آلي من كل التزام فمجال TVA، اللي المجال ديالها عندو قواعدو الخاصة حسب طبيعة النشاط ومستوى رقم المعاملات.
+
+عمليا، جزء كبير من المقاولين الذاتيين كيفوترو بلا TVA وكيحطو البيان المطابق فالفواتير. ولكن الوضعية كتوقف على النشاط الممارس. قبل ما تصدر أول فاتورة، أكد الوضعية ديالك بالضبط: فوترة TVA وأنت ماشي خاضع، ولا نسيانها وهي مستحقة، بجوج أخطاء غالية فالتصحيح.
+
+## تجاوز السقف: استبق الخروج من النظام
+
+تجاوز سقف رقم المعاملات كيخرجك من نظام المقاول الذاتي، مع دوزان لنظام القانون العام. وماشي عقوبة: هي علامة على نشاط كبر.
+
+الغلط هو أنك تكتشفو من بعد. تتبع رقم المعاملات المتراكم على طول العام كيخليك تستبق تغيير الوضعية، وتحضر الدوزان لشركة إلا لزم، وتعدل التسعير ديالك — حيت بنية التكاليف كتبدل.
+
+وهادا سبب ملموس لاختيار أداة كتجمع بشكل آلي. مع فاتورة بوت، المجموع حسب الفترة كيتشاف بالصوت: « فواتير الشهر »، « المجموع من يناير ».
+
+## حالة المهنيين اللي كيكتبو بصعوبة
+
+نظام المقاول الذاتي تصمم باش يهيكل نشاط المهنيين المستقلين — صناع، مقدمي خدمات، تجار صغار. وجزء منهم ما كيتحكمش مزيان فالكتابة، وخصوصا الفرنسية الإدارية.
+
+ولهاد المهنيين، الفوترة بالصوت ماشي رفاهية ولكن شرط للوصول للمطابقة. تملي الفاتورة بالدارجة، وتسمع الملخص بالصوت العالي، وتأكد بكلمة: هي السلسلة الوحيدة اللي ما كتفرض لا حاسوب، لا كلافي، لا قراية.
+
+## أسئلة متكررة
+
+### واش المقاول الذاتي المغربي خاصو يفوتر TVA؟
+
+كيتوقف على طبيعة النشاط ومستوى رقم المعاملات: النظام الجزافي كيخص فرض الضريبة على الدخل وما كيحسمش بوحدو مسألة TVA. أكد الوضعية ديالك مع المحاسب قبل ما تصدر أول فاتورة.
+
+### واش المقاول الذاتي عندو ICE يحطو فالفواتير؟
+
+إيه. التسجيل فالسجل الوطني للمقاول الذاتي كيعطي ICE، وخاصو يبان فالفواتير المصدرة، بحالو بحال الشركة.
+
+### شنو كيوقع فحالة تجاوز السقف؟
+
+تجاوز السقف السنوي لرقم المعاملات كيخرجك من نظام المقاول الذاتي وكيدوزك لنظام القانون العام. تتبع المتراكم ديالك على طول العام كيخليك تستبق هاد التغيير عوض ما تتحملو.
+
+### واش خاص برنامج فوترة للمقاول الذاتي؟
+
+حتى برنامج ما مفروض اليوم. اللي مطلوب هو فواتير كاملة ومرقمة بشكل متصل. ولكن مع وصول الفوترة الإلكترونية الإجبارية، أداة كتنتج وثائق مهيكلة غادي تولي ضرورية — ومن هنا الفايدة ديال أنك ما تبقاش فكناش ولا فExcel.
 
 هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
 
@@ -444,6 +588,71 @@ Titre : البيانات الإجبارية فالفاتورة المغربية 
 
 ---
 
+URL : https://fatora.swiviq.com/ar/guides/numerotation-factures
+Langue : ar
+Titre : ترقيم الفواتير بالمغرب: القواعد والأخطاء
+
+أدلة
+# رقّم الفواتير ديالك بلا ما تحفر ثقب فالسلسلة
+
+الترقيم كيبان حاجة بسيطة حتى نهار المراقبة. السلسلة المثقوبة كتطرح سؤال بسيط وصعيب تجاوب عليه: فين مشات الفاتورة الناقصة؟
+
+من إعداد فريق فاتورة بوت — Swiviq، الرباط · آخر تحديث 12 غشت 2026 · 6 دقيقة ديال القراية
+باختصار
+الفواتير خاصها تحمل رقم تسلسلي متصل وكرونولوجي، بلا انقطاع وبلا تكرار. الفاتورة المصدرة عمرها ما كتتمسح: كتتلغى بإشعار دائن ولا كتتصحح بفاتورة تصحيحية كتحيل على الأصلية. الثقب فالسلسلة كيخلي الإدارة تفترض فاتورة تحيدات من المحاسبة.
+
+## علاش الاتصال هو قلب الموضوع
+
+الترقيم المتصل هو أبسط آلية كاينة باش أي نقصان يبان. إلا كانت الفواتير من 1 حتى 250 بلا انقطاع، عدد العمليات ثابت. وإلا نقص الرقم 137، ما بقاو غير جوج احتمالات: غلطة فالتدبير، ولا بيعة ما تصرحش بها.
+
+والإدارة ما عندها علاش ترجح بيناتهم: المقاولة هي اللي خاصها تجيب التبرير. ومن هنا القاعدة العملية: احتافظ بأثر كل فاتورة ملغاة، مع السبب. فاتورة ملغاة ومؤرشفة هي تفسير؛ أما فاتورة اختفات فهي شك.
+
+## بناء سلسلة مقروءة
+
+حتى صيغة ما مفروضة، ولكن الصيغة المزيانة كتتقرا بلا شرح. الاتفاق الأكثر انتشارا كيجمع بادئة، السنة، وعداد بعرض ثابت.
+
+- FAT-2026-0001 — بادئة، سنة، عداد ب 4 أرقام. مقروء، قابل للترتيب، والعداد كيرجع ل 1 ففاتح يناير.
+- العداد بعرض ثابت كيجنب فوضى الترتيب: 0002 كيجي قبل 0010، أما « 2 » فكيجي من بعد « 10 » فالترتيب الأبجدي.
+- سلسلة لكل سنة محاسبية هي الممارسة الأكثر انتشارا والأسهل فالدفاع. سلسلة متصلة على عدة سنوات مقبولة حتى هي، بشرط ما ترجعش لور.
+- إلا كانو عندك بزاف ديال السلاسل — حسب المؤسسة ولا نوع الوثيقة — كل وحدة خاصها تكون متصلة، والبادئة خاصها تميزهم بلا غموض.
+فاتورة بوت كيعطي بشكل آلي رقم بصيغة FAT-AAAA-NNNN، متصل حسب السنة وخاص بكل مقاولة. حتى رقم ما كيتعاود، وحتى رقم ما كيتقفز.
+
+## الإلغاء والتصحيح بلا ما تكسر السلسلة
+
+ثلاث حالات، وثلاث معالجات مختلفة. خلطهم هو المصدر الأكثر تكرارا للسلاسل غير المنسجمة.
+| الحالة | المعالجة الصحيحة
+| غلطة تكتشفات قبل التسليم للكليان | صحح الفاتورة تحت نفس الرقم. حتى تأثير على السلسلة مادامت الوثيقة ما دارتش.
+| غلطة تكتشفات بعد التسليم | صدر فاتورة تصحيحية برقم جديد كتحيل بوضوح على الفاتورة الأصلية.
+| عملية ملغاة ولا رجوع البضاعة | صدر إشعار دائن، برقمو الخاص فالسلسلة، كيحيل على الفاتورة الملغاة. والفاتورة الأصلية كتبقى فبلاصتها.
+
+## شنو غادي يبان مع الفوترة الإلكترونية
+
+فنظام المصادقة القبلية، كل فاتورة كتتصرح لمنصة وطنية فوقت الإصدار. انقطاعات التسلسل ما بقاتش كتنكشف فمراقبة عرضية: كتبان بشكل مستمر وآلي.
+
+إذن المقاولات اللي كتسير الترقيم ديالها اليوم باليد، فكناش ولا فExcel، عندها مصلحة مباشرة باش تدوز لأداة كتزيد العداد بوحدها. وماشي مسألة راحة ولكن مسألة تعرض.
+
+## أسئلة متكررة
+
+### واش يمكن نمحي فاتورة مصدرة؟
+
+لا. الفاتورة المصدرة جزء من السلسلة، ومحوها كيخلق ثقب ما يمكنش تبررو. حسب الحالة، كتصدر إشعار دائن ولا فاتورة تصحيحية كتحيل على الأصلية، وكتحتافظ بأثر الوثيقة الملغاة مع السبب.
+
+### واش الترقيم خاصو يرجع ل 1 كل عام؟
+
+ماشي إجباري، ولكن هي الممارسة الأكثر انتشارا والأسهل فالتبرير، بشرط أن السنة تبان فالرقم — مثلا FAT-2026-0001. وسلسلة متصلة على عدة سنوات مقبولة مادامت عمرها ما ترجع لور.
+
+### شنو ندير إلا كانت جوج فواتير خداو نفس الرقم؟
+
+التكرار مشكل بحال الثقب: جوج عمليات مختلفة كيوليو ما كيتميزوش. خاصك تصدر فاتورة تصحيحية لوحدة منهم، برقم خالي فآخر السلسلة، وتوثق التصحيح. العداد الآلي كيقتل هاد الخطر من أصلو.
+
+### واش نقدر نسير بزاف ديال السلاسل؟
+
+إيه، مثلا سلسلة لكل مؤسسة ولا لكل نوع ديال الوثائق. وفهاد الحالة كل سلسلة خاصها تكون متصلة، والبادئة ديالها خاصها تعرفها بلا غموض. تكثير السلاسل بلا حاجة كيعقد التبريرات بلا فايدة.
+
+هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
+
+---
+
 URL : https://fatora.swiviq.com/ar/guides/taux-tva-maroc
 Langue : ar
 Titre : نسب TVA بالمغرب: أشنا نسبة تطبق فالفاتورة
@@ -508,6 +717,220 @@ Titre : نسب TVA بالمغرب: أشنا نسبة تطبق فالفاتورة
 ### واش يمكن نخلط بزاف ديال النسب فنفس الفاتورة؟
 
 إيه، وهادشي كيوقع بزاف. كل سطر كيحمل النسبة ديالو وأسفل الفاتورة كيقدم ملخص حسب النسبة: الأساس بلا ضريبة، TVA، المجموع. بلا هاد التوزيع، المبلغ القابل للخصم ما يتحددش والفاتورة كتولي قابلة للطعن.
+
+هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
+
+---
+
+URL : https://fatora.swiviq.com/ar/secteurs/btp-menuiserie
+Langue : ar
+Titre : فوترة البناء والنجارة بالمغرب من الورش
+
+حسب المهنة
+# البناء، النجارة والحدادة: فوتر من الورش
+
+فالورش، الفاتورة كتتقرر فوقت التسليم، قدام الكليان — ماشي من بعد ثلاث أيام فالمكتب. هاكم كيفاش مهن البناء كتفوتر بالصوت، والحالات الخاصة اللي كترجع بزاف.
+
+من إعداد فريق فاتورة بوت — Swiviq، الرباط · آخر تحديث 12 غشت 2026 · 6 دقيقة ديال القراية
+باختصار
+مهن البناء كتفوتر بالمتر الطولي، ولا بالمتر المربع، ولا بالوحدة، مع فصل التوريد على التركيب. الفاتورة المطابقة ديال الورش كتفصل كل شغل بالكمية والثمن ديال الوحدة بلا ضريبة، وكتذكر اليد العاملة بشكل منفصل، وكتحيل بوضوح على الثمن ولا وضعية الأشغال اللي خرجات منها.
+
+## مصطلحات الحرفة، كيفما كتهضر
+
+النجار ما كيمليش « مادة، كمية، ثمن الوحدة ». كيقول « تلاتة ديال البيبان ب ألف وخمسميا الوحدة ». والحداد كيعلن ثمن بالمتر الطولي ديال الدرابزين. ومول الزليج كيحسب بالمتر المربع، والمادة والتركيب أحيانا منفصلين.
+
+هاد الصيغ مفهومة كيفما هي: الوحدة كتتعرف، الكمية كتستخرج، وثمن الوحدة كيتميز على المجموع. وملي كيبقى شي غموض — ثمن الوحدة ولا ثمن المجموعة كاملة؟ — السؤال كيتطرح قبل الإصدار عوض ما يتخمن.
+
+## التوريد والتركيب: علاش تفصلهم
+
+جمع التوريد والتركيب فسطر واحد مكتوب فيه « أشغال » هو الغلط الأكثر تكرارا فالفواتير ديال الورش. وكيطرح جوج مشاكل.
+
+الأول هو التكييف الضريبي: طبيعة العملية هي اللي كتحدد نسبة TVA، وتسمية إجمالية ما كتسمحش بالتحقق. والثاني هو العلاقة مع الكليان: اللي كيعترض على مبلغ، ديما كيعترض على سطر مجمع ما يقدرش يفككو.
+
+الطريقة الصحيحة هي تفصيل الشغل من جهة، واليد العاملة من جهة أخرى، بالكميات ديال كل واحد. كيزيد خمس ثواني فالإملاء وكينقص نص النقاش ديال آخر الورش.
+
+## التسبيقات، الوضعيات والرصيد
+
+الورش الطويل قلما كيتفوتر مرة وحدة. ثلاث وثائق كيتتابعو، وكل وحدة عندها الرقم ديالها فالسلسلة.
+| الوثيقة | شنو كتحمل
+| فاتورة تسبيق | المبلغ المطلوب قبل البداية، مع ذكر خصمو من مجموع الصفقة.
+| وضعية الأشغال | تقدم الفترة، بالإحالة على بنود الثمن المقبول.
+| فاتورة الرصيد | الباقي، بعد خصم واضح للتسبيقات والوضعيات المؤداة.
+
+فاتورة الرصيد خاصها تاخد التسبيقات المفوترة وتخصمهم سطر بسطر. فاتورة رصيد فيها مجموع الصفقة كاملة، بلا خصم، كتخلي الكليان يخلص مرتين — ولا غالبا، ما يخلصش وكيتسنى فاتورة مصححة.
+
+## الثمن اللي كيولي فاتورة
+
+فالميدان، الفاتورة تقريبا ديما كتاخد ثمن مقبول. إعادة إملاء جميع البنود ضياع للوقت ومصدر للفرق بين الوثيقتين.
+
+الطريقة الناجعة هي أنك تبدا من الكليان المسجل من قبل وتملي غير اللي تبدل: الكميات اللي تركبات فعلا، الأشغال الزايدة المقبولة فوسط الورش، والبنود اللي تسالاو. ملف الكليان كيحتافظ بالكتابة الصحيحة ديال الاسم التجاري وبالـICE، ما بقاش خاصك تعاودهم.
+
+## حالة الضمان المحتجز
+
+مع الزبناء المنظمين، غالبا كيتحجز جزء من كل أداء كضمان، وكيتفك بعد رفع التحفظات.
+
+نقطة مهمة: الاحتجاز هو طريقة أداء، ماشي تخفيض فالثمن. الفاتورة كتحمل المبلغ الكامل المستحق؛ والاحتجاز كيبان كشرط أداء، ومبلغ TVA كيبقى محسوب على الأساس الكامل. فوترة المبلغ الصافي مباشرة كتغلط أساس TVA وكتعقد فوترة الرصيد من بعد.
+
+## أسئلة متكررة
+
+### واش يمكن نفوتر من الورش بلا كونيكسيون مزيانة؟
+
+الطلب كيمشي بحال أي رسالة واتساب: بمجرد ما ترجع الكونيكسيون، كيتعالج والـPDF كيوصل فالمحادثة. ما كاين لا جلسة خاصك تخليها محلولة ولا تطبيق خاصو يبقى مفتوح.
+
+### كيفاش نفوتر أشغال زايدة تقبلات بالهضرة؟
+
+كيتمليو بحال سطور زايدة، بتسمية دقيقة للشغل. وباش تحمي راسك من أي اعتراض، خلي الكليان يوافق بالكتابة — رسالة واتساب كافية عمليا — قبل ما تحطهم فالفاتورة.
+
+### واش الثمن بالمتر الطولي كيتفهم مزيان؟
+
+إيه. الوحدة المعلنة — متر طولي، متر مربع، وحدة، جزافي — كترجع فالتسمية، والكمية كتتميز على ثمن الوحدة. وفحالة غموض بين ثمن الوحدة والمجموع، السؤال كيتطرح قبل الإصدار.
+
+### واش بزاف ديال الفرق يقدرو يفوترو على نفس الحساب؟
+
+إيه: الترقيم وملف الكليان والطابع مشتركين على مستوى المقاولة، وهادشي كيضمن سلسلة متصلة مهما كان الورش. للنشر على عدة فرق، تواصلو معانا.
+
+هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
+
+---
+
+URL : https://fatora.swiviq.com/ar/secteurs/commerce-detail
+Langue : ar
+Titre : الفوترة فالحانوت للتجار وتجار الجملة
+
+حسب المهنة
+# التجارة بالتقسيط والجملة: فوتر فالحانوت فثواني
+
+فالحانوت، القيد هو الوقت: فاتورة كتاخد ثلاث دقايق كتخلي الصف كيتسنى. هاكم كيفاش ترجع الإصدار لشي ثواني، بلا ما تضحي بالمطابقة.
+
+من إعداد فريق فاتورة بوت — Swiviq، الرباط · آخر تحديث 12 غشت 2026 · 6 دقيقة ديال القراية
+باختصار
+التاجر يقدر يصدر فاتورة فالحانوت وهو كيملي المواد والمبلغ المتوصل بيه. الثمن المعلن مع جميع الضرائب كيتحول لأساس بلا ضريبة، TVA كتتحسب، والـPDF المطابق كيتسلم للكليان بكود QR، بلا ما يكتب الإيميل ديالو ولا يقطع البيعة اللي من بعد.
+
+## الثمن كيتقال مع الضريبة، والفاتورة كتبدا بلاها
+
+فالحانوت، حتى واحد ما كيعلن ثمن بلا ضريبة. الكليان كيسول شحال خاصو يخلص، والبائع كيعطيه مبلغ كامل، والخلاص كيتدار على هاد المبلغ.
+
+أما الفاتورة فخاصها تبين الأساس بلا ضريبة، النسبة ومبلغ TVA. التحويل كيتدار بقسمة المبلغ مع الضريبة على واحد زائد النسبة — ماشي بطرح النسبة، وهادي غلطة كلاسيكية كتغلط الأساس بشي فالمية.
+
+ولهذا صيغ الخلاص كتتفهم كيفما هي: ملي المبلغ كيتقدم كمتوصل بيه — « خلصني 1200 » — كيتعامل معاه كمبلغ مع الضريبة، الأساس بلا ضريبة كيتعاود يتحسب، والملخص كيعلن بجوج قبل الإصدار.
+
+## الريال والمليون: الوحدات اللي كتهضر بها الناس
+
+فجزء كبير من التجارة المغربية، الأثمنة ما كتتقالش بالدرهم. الريال — واحد على عشرين من الدرهم — مازال منتشر فالمبالغ الصغيرة؛ والمليون — عشرة آلاف درهم — كيتستعمل فالصفقات الكبيرة.
+
+أداة كتفهم غير الدرهم كتفرض على البائع يحول فراسو فكل فاتورة، وهادشي بطيء ومصدر للغلط. ولهذا الوحدتين مفهومتين وكيتحولو، والقيمة بالدرهم كتتعاود فالملخص — باش الغلط، إلا كان، يبان قبل الإصدار ماشي من بعدو.
+
+## التقسيط ولا الجملة: مطلبين مختلفين
+
+الفرق ماشي فالمبلغ ولكن فصفة الكليان، وكيبدل شنو خاص يكون فالفاتورة.
+| | كليان فرد | كليان مهني
+| ICE ديال الكليان | ما عندو معنى | إجباري
+| تسليم الوثيقة | كود QR كيتسكانا فعين المكان | واتساب ولا إيميل، للمحاسبة
+| التسمية | المادة المبيوعة | المرجع، التوضيب والكمية بالضبط
+| الرهان الأساسي | السرعة فالحانوت | قابلية خصم TVA عند الكليان
+
+للكليان المهني الدائم، الـICE والكتابة الصحيحة ديال الاسم التجاري كيتسجلو مرة وحدة فالملف. والفواتير اللي من بعد ما بقاتش كتطلب غير المواد.
+
+## كود QR: تسلم بلا تبادل ديال الإيميل
+
+طلب الإيميل فالحانوت كيبطي كلشي: خاصك تتهجاه، وتتحقق منو، وتعاود تكتبو إلا كانت غلطة. وللكليان اللي غادي دايز، هادشي كثير.
+
+كود QR كيحل المشكل: الكليان كيسكانا شاشة البائع وكيحمل الفاتورة ديالو. والكود يمكن حتى يتطبع ويتخلى فوق الكونطوار. حتى معطى شخصي ما كيتبادل، والصف كيتقدم.
+
+## لقاو بيعة متنازع عليها
+
+كليان كيرجع من بعد أسبوع بشكاية، بلا الوثيقة ديالو. البحث بالصوت — « الفاتورة رقم 8 »، « فواتير الثلاثاء »، « ديال أحمد » — كيرجع الـPDF فشي ثواني، مع مجموع الفترة.
+
+وهادا هو الاستعمال اللي كيقنع التجار غالبا من بعد شي أسابيع: كيسالي كرطونة الأرشيف والمكالمة للمحاسب باش تلقى وثيقة فيها ثلاث سطور.
+
+## أسئلة متكررة
+
+### شحال كتاخد فاتورة فالحانوت؟
+
+من الإملاء حتى الـPDF المصدر، حسب حوالي ثلاثين ثانية، أغلبها وقت الهضرة. وللكليان المسجل من قبل، ما بقا غير المواد خاصها تتملى.
+
+### واش الأثمنة المعلنة بالريال مفهومة؟
+
+إيه. الريال — واحد على عشرين من الدرهم — والمليون — عشرة آلاف درهم — معروفين وكيتحولو للدرهم. والقيمة المحولة كتتعاود فالملخص قبل الإصدار، باش تقدر تتحقق.
+
+### واش خاص ICE ديال الكليان فبيعة بالتقسيط؟
+
+لا إلا كان الكليان فرد غير خاضع: البيان ما عندو معنى. أما إلا كان الكليان مقاولة خاضعة فهو إجباري، وإلا ما غاديش يقدر يخصم TVA.
+
+### واش يمكن نطبع الفاتورة فالحانوت؟
+
+الـPDF اللي كيوصل فالمحادثة كيتطبع بحالو بحال أي وثيقة من تليفون مربوط بطابعة. وغالبا كود QR كافي: الكليان كيحمل النسخة ديالو بيدو.
+
+هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
+
+---
+
+URL : https://fatora.swiviq.com/ar/secteurs/transport-logistique
+Langue : ar
+Titre : فوترة النقل واللوجستيك بالمغرب بالصوت
+
+حسب المهنة
+# النقل واللوجستيك: فوتر الخدمة قبل ما ترجع للمستودع
+
+فالنقل، الوقت اللي كيدوز بين الخدمة والفاتورة هو أول باب ديال الخسارة. الشوفير اللي كيملي عند التسليم كيقتل هاد التأخير — والنسيان اللي كيمشي معاه.
+
+من إعداد فريق فاتورة بوت — Swiviq، الرباط · آخر تحديث 12 غشت 2026 · 6 دقيقة ديال القراية
+باختصار
+الناقل يقدر يفوتر الخدمة من عند التسليم وهو كيملي من التليفون ديالو: الكليان، الطريق، الوزن ولا الحجم، والمبلغ المتفق عليه. الفاتورة كتخرج بالبيانات القانونية ديال المقاولة وكتوصل لصاحب الطلب مباشرة، بلا ما يتسنى الرجوع للمستودع ولا الكتابة فالمكتب.
+
+## المشكل الحقيقي هو التأخير، ماشي الكتابة
+
+الشوفير كيسلم، وسند التسليم كيدخل للمستودع فآخر النهار ولا فآخر الأسبوع، والفاتورة كتتكتب من بعد، وكتمشي من بعد ماشي. كل مرحلة كتزيد فأجل الأداء، وشي خدمات كتضيع نهائيا بين الورقة المجعدة والمكتب.
+
+الفوترة فوقت التسليم كتقلب المنطق: الخدمة والوثيقة التجارية ديالها كيتزامنو. صاحب الطلب كيتوصل بالفاتورة والتسليم مازال طري فراسو، وهادشي كينقص حتى الاعتراضات.
+
+## شنو خاص يبان ففاتورة النقل
+
+تسمية « نقل » ما كافياش: ما كتسمحش لا بربط الفاتورة بخدمة معينة، ولا بتبرير النسبة المطبقة. السطر المفيد فيه ربع عناصر.
+
+- الطريق — من فين لفين، ولا الجولة إلا كانت الخدمة كتخدم بزاف ديال النقط.
+- تاريخ الخدمة، اللي يمكن يكون مختلف على تاريخ إصدار الفاتورة.
+- وحدة الفوترة: بالسفرة، بالوزن، بالحجم، بالكيلومتر ولا جزافي.
+- مرجع سند التسليم ولا سند الطلب ديال صاحب الطلب، اللي بلاه المقارنة مستحيلة عندو.
+## الانتظار، الرجوع خاوي، والتوقيف
+
+هادو هما البنود اللي كيتنساو أكثر، واللي كيتناقشو أكثر. الانتظار فالتحميل ولا التفريغ، والرجوع خاوي، والتوقيف فوق الأجل المتفق عليه كيتفوترو — بشرط أنهم يبانو فسطر منفصل.
+
+إلا غرقو فثمن السفرة، كيوليو ما كيبانوش، وما بقاش يمكن تدافع عليهم فالعام الجاي وقت التفاوض على الأثمنة. ملي كيتمليو بشكل منفصل — « وجوج سوايع ديال الانتظار ب 150 » — كيوليو سطر قائم بذاتو، بالكمية والثمن ديالو.
+
+## خدمات متفرقة ولا فوترة شهرية
+
+جوج نماذج كايناش فالقطاع، والاختيار كيتدار حسب الكليان ماشي دفعة وحدة.
+
+الفاتورة بالخدمة مناسبة للكليان العرضيين وللأفراد: الأداء كيجي مباشرة، غالبا نقدا، وكود QR كيسمح بتسليم الوثيقة بلا تبادل ديال الإيميل.
+
+أما الفاتورة الشهرية المجمعة فمناسبة لأصحاب الطلبات الدائمين، اللي المحاسبة ديالهم كتفضل فاتورة وحدة فالشهر فيها لائحة الخدمات. والأرشيف اللي كيتشاف بالصوت — « كاع الفواتير ديال أحمد هاد الشهر »، مع المجموع — كيخلي هاد الملخص يتحضر بلا إعادة كتابة.
+
+مهما كان النموذج، الترقيم كيبقى وحيد ومتصل على مستوى المقاولة. ماشي حيت الفواتير كتخرج من بزاف ديال الكاميوات غادي تتقسم السلسلة.
+
+## شوفير كيكتب بصعوبة يقدر يفوتر
+
+وهادي حاسمة فهاد المهنة. جزء كبير من السواقة كيتحكمو بصعوبة فالكتابة الإدارية، وحتى تطبيق ديال التدبير ما كيجتاز هاد العائق: ديما كاين شي فورمولير خاصو يتعمر بالكلافي.
+
+النوطة الصوتية كتجتازو. الشوفير كيقول الخدمة بالدارجة، وكيسمع الملخص بالصوت العالي — الكليان، الطريق، المبلغ — وكيأكد ب « واخا ». والفاتورة كتحمل البيانات القانونية ديال المقاولة والطابع ديالها، بلا ما يقرا ولا يكتب حتى حاجة.
+
+## أسئلة متكررة
+
+### واش الشوفير يقدر يفوتر بلا ما يوصل لمعطيات المقاولة؟
+
+معلومات المقاولة — ICE، الرقم الضريبي، الضريبة المهنية، الطابع — مسجلة مرة وحدة على مستوى الحساب وكتطبق بشكل آلي على جميع الفواتير. الشوفير ما بقا ليه غير يوصف الخدمة.
+
+### كيفاش نفوتر جولة كتخدم بزاف ديال الكليان؟
+
+إلا كانت الجولة مدارة لصاحب طلب واحد، كتعطي فاتورة وحدة فيها تفصيل النقط المخدومة فسطور منفصلة. أما إلا كان كل مرسل إليه كليان مختلف، فكل خدمة كتعطي الفاتورة ديالها.
+
+### واش يمكن نفوتر بالعملة الصعبة للنقل الدولي؟
+
+الفواتير كتصدر بالدرهم. للعمليات الدولية اللي فيها عملة أخرى ولا نظام إعفاء عند التصدير، تواصل مع المحاسب ديالك: هاد الحالات كتطلب بيانات خاصة.
+
+### واش الفواتير كتبقى فمتناول المكتب؟
+
+إيه. الأرشيف كيتشاف من المحادثة بالرقم، ولا بالكليان، ولا بالفترة، مع المجاميع المطابقة، وكل PDF مصدر كيتحتافظ بيه.
 
 هاد الدليل كيقدم الإطار العام المطبق بالمغرب. ما كيعوضش رأي الخبير المحاسب ديالك ولا النصوص المنشورة من المديرية العامة للضرائب، اللي القيم الرقمية ديالها كتبدل مع قوانين المالية.
 
@@ -799,6 +1222,235 @@ Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l�
 
 ---
 
+URL : https://fatora.swiviq.com/fr/guides/archivage-factures-maroc
+Langue : fr
+Titre : Conserver ses factures au Maroc : durée et archivage
+
+Guides
+# Combien de temps garder ses factures, et sous quelle forme
+
+La question paraît administrative jusqu’au jour où un contrôle porte sur un exercice de quatre ans et où les factures dorment dans un carton humide. Voici la règle, et ce que l’archivage électronique change.
+
+Rédigé par l’équipe Fatora-Bot — Swiviq, Rabat · Mis à jour le 12 août 2026 · 6 min de lecture
+En bref
+La législation comptable marocaine impose de conserver les livres et les pièces justificatives, dont les factures, pendant dix ans. Le droit de contrôle de l’administration fiscale s’exerce sur une période plus courte, mais l’obligation de conservation reste la plus longue des deux. Les factures conservées sous forme électronique doivent rester lisibles, intègres et accessibles pendant toute cette durée.
+
+## Deux durées à ne pas confondre
+
+On mélange couramment la durée de conservation et le délai de reprise de l’administration. Ce sont deux choses différentes, et c’est la plus longue qui s’impose en pratique.
+
+La durée de conservation découle de la loi comptable : les documents comptables et les pièces justificatives se gardent dix ans. Elle vaut pour les factures émises comme pour les factures reçues.
+
+Le délai de reprise correspond à la période sur laquelle l’administration fiscale peut revenir contrôler et redresser. Il est plus court, mais il connaît des cas d’allongement — déficits reportés, opérations dont les effets se prolongent, absence de déclaration. Se caler sur ce délai plutôt que sur la durée légale de conservation est une erreur.
+
+Les durées applicables à votre situation exacte — et les cas particuliers d’allongement — sont à confirmer avec votre expert-comptable. La règle des dix ans pour les pièces comptables est la base ; certaines pièces, comme celles relatives aux immobilisations, suivent la durée de vie du bien.
+
+## Papier ou électronique
+
+Les deux formes sont admises. L’enjeu n’est pas le support mais la capacité à produire, des années plus tard, un document lisible dont personne ne conteste l’intégrité.
+
+Le papier a un défaut évident et un défaut moins connu. L’évident : il se perd, brûle, prend l’eau et se range mal. Le moins connu : le ticket thermique s’efface. Une facture imprimée sur papier thermique peut être totalement illisible au bout de deux ou trois ans, ce qui la rend inutilisable comme justificatif.
+
+L’électronique résout ces deux problèmes, à condition d’organiser la conservation plutôt que de laisser les fichiers s’accumuler. Trois exigences pratiques : la lisibilité dans la durée (préférez le PDF à un format propriétaire), l’intégrité (le document ne doit pas être modifiable après émission), et l’accessibilité (retrouver une facture précise en quelques minutes, pas en un après-midi).
+
+## Organiser des archives réellement exploitables
+
+Le critère de qualité d’un archivage n’est pas le volume conservé mais le temps nécessaire pour retrouver une pièce précise. Quatre principes suffisent.
+
+- Classer par exercice, puis par numéro de facture. Le numéro séquentiel est le seul identifiant fiable — le nom du client ne l’est pas, son orthographe varie.
+- Nommer les fichiers de façon triable : FAT-2026-0042.pdf plutôt que « facture ahmed.pdf ». Le tri alphabétique donne alors le tri chronologique.
+- Conserver les factures d’achat avec la même rigueur que les factures de vente : ce sont elles qui justifient votre TVA déductible, et c’est là que les trous se creusent.
+- Doubler la sauvegarde. Un disque unique n’est pas une archive : c’est un point de défaillance qui attend son tour.
+## Ce que la facturation électronique va changer
+
+Dans un dispositif de validation préalable, chaque facture est déclarée à une plateforme nationale au moment de son émission. L’administration disposera donc de sa propre trace, indépendamment de la vôtre.
+
+Cela ne vous dispense pas de conserver les vôtres — l’obligation comptable reste entière — mais cela change la nature du risque. Aujourd’hui, une facture perdue est une pièce manquante. Demain, une facture perdue chez vous sera une facture que l’administration a, et pas vous : la discussion ne portera plus sur son existence mais sur ce que vous en avez fait.
+
+La conséquence est simple : les entreprises dont l’archivage repose sur un carton et une bonne mémoire ont intérêt à basculer avant l’échéance, pas après.
+
+Avec Fatora-Bot, chaque PDF émis est archivé et reste consultable depuis la conversation : par numéro, par client ou par période, avec les totaux correspondants. L’archivage n’est pas une tâche séparée à ne pas oublier, c’est une conséquence de l’émission.
+
+## Questions fréquentes
+
+### Combien de temps faut-il conserver une facture au Maroc ?
+
+La loi comptable impose dix ans pour les documents comptables et leurs pièces justificatives, factures comprises. Le délai pendant lequel l’administration fiscale peut contrôler est plus court, mais c’est la durée la plus longue qui s’impose en pratique.
+
+### Peut-on jeter le papier après numérisation ?
+
+La conservation sous forme électronique est admise dès lors que le document reste lisible, intègre et accessible pendant toute la durée légale. Avant de détruire des originaux papier, faites valider votre procédure par votre expert-comptable : les conditions d’une numérisation opposable méritent d’être vérifiées.
+
+### Faut-il conserver aussi les factures d’achat ?
+
+Oui, avec la même rigueur. Ce sont elles qui justifient la TVA que vous avez déduite et les charges que vous avez comptabilisées. En contrôle, c’est le plus souvent de ce côté que les pièces manquent.
+
+### Un PDF suffit-il comme archive ?
+
+Un PDF non modifiable, correctement nommé, sauvegardé en deux endroits distincts et retrouvable rapidement constitue une archive satisfaisante. Ce qui pose problème, ce n’est pas le format mais l’absence d’organisation : des milliers de fichiers dans un dossier unique ne sont pas des archives.
+
+Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l’avis de votre expert-comptable ni les textes publiés par la Direction Générale des Impôts, dont les valeurs chiffrées évoluent avec les lois de finances.
+
+---
+
+URL : https://fatora.swiviq.com/fr/guides/delais-paiement-maroc
+Langue : fr
+Titre : Délais de paiement entre entreprises au Maroc
+
+Guides
+# Délais de paiement : ce que la loi impose désormais
+
+Le retard de paiement est le premier tueur de trésorerie des petites entreprises marocaines. Le législateur s’en est saisi : les délais entre entreprises sont désormais plafonnés, et les dépassements se déclarent.
+
+Rédigé par l’équipe Fatora-Bot — Swiviq, Rabat · Mis à jour le 12 août 2026 · 7 min de lecture
+En bref
+Le Maroc encadre les délais de paiement entre entreprises par la loi 69-21, qui plafonne le délai convenu, prévoit une amende pécuniaire calculée sur les montants réglés en retard, et impose une déclaration périodique à l’administration fiscale. Le dispositif s’applique par vagues, selon le chiffre d’affaires des entreprises concernées.
+
+## Ce que le dispositif change
+
+Jusqu’à récemment, le délai de paiement relevait de la négociation commerciale : un fournisseur en position faible acceptait ce qu’on lui imposait, et le retard n’avait aucune conséquence pratique pour le débiteur.
+
+La loi 69-21 renverse la logique. Elle fixe un délai maximal, prévoit une sanction financière automatique en cas de dépassement, et — c’est le point décisif — impose au débiteur de déclarer lui-même à l’administration les factures réglées en retard. Le retard cesse d’être un arbitrage confortable pour devenir une ligne dans une déclaration fiscale.
+
+Le déploiement se fait par paliers de chiffre d’affaires, en commençant par les plus grandes entreprises et en s’étendant progressivement vers les plus petites. Les seuils, les taux et les échéances sont fixés par les textes d’application et ont déjà été ajustés.
+
+Le seuil de chiffre d’affaires qui vous concerne, le taux de l’amende et la périodicité de la déclaration sont à confirmer auprès de la Direction Générale des Impôts ou de votre expert-comptable. Ce guide décrit le mécanisme, pas les valeurs de l’exercice en cours — elles évoluent.
+
+## Le délai par défaut et le délai convenu
+
+Le raisonnement se fait en deux temps. En l’absence d’accord écrit entre les parties, un délai par défaut s’applique, décompté à partir de la date de réception de la marchandise ou d’exécution de la prestation.
+
+Les parties peuvent convenir d’un délai plus long, mais pas au-delà d’un plafond légal, et à condition que cet accord soit écrit. Certains secteurs, dont l’activité est saisonnière ou le cycle d’exploitation particulièrement long, bénéficient de délais dérogatoires négociés par accord professionnel.
+
+Conséquence pratique immédiate : si vous accordez des délais longs, faites-les figurer par écrit dans le devis ou les conditions générales. Un délai long non écrit n’est pas opposable, et vous place en dehors du délai par défaut.
+
+## Ce qu’il faut écrire sur vos factures
+
+Le dispositif ne fonctionne que si la date de départ du délai est établie. Quatre mentions rendent votre facture exploitable en cas de litige.
+
+- La date d’échéance en clair — « à régler avant le 30 septembre 2026 » — plutôt qu’un délai en jours que le client devra calculer lui-même.
+- La date de livraison ou d’exécution, lorsqu’elle diffère de la date d’émission : c’est elle qui fait courir le délai.
+- Les conditions de règlement convenues, avec référence au devis ou au contrat qui les a fixées.
+- La mention des pénalités applicables en cas de retard. Elle ne les crée pas — elles sont légales — mais elle prive le client de l’argument selon lequel il n’en avait pas été informé.
+## Que faire quand le retard s’installe
+
+La séquence utile est graduelle, et chacune de ses étapes doit laisser une trace écrite. C’est la trace, plus que le ton, qui fait avancer le dossier.
+| Étape | Quand | Ce qu’elle apporte
+| Relance amiable écrite | Quelques jours après l’échéance | Écarte l’oubli, qui explique une bonne part des retards
+| Relance formelle avec décompte des pénalités | Deux à trois semaines après | Signale que le retard est suivi et chiffré
+| Mise en demeure recommandée | Après un mois | Fait courir les intérêts et constitue la preuve exigée en justice
+| Recouvrement ou action judiciaire | Selon le montant en jeu | Suppose un dossier complet : facture, preuve de livraison, relances
+
+Le dossier se construit avant le litige, pas pendant. Facture conforme, bon de livraison signé, devis accepté, échanges écrits : sans ces pièces, la meilleure procédure n’aboutit pas.
+
+## La visibilité, arme la plus simple
+
+Beaucoup de très petites entreprises ne savent pas, à un instant donné, combien on leur doit. Le retard n’est pas détecté, la relance n’est pas faite, et la créance vieillit jusqu’à devenir difficile à recouvrer.
+
+Savoir ce qui a été facturé sur une période est donc le premier réflexe de trésorerie. Avec Fatora-Bot, ce total se demande à la voix — « les factures du mois », « toutes celles d’Ahmed » — et le PDF de chaque document est renvoyé dans la conversation, prêt à être joint à une relance.
+
+## Questions fréquentes
+
+### Quel est le délai de paiement maximal entre entreprises au Maroc ?
+
+La loi 69-21 fixe un délai par défaut applicable en l’absence d’accord écrit, et un plafond que les parties ne peuvent pas dépasser même par accord, avec des dérogations sectorielles. Les valeurs exactes et le calendrier d’application par taille d’entreprise sont à vérifier auprès de la Direction Générale des Impôts ou de votre comptable.
+
+### Les pénalités de retard doivent-elles figurer sur la facture ?
+
+Les pénalités sont prévues par la loi et ne dépendent pas de leur mention sur le document. Les indiquer reste fortement recommandé : cela prive le client de l’argument de l’ignorance et rend la relance plus simple à formuler.
+
+### Que faire si un client refuse de payer une facture conforme ?
+
+Relancer par écrit, puis adresser une mise en demeure par recommandé, qui fait courir les intérêts et constitue la preuve exigée en cas d’action. Réunissez d’abord le dossier complet : facture conforme, preuve de livraison ou d’exécution, devis accepté et historique des relances.
+
+### Peut-on accorder un délai plus long à un bon client ?
+
+Oui, dans la limite du plafond légal et à condition que l’accord soit écrit. Un délai long convenu oralement n’est pas opposable et vous expose : c’est le délai par défaut qui s’appliquerait, avec les conséquences déclaratives qui en découlent pour votre client.
+
+Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l’avis de votre expert-comptable ni les textes publiés par la Direction Générale des Impôts, dont les valeurs chiffrées évoluent avec les lois de finances.
+
+---
+
+URL : https://fatora.swiviq.com/fr/guides/devis-conforme-maroc
+Langue : fr
+Titre : Devis au Maroc : mentions, validité et passage en facture
+
+Guides
+# Le devis au Maroc : ce qu’il doit contenir et ce qu’il engage
+
+Le devis n’est pas encadré comme la facture, et c’est précisément ce qui le rend risqué : rien n’oblige à y faire figurer quoi que ce soit, donc tout ce qui manque se discute au moment de payer.
+
+Rédigé par l’équipe Fatora-Bot — Swiviq, Rabat · Mis à jour le 12 août 2026 · 7 min de lecture
+En bref
+Un devis au Maroc n’est pas soumis aux mentions obligatoires de la facture, mais il devient contractuel dès qu’il est accepté par écrit. Il doit porter l’identité complète des deux parties, le détail chiffré des prestations, les montants hors taxe et toutes taxes comprises, la durée de validité, les conditions de règlement et un espace pour la mention « bon pour accord ».
+
+## Un devis accepté vaut contrat
+
+C’est le point que beaucoup d’artisans et de prestataires découvrent trop tard. Le devis est une offre : tant qu’il n’est pas accepté, il n’engage que celui qui l’émet, et encore, pendant sa durée de validité seulement. Une fois accepté par écrit, il devient la loi des parties.
+
+Ce qui y figure sera donc opposable des deux côtés. Si le devis annonce un prix ferme, le dépassement devra être justifié par un avenant accepté. Si le devis ne dit rien du délai, aucun délai n’est exigible. Si le devis ne mentionne pas que la pose est exclue, elle sera réputée comprise.
+
+L’acceptation n’a pas besoin d’être solennelle. Un devis signé avec la mention « bon pour accord », un bon de commande, ou même un message WhatsApp non ambigu du client valant acceptation suffisent en pratique à établir l’accord. Conservez cette trace : c’est elle qui tranchera le désaccord.
+
+## Ce qu’un devis sérieux comporte
+
+Aucune de ces mentions n’est imposée par un texte. Toutes servent à éviter une discussion précise que vous aurez, un jour, avec un client.
+| Mention | La discussion qu’elle évite
+| Identité complète des deux parties, ICE inclus | « Ce n’est pas moi qui ai commandé, c’est mon frère »
+| Numéro et date du devis | Deux versions du devis circulent, on ne sait plus laquelle a été acceptée
+| Durée de validité (30, 60, 90 jours) | Le client revient six mois plus tard en exigeant l’ancien prix
+| Détail chiffré ligne par ligne | « Je pensais que la peinture était comprise »
+| Distinction fourniture / pose / main-d’œuvre | Le client fournit son matériau et exige la même remise
+| Montants HT, TVA par taux, TTC | Le client conteste la TVA ajoutée au moment de la facture
+| Conditions de règlement (acompte, solde, délai) | « On règle à la fin, comme d’habitude »
+| Délai d’exécution | Le chantier traîne et aucun engagement n’est démontrable
+| Ce qui est expressément exclu | Le poste le plus rentable de tous les litiges
+| Espace « bon pour accord », date et signature | L’acceptation elle-même est contestée
+
+## La durée de validité, souvent oubliée
+
+Sans durée de validité, une offre reste théoriquement ouverte. Dans un contexte où le prix des matériaux bouge — bois, acier, ciment, carburant — c’est une exposition réelle. Un devis accepté quatre mois après son émission au prix d’origine peut effacer toute la marge.
+
+Trente jours est un standard confortable pour les prestations de service, quinze à trente jours pour les activités très exposées au prix des matières. Passé ce délai, l’offre n’est pas annulée : elle doit simplement être reconfirmée, ce qui vous rend la main sur le prix.
+
+## Du devis à la facture, sans écart
+
+L’erreur classique consiste à refaire la facture de zéro. Les désignations changent légèrement, une ligne saute, un arrondi diffère — et le client refuse de payer une facture qui ne correspond pas visiblement au devis qu’il a signé.
+
+La bonne méthode est de repartir du devis accepté et de ne modifier que ce qui a réellement changé : les quantités effectivement livrées ou posées, les travaux supplémentaires acceptés en cours de route, les postes abandonnés. La facture doit référencer le devis par son numéro et sa date.
+
+Si des acomptes ont été facturés, la facture de solde doit les déduire ligne à ligne. Une facture de solde portant le montant total du marché sans déduction est la première cause de retard de paiement dans le bâtiment — le client attend une facture corrigée plutôt que de discuter.
+
+Avec Fatora-Bot, le client est enregistré une fois dans le référentiel avec l’orthographe exacte de sa raison sociale et son ICE. Pour la facture, seuls les articles restent à dicter, ce qui supprime la principale source d’écart entre le devis et la facture : la ressaisie.
+
+## Le devis face à la facturation électronique
+
+Le dispositif de facturation électronique porte sur les factures, pas sur les devis : rien n’indique à ce jour qu’un devis devra transiter par la plateforme nationale.
+
+Cela ne le rend pas indifférent. Un devis structuré, dont les lignes se convertissent directement en lignes de facture, réduira le travail de saisie au moment où chaque facture devra partir dans un format normalisé. Ceux qui rédigent leurs devis en texte libre auront ce travail à faire deux fois.
+
+## Questions fréquentes
+
+### Un devis est-il obligatoire au Maroc ?
+
+Aucun texte général ne l’impose pour les relations entre entreprises. Il est en revanche systématiquement exigé pour les marchés publics et par la plupart des donneurs d’ordre structurés, et il reste la meilleure protection contre les litiges de fin de chantier.
+
+### Le devis doit-il porter les mêmes mentions que la facture ?
+
+Non. Les mentions obligatoires de l’article 145 du Code Général des Impôts concernent la facture. Mais faire figurer l’ICE, la TVA détaillée et le total en toutes lettres sur le devis évite toute surprise au moment de la facture, et donne au document une allure professionnelle qui pèse dans la décision.
+
+### Peut-on facturer plus cher que le devis ?
+
+Seulement pour ce qui a été accepté en plus. Les travaux supplémentaires doivent faire l’objet d’un accord écrit avant exécution — un message du client suffit en pratique. Un dépassement non accepté sur un devis à prix ferme est contestable, et le sera.
+
+### Faut-il facturer un devis non suivi de commande ?
+
+Un devis en lui-même n’est pas facturable, sauf si l’étude préalable a été convenue comme une prestation payante — ce qui doit alors être annoncé avant, et non découvert par le client à la réception de la facture.
+
+Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l’avis de votre expert-comptable ni les textes publiés par la Direction Générale des Impôts, dont les valeurs chiffrées évoluent avec les lois de finances.
+
+---
+
 URL : https://fatora.swiviq.com/fr/guides/facturation-electronique-maroc
 Langue : fr
 Titre : Facturation électronique au Maroc : le guide 2026
@@ -941,6 +1593,87 @@ Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l�
 
 ---
 
+URL : https://fatora.swiviq.com/fr/guides/facture-avoir-maroc
+Langue : fr
+Titre : Facture d’avoir au Maroc : quand et comment l’émettre
+
+Guides
+# La facture d’avoir : annuler sans effacer
+
+On n’efface jamais une facture émise. L’avoir est l’instrument qui permet d’annuler ou de réduire une facture tout en laissant une trace vérifiable — et c’est exactement ce que l’administration attend de vous.
+
+Rédigé par l’équipe Fatora-Bot — Swiviq, Rabat · Mis à jour le 12 août 2026 · 7 min de lecture
+En bref
+Une facture d’avoir est un document commercial qui annule totalement ou partiellement une facture déjà émise. Elle porte son propre numéro dans la série, référence explicitement la facture d’origine par son numéro et sa date, indique le motif, et reprend la ventilation de TVA de la facture annulée afin de permettre la régularisation.
+
+## Avoir ou facture rectificative : deux outils distincts
+
+La confusion entre les deux est la source la plus fréquente de comptabilités incohérentes. Le critère de choix est simple : qu’est-ce qui a changé ?
+| Situation | Le bon document
+| Erreur détectée avant remise au client | Correction sous le même numéro — le document n’a pas circulé
+| Erreur de forme après remise (adresse, désignation, ICE) | Facture rectificative référençant l’originale
+| Erreur de montant à la hausse | Facture complémentaire pour la différence
+| Erreur de montant à la baisse | Avoir partiel pour la différence
+| Commande annulée, marchandise retournée | Avoir total
+| Remise accordée après coup, geste commercial | Avoir partiel
+| Facture impayée et irrécouvrable | Ni l’un ni l’autre — c’est une créance douteuse, à traiter avec votre comptable
+
+Le dernier cas mérite une attention particulière : émettre un avoir pour effacer une facture qu’un client refuse de payer est une erreur courante et coûteuse. Cela revient à reconnaître que la prestation n’était pas due, et affaiblit toute action en recouvrement.
+
+## Ce que l’avoir doit contenir
+
+L’avoir est une facture : il en reprend la structure et les mentions obligatoires. S’y ajoutent trois éléments qui lui sont propres.
+
+- La qualification explicite du document : « Avoir » ou « Facture d’avoir », visible en en-tête. Un document ambigu sera lu comme une seconde facture, et payé comme telle.
+- La référence à la facture d’origine : son numéro et sa date, sans quoi le rapprochement est impossible chez le client comme en contrôle.
+- Le motif de l’avoir : retour de marchandise, annulation de commande, remise commerciale, erreur de facturation. Un avoir sans motif est un avoir difficile à défendre.
+- La ventilation de TVA identique à celle de la facture annulée : mêmes taux, mêmes bases, afin que la régularisation soit symétrique des deux côtés.
+## La numérotation de l’avoir
+
+L’avoir prend un numéro dans une série continue, exactement comme une facture. Deux pratiques coexistent et se défendent toutes les deux.
+
+La première consiste à utiliser la même série que les factures : l’avoir prend simplement le numéro suivant. C’est la solution la plus simple, et celle qui garantit mécaniquement l’absence de trou.
+
+La seconde consiste à tenir une série distincte, avec un préfixe propre — AV-2026-0001. C’est plus lisible pour le comptable, à condition que cette seconde série soit elle aussi continue et sans doublon.
+
+Ce qui n’est pas défendable, en revanche : réutiliser le numéro de la facture annulée, ou émettre l’avoir sans numéro du tout.
+
+## L’effet sur la TVA
+
+C’est la raison d’être fiscale de l’avoir. La facture d’origine a rendu la TVA exigible chez vous et déductible chez votre client. L’avoir défait symétriquement les deux mouvements : vous récupérez la TVA collectée à tort, votre client réduit sa déduction d’autant.
+
+Cette symétrie explique pourquoi l’avoir doit reprendre exactement la ventilation par taux de la facture annulée. Un avoir dont la TVA ne correspond pas à celle de la facture d’origine crée un écart qui apparaîtra chez l’un des deux, tôt ou tard.
+
+La période de rattachement de la régularisation dépend de votre régime de TVA — encaissement ou débit — et du moment où l’avoir est émis. C’est le point à faire confirmer par votre comptable plutôt qu’à déduire d’une règle générale.
+
+## Le réflexe qui évite la plupart des avoirs
+
+Un avoir sur deux découle d’une erreur qui aurait pu être vue avant l’émission : mauvais client, quantité inexacte, prix unitaire au lieu du prix total, taux de TVA erroné.
+
+D’où l’intérêt d’un récapitulatif systématique avant émission. Avec Fatora-Bot, rien ne part sans confirmation explicite : le client, chaque article avec sa quantité et son prix, la TVA et le total sont récapitulés — à l’écrit, et à la voix en darija si la demande est arrivée en note vocale. Tant que la facture n’a pas été remise, la correction se fait sous le même numéro, sans avoir à émettre quoi que ce soit.
+
+## Questions fréquentes
+
+### Un avoir peut-il annuler partiellement une facture ?
+
+Oui, c’est même le cas le plus fréquent : retour d’une partie de la marchandise, remise accordée après coup, erreur portant sur une seule ligne. L’avoir porte alors uniquement sur le montant concerné, avec sa propre ventilation de TVA.
+
+### Faut-il l’accord du client pour émettre un avoir ?
+
+Un avoir vous est défavorable et lui est favorable : son accord n’est pas requis. En revanche, prévenez-le, car il doit régulariser sa propre déduction de TVA. Un avoir qui arrive sans explication est souvent classé sans traitement, et l’écart se révèle des mois plus tard.
+
+### Peut-on émettre un avoir sur une facture d’un exercice antérieur ?
+
+C’est possible, mais les conséquences comptables et fiscales diffèrent selon que l’exercice est clos ou non, et selon votre régime de TVA. C’est typiquement le cas à ne pas traiter seul : faites-le valider par votre comptable avant d’émettre.
+
+### Un avoir se numérote-t-il dans la même série que les factures ?
+
+Les deux pratiques sont admises : même série, ou série distincte avec un préfixe propre. La seule exigence est que chaque série soit continue, sans trou ni doublon. Ce qui n’est pas défendable, c’est de réutiliser le numéro de la facture annulée.
+
+Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l’avis de votre expert-comptable ni les textes publiés par la Direction Générale des Impôts, dont les valeurs chiffrées évoluent avec les lois de finances.
+
+---
+
 URL : https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire
 Langue : fr
 Titre : Faire une facture sur WhatsApp : la méthode complète
@@ -1015,6 +1748,103 @@ La conversation peut être entièrement vocale. La demande se dicte, le récapit
 ### Plusieurs personnes peuvent-elles facturer pour la même entreprise ?
 
 Oui. Les données sont cloisonnées par entreprise : référentiel clients, numérotation et cachet sont partagés au sein de la société, et étanches vis-à-vis des autres. Pour un déploiement multi-comptes, contactez-nous.
+
+Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l’avis de votre expert-comptable ni les textes publiés par la Direction Générale des Impôts, dont les valeurs chiffrées évoluent avec les lois de finances.
+
+---
+
+URL : https://fatora.swiviq.com/fr/guides/glossaire-facturation-maroc
+Langue : fr
+Titre : Glossaire de la facturation au Maroc : 30 termes
+
+Guides
+# Glossaire de la facturation marocaine
+
+Trente définitions, du sigle administratif au vocabulaire du souk. Parce qu’une bonne part des erreurs de facturation vient simplement de deux personnes qui n’emploient pas le même mot pour la même chose.
+
+Rédigé par l’équipe Fatora-Bot — Swiviq, Rabat · Mis à jour le 12 août 2026 · 8 min de lecture
+En bref
+La facturation marocaine mobilise trois registres de vocabulaire : les identifiants administratifs (ICE, IF, taxe professionnelle), les notions comptables et fiscales (hors taxe, toutes taxes comprises, avoir, ventilation), et le vocabulaire commercial parlé (riyal, melyoun, khallasni). Confondre un prix hors taxe et un prix encaissé est l’erreur la plus fréquente.
+
+## Identifiants administratifs
+
+Les numéros qui identifient une entreprise marocaine, et ce que chacun établit.
+| Terme | Définition
+| ICE | Identifiant Commun de l’Entreprise. Quinze chiffres, unique, reconnu par toutes les administrations marocaines. Obligatoire sur la facture pour le vendeur, et pour le client lorsqu’il est assujetti.
+| IF | Identifiant Fiscal. Numéro sous lequel l’entreprise est connue de la Direction Générale des Impôts ; sert aux déclarations de TVA et d’impôt.
+| Taxe professionnelle | Taxe locale due par toute personne exerçant une activité professionnelle. Anciennement « patente ». Son numéro est rattaché à un établissement, pas à l’entreprise.
+| RC | Registre du Commerce. Numéro d’immatriculation au tribunal de commerce ; figure sur le modèle J.
+| Modèle J | Extrait du registre du commerce attestant l’existence et les caractéristiques de la société. C’est le document où l’on retrouve l’ICE quand on l’a perdu.
+| CNSS | Caisse Nationale de Sécurité Sociale. Numéro d’affiliation employeur, sans effet sur la facturation mais souvent demandé dans les dossiers d’appel d’offres.
+
+## Montants et taxes
+
+Le registre où se logent la majorité des erreurs de calcul.
+| Terme | Définition
+| HT — hors taxe | Montant avant application de la TVA. C’est la base de calcul, et ce que la facture doit exposer ligne par ligne.
+| TTC — toutes taxes comprises | Montant TVA incluse. C’est ce que le client règle, et presque toujours ce qu’on lui annonce au comptoir.
+| TVA | Taxe sur la Valeur Ajoutée. Collectée par le vendeur, déductible chez le client assujetti. Taux normal de 20 %, taux réduits pour des catégories limitativement énumérées.
+| Ventilation | Répartition des montants par taux de TVA en pied de facture. Obligatoire dès que plusieurs taux coexistent, faute de quoi le montant déductible n’est pas déterminable.
+| Assujetti | Entreprise entrant dans le champ de la TVA : elle la collecte sur ses ventes et la déduit sur ses achats.
+| Exonération | Opération placée hors du champ ou dispensée de TVA par un texte. Une facture exonérée porte la mention correspondante et ne fait apparaître aucune TVA.
+| Montant en toutes lettres | Total TTC écrit en toutes lettres. Mention exigée au Maroc ; en cas de divergence, elle prime sur le chiffre.
+
+## Documents du cycle commercial
+
+Chaque document a une fonction propre ; les confondre crée des séries incohérentes.
+| Terme | Définition
+| Devis | Offre chiffrée. N’engage que celui qui l’émet, jusqu’à acceptation écrite — après quoi il vaut contrat.
+| Bon de commande | Document par lequel le client formalise sa commande. Vaut acceptation du devis.
+| Bon de livraison | Atteste la remise de la marchandise. Signé par le client, il fait courir le délai de paiement et sert de preuve en cas de litige.
+| Facture | Document opposable constatant l’opération. Doit porter les mentions de l’article 145 du Code Général des Impôts.
+| Facture d’acompte | Facture d’un montant appelé avant exécution, imputé sur le marché total.
+| Situation de travaux | Facturation de l’avancement d’un chantier sur une période, en référence aux postes du devis.
+| Facture de solde | Facture finale, déduisant explicitement les acomptes et situations déjà réglés.
+| Avoir | Document annulant totalement ou partiellement une facture émise. Porte son propre numéro et référence la facture d’origine.
+| Facture rectificative | Facture corrigeant une erreur de forme sur une facture déjà remise, sous un nouveau numéro.
+| Retenue de garantie | Fraction du prix retenue par le client jusqu’à la levée des réserves. Modalité de règlement, pas réduction du prix : la TVA reste calculée sur la base complète.
+
+## Vocabulaire commercial parlé
+
+Ce registre n’apparaît dans aucun manuel, et c’est pourtant celui dans lequel les ventes se concluent réellement au Maroc.
+| Terme | Définition
+| Riyal | Unité de compte traditionnelle valant un vingtième de dirham. Encore couramment employée pour les petits montants. « Mitin riyal » = 10 dirhams.
+| Melyoun | Dix mille dirhams — et non un million. Employé pour les grosses transactions : « joj melyoun » = 20 000 dirhams.
+| Khallasni | « Il m’a payé ». Signale un montant encaissé, donc toutes taxes comprises : la base hors taxe doit être recalculée.
+| Fatora | Facture. « Sayab liya fatora » = « établis-moi une facture ».
+| Wakha | « D’accord ». La confirmation, celle qui déclenche l’émission.
+| Kachi / cachet | Tampon de l’entreprise. Sans valeur légale au sens strict, mais pratiquement indispensable : une facture sans cachet est régulièrement retournée.
+
+Fatora-Bot comprend ces formulations telles qu’elles se disent, convertit les unités et annonce la valeur en dirhams dans le récapitulatif avant émission — pour que l’erreur, s’il y en a une, se voie avant la facture et non après.
+
+## Facturation électronique
+
+Le vocabulaire qui arrive avec le mandat DGI, et qu’il vaut mieux comprendre avant qu’on vous le vende.
+| Terme | Définition
+| Facturation électronique | Émission, transmission et conservation des factures sous forme structurée. Un PDF envoyé par email n’en est pas une.
+| Clearance / validation préalable | Modèle dans lequel chaque facture est transmise à une plateforme nationale et validée avant de produire ses effets juridiques. C’est le modèle retenu par le Maroc.
+| Post-audit | Modèle inverse : les entreprises échangent librement, l’administration contrôle a posteriori.
+| Format structuré | Fichier où chaque donnée occupe un champ identifié, lisible par une machine sans interprétation.
+| UBL / CII | Deux standards internationaux de facture structurée. UBL 2.1 est le plus répandu dans les dispositifs de type clearance.
+| Article 145-IX du CGI | Base légale de l’obligation de facturation électronique au Maroc.
+
+## Questions fréquentes
+
+### Quelle est la différence entre HT et TTC ?
+
+Le montant hors taxe est la base avant TVA ; le montant toutes taxes comprises est ce que le client règle. Pour retrouver le hors taxe à partir d’un prix TTC, on divise par un plus le taux — au taux normal, 1 200 dirhams TTC correspondent à 1 000 dirhams hors taxe et 200 dirhams de TVA.
+
+### Combien vaut un melyoun en dirhams ?
+
+Dix mille dirhams. Le terme prête à confusion pour qui l’entend comme « million » : « joj melyoun » désigne 20 000 dirhams, pas deux millions.
+
+### Combien vaut un riyal marocain ?
+
+Un vingtième de dirham. C’est une unité de compte traditionnelle encore très employée dans le commerce de détail : « mitin riyal » correspond à 10 dirhams.
+
+### Quelle différence entre un avoir et une facture rectificative ?
+
+L’avoir annule ou réduit un montant : retour de marchandise, annulation, remise accordée après coup. La facture rectificative corrige une erreur de forme — adresse, désignation, ICE — sur une facture dont le montant reste juste.
 
 Ce guide présente le cadre général applicable au Maroc. Il ne remplace pas l’avis de votre expert-comptable ni les textes publiés par la Direction Générale des Impôts, dont les valeurs chiffrées évoluent avec les lois de finances.
 
