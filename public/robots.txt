@@ -1,8 +1,31 @@
 # Fatora-Bot — facturation vocale WhatsApp pour les entreprises marocaines
+# Éditeur : Swiviq, Rabat — contact@swiviq.com
+
 User-agent: *
 Allow: /
 
-# Moteurs de recherche IA : indexation et citation autorisées
+# ── Moteurs de recherche classiques ──────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ── Moteurs et agents IA : indexation et citation explicitement autorisées ───
+# Autoriser ces robots est un choix : sans eux, aucune chance d'être cité dans
+# une réponse d'AI Overview, de ChatGPT ou de Perplexity.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -18,16 +41,47 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-User-agent: Bingbot
+User-agent: Meta-ExternalAgent
 Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Contenu intégral des guides, en texte brut, pour les moteurs génératifs :
+# https://fatora.swiviq.com/llms.txt
+# https://fatora.swiviq.com/llms-full.txt
 
 Sitemap: https://fatora.swiviq.com/sitemap.xml

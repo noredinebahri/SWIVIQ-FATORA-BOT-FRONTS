@@ -39,7 +39,10 @@ app.get('/', (req, res) => {
     .map((part) => part.split(';')[0].trim().slice(0, 2))
     .find((code) => (LANGS as readonly string[]).includes(code));
   res.set('Vary', 'Accept-Language');
-  res.redirect(302, `/${match || 'fr'}`);
+  // 301 et non 302 : la racine ne redirigera jamais ailleurs que vers une
+  // langue. Une redirection temporaire fait porter l'indexation sur `/`
+  // au lieu de la transmettre à la page de destination.
+  res.redirect(301, `/${match || 'fr'}`);
 });
 
 /**
@@ -50,18 +53,35 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
+    setHeaders(res, filePath) {
+      // Les fichiers destinés aux robots changent à chaque publication et ne
+      // portent pas de hash dans leur nom : un cache d'un an y ferait servir
+      // un sitemap périmé longtemps après une mise en ligne.
+      if (/[\\/](robots\.txt|sitemap\.xml|llms\.txt|llms-full\.txt)$/.test(filePath)) {
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+      }
+    },
   }),
 );
 
 /**
  * Handle all other requests by rendering the Angular application.
+ *
+ * Le HTML sortait sans en-tête de cache : chaque visite et chaque passage de
+ * robot repartaient du serveur. `stale-while-revalidate` laisse servir la
+ * version en cache pendant la revalidation — le temps de réponse perçu compte
+ * dans le LCP, et le budget de crawl s'en ressent aussi.
  */
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => {
+      if (!response) return next();
+      if (!res.headersSent && !res.getHeader('Cache-Control')) {
+        res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=86400');
+      }
+      return writeResponseToNodeResponse(response, res);
+    })
     .catch(next);
 });
 

@@ -1,0 +1,115 @@
+<app-site-header [lang]="lang()" />
+
+@if (a(); as art) {
+  <main class="page">
+    <div class="wrap">
+      <nav class="crumbs" [attr.aria-label]="ui().tocLabel">
+        <a [routerLink]="['/', lang()]">{{ ui().home }}</a>
+        <span aria-hidden="true">›</span>
+        <a [routerLink]="['/', lang(), 'guides']">{{ ui().navGuides }}</a>
+        <span aria-hidden="true">›</span>
+        <!-- Dernier maillon = le titre, comme dans le BreadcrumbList JSON-LD :
+             fil d'Ariane visible et balisage doivent dire la même chose. -->
+        <span class="here">{{ art.title }}</span>
+      </nav>
+
+      <header class="head">
+        <span class="kicker">{{ ui().sections[art.section] }}</span>
+        <h1>{{ art.title }}</h1>
+        <p class="lead">{{ art.intro }}</p>
+        <p class="byline">
+          <span>{{ ui().authorLine }}</span>
+          <span aria-hidden="true">·</span>
+          <span>{{ ui().updatedLabel }} <time [attr.datetime]="art.updated">{{ prettyDate() }}</time></span>
+          <span aria-hidden="true">·</span>
+          <span>{{ art.readMin }} {{ ui().readLabel }}</span>
+        </p>
+      </header>
+
+      <!-- Bloc de réponse directe : le passage que les moteurs génératifs citent -->
+      <aside class="answer" id="answer">
+        <span class="answer-label">{{ ui().answerLabel }}</span>
+        <p class="answer-text">{{ art.answer }}</p>
+      </aside>
+
+      <div class="cols">
+        <nav class="toc" [attr.aria-label]="ui().tocLabel">
+          <b>{{ ui().tocLabel }}</b>
+          <ol>
+            @for (b of art.blocks; track b.h; let i = $index) {
+              <li><a [href]="'#s' + (i + 1)">{{ b.h }}</a></li>
+            }
+            <li><a href="#faq">{{ ui().faqLabel }}</a></li>
+          </ol>
+        </nav>
+
+        <article class="body">
+          @for (b of art.blocks; track b.h; let i = $index) {
+            <section [id]="'s' + (i + 1)">
+              <h2>{{ b.h }}</h2>
+              @for (par of b.p; track par) { <p>{{ par }}</p> }
+
+              @if (b.list) {
+                <ul>
+                  @for (li of b.list; track li) { <li>{{ li }}</li> }
+                </ul>
+              }
+
+              @if (b.table) {
+                <div class="tw">
+                  <table>
+                    <thead>
+                      <tr>@for (h of b.table.head; track h) { <th>{{ h }}</th> }</tr>
+                    </thead>
+                    <tbody>
+                      @for (row of b.table.rows; track row[0]) {
+                        <tr>@for (cell of row; track $index) { <td>{{ cell }}</td> }</tr>
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              }
+
+              @if (b.note) { <p class="note">{{ b.note }}</p> }
+            </section>
+          }
+
+          <section id="faq" class="faq">
+            <h2>{{ ui().faqLabel }}</h2>
+            @for (f of art.faq; track f.q) {
+              <div class="qa">
+                <h3>{{ f.q }}</h3>
+                <p>{{ f.a }}</p>
+              </div>
+            }
+          </section>
+
+          <p class="disclaimer">{{ ui().reviewNote }}</p>
+
+          <aside class="cta">
+            <h2>{{ ui().ctaTitle }}</h2>
+            <p>{{ ui().ctaText }}</p>
+            <a class="btn" [href]="wa" target="_blank" rel="noopener">{{ ui().ctaBtn }} →</a>
+          </aside>
+
+          @if (related().length) {
+            <section class="related">
+              <h2>{{ ui().relatedLabel }}</h2>
+              <div class="rel-grid">
+                @for (r of related(); track r.slug) {
+                  <a class="rel" [routerLink]="['/', r.lang, r.section, r.slug]">
+                    <span class="rel-k">{{ ui().sections[r.section] }}</span>
+                    <b>{{ r.title }}</b>
+                    <i>{{ r.metaDesc }}</i>
+                  </a>
+                }
+              </div>
+            </section>
+          }
+        </article>
+      </div>
+    </div>
+  </main>
+}
+
+<app-site-footer [lang]="lang()" />

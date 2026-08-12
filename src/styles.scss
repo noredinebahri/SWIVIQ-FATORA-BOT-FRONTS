@@ -1,3 +1,8 @@
+/* Polices auto-hébergées — généré par `node scripts/fonts.js`.
+   Embarquées dans le bundle CSS : plus de requête vers fonts.googleapis.com,
+   donc un aller-retour réseau de moins avant le premier texte affiché. */
+@use 'styles/fonts';
+
 /* Global — Fatora-Bot landing (thème clair) */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 

@@ -64,6 +64,30 @@ Tout le Maroc : Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Ouj
 Salé, Safi, El Jadida, Béni Mellal, Nador, Laâyoune, Mohammédia, Khouribga, Essaouira, Ouarzazate —
 et partout où WhatsApp fonctionne.
 
+## Guides publiés
+
+Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
+
+- بديل برامج الفوترة بالمغرب: مقارنة صريحة : https://fatora.swiviq.com/ar/comparatif/alternative-logiciel-facturation
+- الفوترة الإلكترونية بالمغرب: دليل 2026 : https://fatora.swiviq.com/ar/guides/facturation-electronique-maroc
+- كيفاش دير فاتورة من الواتساب: الطريقة كاملة : https://fatora.swiviq.com/ar/guides/facture-whatsapp-comment-faire
+- ICE والرقم الضريبي والضريبة المهنية: شنو الفرق : https://fatora.swiviq.com/ar/guides/ice-if-taxe-professionnelle
+- البيانات الإجبارية فالفاتورة المغربية (لائحة 2026) : https://fatora.swiviq.com/ar/guides/mentions-obligatoires-facture
+- نسب TVA بالمغرب: أشنا نسبة تطبق فالفاتورة : https://fatora.swiviq.com/ar/guides/taux-tva-maroc
+- Alternative aux logiciels de facturation au Maroc : https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation
+- Facturer sur Excel : les risques et quand en sortir : https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp
+- Facturation électronique au Maroc : le guide 2026 : https://fatora.swiviq.com/fr/guides/facturation-electronique-maroc
+- Facture auto-entrepreneur au Maroc : règles et modèle : https://fatora.swiviq.com/fr/guides/facture-auto-entrepreneur-maroc
+- Faire une facture sur WhatsApp : la méthode complète : https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire
+- ICE, IF, taxe professionnelle : quel numéro sur vos factures : https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle
+- Mentions obligatoires d’une facture au Maroc (liste 2026) : https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture
+- Numérotation des factures au Maroc : règles et erreurs : https://fatora.swiviq.com/fr/guides/numerotation-factures
+- Taux de TVA au Maroc : lequel appliquer sur vos factures : https://fatora.swiviq.com/fr/guides/taux-tva-maroc
+- Facturation BTP et menuiserie au Maroc depuis le chantier : https://fatora.swiviq.com/fr/secteurs/btp-menuiserie
+- Facturation au comptoir pour commerces et grossistes : https://fatora.swiviq.com/fr/secteurs/commerce-detail
+- Facturation transport et logistique au Maroc à la voix : https://fatora.swiviq.com/fr/secteurs/transport-logistique
+
+
 ## Liens
 
 - Page d'accueil (français) : https://fatora.swiviq.com/fr

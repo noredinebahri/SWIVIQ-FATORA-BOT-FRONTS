@@ -1,12 +1,15 @@
 import { Component, computed, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Ico } from '../icon';
 import { SEO } from './seo-i18n';
 import { WA_LINK, type Lang } from '../i18n';
+import { CONTENT_UI } from '../content/ui';
+import { HOME_LINKS, LINK_LANG } from '../content/links';
 
 /** Section éditoriale : contexte réglementaire + secteurs + couverture géographique (SEO) */
 @Component({
   selector: 'app-seo-section',
-  imports: [Ico],
+  imports: [Ico, RouterLink],
   template: `
   <section id="guide" class="seo">
     <div class="wrap">
@@ -34,6 +37,18 @@ import { WA_LINK, type Lang } from '../i18n';
         <h3>{{ d().citiesTitle }}</h3>
         <p>{{ d().cities }}</p>
       </div>
+
+      @if (guides().length) {
+        <div class="guides">
+          <h3>{{ ui().hubTitle }}</h3>
+          <ul>
+            @for (g of guides(); track g.slug) {
+              <li><a [routerLink]="['/', linkLang(), g.section, g.slug]">{{ g.label }}</a></li>
+            }
+          </ul>
+          <a class="all" [routerLink]="['/', lang(), 'guides']">{{ ui().hubTitle }} →</a>
+        </div>
+      }
 
       <div class="seo-cta">
         <p>{{ d().ctaText }}</p>
@@ -65,6 +80,16 @@ import { WA_LINK, type Lang } from '../i18n';
     border: 1px solid rgba(201,144,42,.28);
     h3 { margin: 0 0 8px; font-size: 1.05rem; color: #a8761c; }
     p { font-size: .92rem; margin: 0; } }
+  .guides { margin-top: 44px;
+    h3 { margin: 0 0 14px; font-size: 1.15rem; }
+    ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 26px; }
+    li { position: relative; padding-inline-start: 18px;
+      &::before { content: ''; position: absolute; inset-inline-start: 2px; top: .72em;
+        width: 6px; height: 6px; border-radius: 50%; background: #e8b64c; } }
+    a { color: #3b4252; text-decoration: none; font-size: .94rem; line-height: 1.7;
+      &:hover { color: #a8761c; text-decoration: underline; } }
+    .all { display: inline-block; margin-top: 16px; font-weight: 700; color: #a8761c;
+      text-decoration: none; font-size: .93rem; } }
   .seo-cta { margin-top: 40px; text-align: center;
     p { margin-bottom: 16px; font-weight: 600; color: #10131c; }
     .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px;
@@ -81,5 +106,13 @@ import { WA_LINK, type Lang } from '../i18n';
 export class SeoSection {
   lang = input<Lang>('fr');
   d = computed(() => SEO[this.lang()] ?? SEO.fr);
+  ui = computed(() => CONTENT_UI[this.lang()]);
+  /**
+   * Liens contextuels vers le pôle éditorial. Les langues sans contenu propre
+   * pointent vers les guides français plutôt que vers rien : mieux vaut un lien
+   * utile dans une autre langue qu'une section vide.
+   */
+  linkLang = computed(() => LINK_LANG[this.lang()]);
+  guides = computed(() => HOME_LINKS[this.lang()]);
   readonly wa = WA_LINK;
 }

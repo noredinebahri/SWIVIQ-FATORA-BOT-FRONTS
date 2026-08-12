@@ -11,6 +11,7 @@ import { DICT, LANGS, RTL, WA_LINK, type Lang, type Dict } from '../i18n';
 import { Ico } from '../icon';
 import { Showcase } from '../showcase/showcase';
 import { SeoSection } from '../seo/seo-section';
+import { CONTENT_UI } from '../content/ui';
 
 const SITE = 'https://fatora.swiviq.com';
 const CONTACT_API = 'https://bot.swiviq.com/lead';
@@ -35,6 +36,10 @@ export class Landing implements OnInit, OnDestroy {
   lang = signal<Lang>('fr');
   t = computed<Dict>(() => DICT[this.lang()]);
   rtl = computed(() => RTL[this.lang()]);
+  cu = computed(() => CONTENT_UI[this.lang()]);
+  aboutLabel = computed(
+    () => ({ fr: 'À propos', ar: 'من نحن', en: 'About', es: 'Quiénes somos' })[this.lang()]
+  );
 
   openFaq = signal<number>(-1);
   navOpen = signal(false);

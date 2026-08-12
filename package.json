@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node scripts/seo-assets.js",
+    "seo:assets": "node scripts/seo-assets.js",
+    "seo:indexnow": "node scripts/indexnow.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:factora-bot-front": "node dist/factora-bot-front/server/server.mjs"
