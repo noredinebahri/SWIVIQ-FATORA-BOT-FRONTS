@@ -37,16 +37,16 @@ const notFoundPage = (lang: string) => {
   return `<!doctype html><html lang="${lang}" dir="${dir}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,follow"><title>404 — ${t.title} · Fatora-Bot</title>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
 <style>body{font-family:system-ui,'Segoe UI',sans-serif;background:#f7f8fb;color:#10131c;
 display:grid;place-items:center;min-height:100vh;margin:0;padding:24px;text-align:center}
-.c{max-width:520px}.m{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
-margin:0 auto 22px;background:linear-gradient(135deg,#e8b64c,#c9902a);color:#17120a;
-font-size:28px;font-weight:800}h1{font-size:1.7rem;margin:0 0 12px;letter-spacing:-.02em}
+.c{max-width:520px}.m{width:56px;height:56px;display:block;margin:0 auto 22px}
+h1{font-size:1.7rem;margin:0 0 12px;letter-spacing:-.02em}
 p{color:#5b6272;line-height:1.7;margin:0 0 26px}
 a{display:inline-block;margin:0 6px;padding:12px 24px;border-radius:999px;font-weight:700;
 text-decoration:none;color:#17120a;background:linear-gradient(135deg,#e8b64c,#c9902a)}
 a.g{background:#fff;color:#10131c;border:1px solid rgba(16,19,28,.14)}</style></head>
-<body><div class="c"><div class="m">&#1601;</div><h1>${t.title}</h1><p>${t.lead}</p>
+<body><div class="c"><img class="m" src="/logo.svg" alt=""><h1>${t.title}</h1><p>${t.lead}</p>
 <a href="/${lang}">${t.home}</a><a class="g" href="/${lang}/guides">${t.guides}</a></div></body></html>`;
 };
 

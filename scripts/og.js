@@ -6,6 +6,12 @@ const puppeteer = require(path.join('D:', 'start', 'center_atlas_back', 'node_mo
 
 const OUT = path.join(__dirname, '..', 'public');
 
+// Le logo est embarqué en base64 : la page rendue par Chrome headless n'a pas
+// de serveur derrière elle, un src="/logo.svg" ne résoudrait pas.
+const LOGO_URI =
+  'data:image/svg+xml;base64,' +
+  fs.readFileSync(path.join(OUT, 'logo.svg')).toString('base64');
+
 const T = {
   fr: {
     dir: 'ltr', badge: 'MAROC · FACTURATION',
@@ -55,9 +61,8 @@ body{width:1200px;height:630px;overflow:hidden;position:relative;
   padding:0 78px;gap:56px}
 .copy{flex:1}
 .logo{display:flex;align-items:center;gap:16px;margin-bottom:30px}
-.mark{width:66px;height:66px;border-radius:20px;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#e8b64c,#c9902a);color:#17120a;font-size:36px;font-weight:800;
-  font-family:'Tahoma',sans-serif;box-shadow:0 12px 34px rgba(232,182,76,.4)}
+.mark{width:66px;height:66px;border-radius:20px;display:block;
+  box-shadow:0 12px 34px rgba(232,182,76,.4)}
 .name{font-size:34px;font-weight:800;letter-spacing:-.5px}
 .name i{font-style:normal;color:#e8b64c}
 .badge{display:inline-block;padding:9px 18px;border-radius:999px;font-size:17px;font-weight:700;
@@ -94,7 +99,7 @@ h1 span{background:linear-gradient(92deg,#e8b64c,#f6dc9a 55%,#25d366);
 <div class="bg"></div><div class="grid"></div>
 <div class="in">
   <div class="copy">
-    <div class="logo"><div class="mark">&#1601;</div><div class="name">Fatora<i>Bot</i></div></div>
+    <div class="logo"><img class="mark" src="${LOGO_URI}" alt=""><div class="name">Fatora<i>Bot</i></div></div>
     <div class="badge">${t.badge}</div>
     <h1>${t.h1}</h1>
     <div class="sub">${t.sub}</div>

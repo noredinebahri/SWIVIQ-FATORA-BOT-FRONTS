@@ -1,0 +1,29 @@
+{
+  "name": "Fatora-Bot — facturation vocale WhatsApp",
+  "short_name": "Fatora-Bot",
+  "description": "Dictez votre facture sur WhatsApp, recevez un PDF conforme.",
+  "start_url": "/fr",
+  "display": "standalone",
+  "background_color": "#f7f8fb",
+  "theme_color": "#e8b64c",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

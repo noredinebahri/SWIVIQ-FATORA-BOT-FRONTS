@@ -15,7 +15,7 @@ import { CONTENT_UI } from '../content/ui';
   <header class="nav">
     <div class="wrap nav-in">
       <a class="logo" [routerLink]="['/', lang()]">
-        <span class="logo-mark">ف</span>
+        <img class="logo-mark" src="/logo.svg" alt="" width="34" height="34">
         <span class="logo-txt">Fatora<em>Bot</em></span>
       </a>
       <nav class="nav-links">
@@ -40,8 +40,7 @@ import { CONTENT_UI } from '../content/ui';
   .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
   .nav-in { display: flex; align-items: center; gap: 20px; height: 66px; }
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #10131c; }
-  .logo-mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
-    background: linear-gradient(135deg,#e8b64c,#c9902a); color: #17120a; font-weight: 800; font-size: 1.1rem; }
+  .logo-mark { width: 34px; height: 34px; display: block; flex-shrink: 0; }
   .logo-txt { font-family: 'Sora','Tajawal',sans-serif; font-weight: 800; letter-spacing: -.02em;
     em { font-style: normal; color: #c9902a; } }
   .nav-links { display: flex; gap: 22px; margin-inline-start: auto;
@@ -78,7 +77,7 @@ export class SiteHeader {
     <div class="wrap foot-in">
       <div>
         <a class="logo" [routerLink]="['/', lang()]">
-          <span class="logo-mark">ف</span>
+          <img class="logo-mark" src="/logo.svg" alt="" width="34" height="34">
           <span class="logo-txt">Fatora<em>Bot</em></span>
         </a>
         <p class="tag">{{ d().footer.tag }}</p>
@@ -103,8 +102,7 @@ export class SiteHeader {
   .foot-in { display: flex; justify-content: space-between; gap: 34px; flex-wrap: wrap;
     padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.09); }
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-  .logo-mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
-    background: linear-gradient(135deg,#e8b64c,#c9902a); color: #17120a; font-weight: 800; }
+  .logo-mark { width: 34px; height: 34px; display: block; flex-shrink: 0; }
   .logo-txt { font-family: 'Sora','Tajawal',sans-serif; font-weight: 800;
     em { font-style: normal; color: #e8b64c; } }
   .tag { margin-top: 12px; max-width: 420px; font-size: .9rem; line-height: 1.7; color: #98a0b2; }
