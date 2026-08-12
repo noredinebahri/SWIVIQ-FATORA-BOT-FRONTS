@@ -93,9 +93,16 @@ admettre ses limites est un signal de fiabilité, pas une faiblesse commerciale.
 
 ```bash
 npm run build          # ng build + génération sitemap / llms.txt / llms-full.txt
-npm run seo:indexnow   # notifie Bing, Yandex, Seznam (URL lues dans le sitemap)
+#   → déployer ici : tar de dist/factora-bot-front → /var/www/fatora-front + pm2 restart
+npm run seo:indexnow   # notifie Bing, Yandex, Seznam — APRÈS déploiement uniquement
 node scripts/fonts.js  # uniquement si on change de police
 ```
+
+L'ordre n'est pas cosmétique : l'API IndexNow va chercher le fichier de clé sur le
+domaine public avant d'accepter la soumission. Lancée avant le déploiement, elle
+répond 403. Le script vérifie désormais lui-même que la clé est en ligne et refuse
+de soumettre sinon. Clé courante : `0fb6d02734c541ccb01f9d2f9c41bf07`, générée dans
+Bing Webmaster Tools ; l'ancienne reste servie pour ne pas invalider l'historique.
 
 Le déploiement doit servir `dist/factora-bot-front/browser/` avec :
 
