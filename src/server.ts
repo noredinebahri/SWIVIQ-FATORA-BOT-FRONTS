@@ -6,8 +6,49 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { LANGS as APP_LANGS } from './app/i18n';
+import { ALL_ARTICLES } from './app/content/registry';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
+
+/**
+ * Toutes les URL réellement publiées.
+ *
+ * Sans cette liste, le routeur Angular renvoyait la page d'accueil avec un
+ * statut 200 pour n'importe quelle adresse inventée. C'est un « soft 404 » :
+ * Google indexe des URL fantômes, les signale en masse dans la Search Console
+ * et dépense du budget de crawl à recharger la même page d'accueil.
+ */
+const VALID_ROUTES = new Set<string>(
+  APP_LANGS.flatMap((l) => [`/${l}`, `/${l}/guides`, `/${l}/a-propos`]).concat(
+    ALL_ARTICLES.map((a) => `/${a.lang}/${a.section}/${a.slug}`),
+  ),
+);
+
+const notFoundPage = (lang: string) => {
+  const t =
+    {
+      ar: { title: 'الصفحة ما كايناش', lead: 'الرابط اللي طلبتي ما كاينش ولا تبدل.', home: 'الرئيسية', guides: 'الأدلة' },
+      en: { title: 'Page not found', lead: 'The address you requested does not exist, or has changed.', home: 'Home', guides: 'Guides' },
+      es: { title: 'Página no encontrada', lead: 'La dirección solicitada no existe o ha cambiado.', home: 'Inicio', guides: 'Guías' },
+      fr: { title: 'Page introuvable', lead: 'L’adresse demandée n’existe pas, ou a changé.', home: 'Accueil', guides: 'Guides' },
+    }[lang] ?? { title: 'Page introuvable', lead: 'L’adresse demandée n’existe pas, ou a changé.', home: 'Accueil', guides: 'Guides' };
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+  return `<!doctype html><html lang="${lang}" dir="${dir}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow"><title>404 — ${t.title} · Fatora-Bot</title>
+<style>body{font-family:system-ui,'Segoe UI',sans-serif;background:#f7f8fb;color:#10131c;
+display:grid;place-items:center;min-height:100vh;margin:0;padding:24px;text-align:center}
+.c{max-width:520px}.m{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+margin:0 auto 22px;background:linear-gradient(135deg,#e8b64c,#c9902a);color:#17120a;
+font-size:28px;font-weight:800}h1{font-size:1.7rem;margin:0 0 12px;letter-spacing:-.02em}
+p{color:#5b6272;line-height:1.7;margin:0 0 26px}
+a{display:inline-block;margin:0 6px;padding:12px 24px;border-radius:999px;font-weight:700;
+text-decoration:none;color:#17120a;background:linear-gradient(135deg,#e8b64c,#c9902a)}
+a.g{background:#fff;color:#10131c;border:1px solid rgba(16,19,28,.14)}</style></head>
+<body><div class="c"><div class="m">&#1601;</div><h1>${t.title}</h1><p>${t.lead}</p>
+<a href="/${lang}">${t.home}</a><a class="g" href="/${lang}/guides">${t.guides}</a></div></body></html>`;
+};
 
 const app = express();
 // Hôtes autorisés (protection SSRF d'Angular SSR)
@@ -72,6 +113,19 @@ app.use(
  * version en cache pendant la revalidation — le temps de réponse perçu compte
  * dans le LCP, et le budget de crawl s'en ressent aussi.
  */
+/**
+ * Vrai 404 pour tout ce qui n'est ni un fichier statique (déjà servi plus haut)
+ * ni une route publiée. Placé avant le moteur Angular, dont la route « ** »
+ * redirige vers l'accueil et répondrait donc 200.
+ */
+app.use((req, res, next) => {
+  const path = req.path.replace(/\/+$/, '') || '/';
+  if (path === '/' || VALID_ROUTES.has(path)) return next();
+  const seg = path.split('/')[1] ?? '';
+  const lang = (APP_LANGS as readonly string[]).includes(seg) ? seg : 'fr';
+  res.status(404).set('Cache-Control', 'public, max-age=300').type('html').send(notFoundPage(lang));
+});
+
 app.use((req, res, next) => {
   angularApp
     .handle(req)
