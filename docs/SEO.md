@@ -109,9 +109,15 @@ Le déploiement doit servir `dist/factora-bot-front/browser/` avec :
 - `/fonts/*.woff2` accessibles (nouveau répertoire — à vérifier après le premier déploiement) ;
 - `Cache-Control: public, max-age=31536000, immutable` sur `/fonts/` et les assets hashés.
 
-**Point relevé sur la production actuelle** : nginx renvoie un en-tête `Cache-Control` dupliqué
-sur les assets (`max-age=2592000,public, max-age=2592000, immutable`). Sans gravité, mais c'est
-le signe d'une directive `add_header` déclarée deux fois — à nettoyer au passage.
+**Corrigé sur le VPS le 12/08/2026** (copie du vhost dans `docs/nginx-fatora-swiviq.conf`) :
+
+- `expires 30d` fabriquait un second `Cache-Control` en plus du `add_header` explicite — supprimé.
+- Un `add_header` déclaré dans un `location` **annule tous les `add_header` hérités du bloc
+  `server`**. Les assets statiques partaient donc sans HSTS, sans `X-Content-Type-Options`, sans
+  `Referrer-Policy` ni `Permissions-Policy`. Ces quatre en-têtes sont désormais redéclarés dans
+  le bloc statique. C'est le piège nginx le plus coûteux, parce qu'il ne produit aucune erreur.
+- `proxy_hide_header Cache-Control` ajouté : Express envoyait son propre `max-age` d'un an que
+  nginx complétait au lieu de le remplacer. nginx est maintenant seule autorité sur les assets.
 
 Après déploiement, vérifier :
 
