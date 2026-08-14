@@ -79,7 +79,12 @@ export const DICT: Record<Lang, Dict> = {
         { icon: 'send', t: 'Envoi WhatsApp & email au client', d: 'La facture part directement chez votre client — avec une confirmation explicite avant chaque envoi. Zéro erreur de destinataire.' },
         { icon: 'users', t: 'Référentiel clients partagé', d: 'L\'orthographe exacte de chaque client est mémorisée. Nom complexe ? Une photo d\'un document suffit, le nom exact est lu et enregistré.' },
         { icon: 'archive', t: 'Les archives à la voix', d: '« La facture n°8 », « les factures du mois », « toutes celles d\'Ahmed » — PDF renvoyés avec résumé audio et totaux de la période.' },
-        { icon: 'edit', t: 'Correction après émission', d: 'Une erreur détectée après coup ? Elle est corrigée sous le même numéro — pas de trou dans la séquence, pas d\'avoir à gérer.' },
+        { icon: 'edit', t: 'Corrections et avoirs conformes', d: 'Erreur avant transmission ? Corrigée sous le même numéro. Facture déjà transmise ? Un avoir AVO conforme l\'annule en une phrase — la règle DGI, respectée.' },
+        { icon: 'star', t: 'Votre bilan, chaque lundi', d: 'CA, encaissé, TVA facturée et encaissée, impayés, meilleur client : vos chiffres arrivent seuls dans WhatsApp. À la demande avec « bilan ».' },
+        { icon: 'card', t: 'Dépenses par photo', d: 'Photographiez un ticket ou une facture d\'achat : dépense enregistrée, TVA déductible calculée, résultat du mois (encaissé − dépenses) mis à jour.' },
+        { icon: 'check', t: 'Devis, bons de livraison', d: 'Devis DEV valable 30 jours, converti en facture d\'une phrase quand le client accepte. Bons de livraison BL à numérotation propre.' },
+        { icon: 'spark', t: 'Factures récurrentes', d: '« Facture ça chaque mois » — loyers et abonnements se régénèrent automatiquement à l\'échéance, PDF envoyé, sans y penser.' },
+        { icon: 'globe', t: 'Export comptable en un mot', d: '« export » : le fichier CSV mensuel (numéros, clients, ICE, HT, TVA, TTC, encaissements) prêt à transmettre à votre fiduciaire.' },
         { icon: 'shield', t: 'Données cloisonnées par entreprise', d: 'Chaque société dispose de son espace étanche : ses clients, sa numérotation, son cachet. Hébergement en Union européenne.' }
       ]
     },
@@ -178,7 +183,12 @@ export const DICT: Record<Lang, Dict> = {
         { icon: 'send', t: 'إرسال واتساب وإيميل للعميل', d: 'الفاتورة كتوصل نيشان للعميل ديالك — مع تأكيد صريح قبل كل إرسال. صفر خطأ فالمرسل إليه.' },
         { icon: 'users', t: 'سجل عملاء مشترك', d: 'الإملاء الصحيح ديال كل عميل محفوظ. سمية معقدة؟ صورة ديال وثيقة كافية، السمية الصحيحة كتقرا وكتسجل.' },
         { icon: 'archive', t: 'الأرشيف بالصوت', d: '« الفاتورة رقم 8 »، « فواتير الشهر »، « ديال أحمد كاملين » — PDF مع ملخص صوتي ومجاميع الفترة.' },
-        { icon: 'edit', t: 'التصحيح بعد الإصدار', d: 'خطأ مكتشف من بعد؟ كيتصحح بنفس الرقم — بلا فراغ فالتسلسل، بلا تعقيدات.' },
+        { icon: 'edit', t: 'تصحيحات وأفوارات قانونية', d: 'خطأ قبل الإرسال؟ كيتصحح بنفس الرقم. الفاتورة وصلات للعميل؟ أفوار AVO قانوني كيلغيها بجملة وحدة — قاعدة الضرائب، محترمة.' },
+        { icon: 'star', t: 'الحصيلة ديالك، كل اثنين', d: 'رقم المعاملات، اللي دخل، التيفيا، اللي ما تخلصوش، أحسن عميل: الأرقام ديالك كتوصلك بوحدها فالواتساب. وفأي وقت كتب « bilan ».' },
+        { icon: 'card', t: 'المصاريف بالتصويرة', d: 'صور تيكي ولا فاتورة ديال الشرا: المصروف كيتسجل، التيفيا القابلة للخصم كتحسب، والنتيجة ديال الشهر كتحين.' },
+        { icon: 'check', t: 'ديفيات وبونات التسليم', d: 'ديفي DEV صالح 30 يوم، كيتحول لفاتورة بجملة وحدة ملي يقبل العميل. بونات تسليم BL بترقيم خاص.' },
+        { icon: 'spark', t: 'فواتير متكررة', d: '« فوتر هادشي كل شهر » — الكراء والاشتراكات كيتصاوبو بوحدهم فالوقت، والPDF كيتصيفط، بلا ما تفكر فيهم.' },
+        { icon: 'globe', t: 'إكسبور محاسبي بكلمة وحدة', d: '« export » : فيشي CSV شهري (الأرقام، العملاء، ICE، TVA، المداخيل) واجد تصيفطو للمحاسب ديالك.' },
         { icon: 'shield', t: 'بيانات معزولة لكل مقاولة', d: 'كل شركة عندها فضاء محكم: عملاؤها، ترقيمها، طابعها. استضافة فالاتحاد الأوروبي.' }
       ]
     },
@@ -277,7 +287,12 @@ export const DICT: Record<Lang, Dict> = {
         { icon: 'send', t: 'WhatsApp & email delivery', d: 'The invoice goes straight to your customer — with an explicit confirmation before every send. Zero recipient errors.' },
         { icon: 'users', t: 'Shared customer directory', d: 'Exact spelling of every customer is remembered. Complex name? A photo of any document is enough — the exact name is read and stored.' },
         { icon: 'archive', t: 'Voice-driven archives', d: '"Invoice #8", "this month\'s invoices", "all of Ahmed\'s" — PDFs re-sent with audio summaries and period totals.' },
-        { icon: 'edit', t: 'Post-issuance correction', d: 'Error spotted later? Fixed under the same number — no sequence gaps, no credit notes to juggle.' },
+        { icon: 'edit', t: 'Compliant corrections & credit notes', d: 'Error before delivery? Fixed under the same number. Invoice already sent? A compliant AVO credit note cancels it in one sentence — the legal way.' },
+        { icon: 'star', t: 'Your numbers, every Monday', d: 'Revenue, collected, VAT invoiced and collected, unpaid, top client: your figures arrive by themselves in WhatsApp. On demand with "bilan".' },
+        { icon: 'card', t: 'Expenses by photo', d: 'Snap a receipt or purchase invoice: expense recorded, deductible VAT computed, monthly result (collected − expenses) updated.' },
+        { icon: 'check', t: 'Quotes & delivery notes', d: 'DEV quotes valid 30 days, converted to invoices in one sentence when accepted. BL delivery notes with their own numbering.' },
+        { icon: 'spark', t: 'Recurring invoices', d: '"Invoice this every month" — rents and subscriptions regenerate automatically on schedule, PDF delivered, hands-free.' },
+        { icon: 'globe', t: 'One-word accounting export', d: '"export": the monthly CSV (numbers, clients, ICE, VAT, payments) ready for your accountant.' },
         { icon: 'shield', t: 'Data isolated per company', d: 'Each business gets a sealed space: its customers, numbering and stamp. EU hosting.' }
       ]
     },
@@ -376,7 +391,12 @@ export const DICT: Record<Lang, Dict> = {
         { icon: 'send', t: 'Envío por WhatsApp y email', d: 'La factura llega directa a tu cliente — con confirmación explícita antes de cada envío. Cero errores de destinatario.' },
         { icon: 'users', t: 'Directorio de clientes compartido', d: 'Se memoriza la ortografía exacta de cada cliente. ¿Nombre complejo? Basta la foto de un documento: el nombre exacto se lee y se guarda.' },
         { icon: 'archive', t: 'Archivo por voz', d: '«La factura n°8», «las de este mes», «todas las de Ahmed» — PDF reenviados con resumen de audio y totales del período.' },
-        { icon: 'edit', t: 'Corrección tras emisión', d: '¿Error detectado después? Se corrige con el mismo número — sin huecos en la secuencia, sin abonos que gestionar.' },
+        { icon: 'edit', t: 'Correcciones y abonos conformes', d: '¿Error antes de enviar? Se corrige con el mismo número. ¿Factura ya entregada? Un abono AVO conforme la anula en una frase — la regla fiscal, respetada.' },
+        { icon: 'star', t: 'Tus cifras, cada lunes', d: 'Facturación, cobrado, IVA, impagados, mejor cliente: tus números llegan solos a WhatsApp. Bajo demanda con «bilan».' },
+        { icon: 'card', t: 'Gastos por foto', d: 'Fotografía un ticket o factura de compra: gasto registrado, IVA deducible calculado, resultado del mes actualizado.' },
+        { icon: 'check', t: 'Presupuestos y albaranes', d: 'Presupuestos DEV válidos 30 días, convertidos en factura con una frase. Albaranes BL con numeración propia.' },
+        { icon: 'spark', t: 'Facturas recurrentes', d: '«Factura esto cada mes» — alquileres y suscripciones se regeneran solos a su vencimiento, PDF enviado.' },
+        { icon: 'globe', t: 'Export contable en una palabra', d: '«export»: el CSV mensual (números, clientes, ICE, IVA, cobros) listo para tu contable.' },
         { icon: 'shield', t: 'Datos aislados por empresa', d: 'Cada sociedad tiene su espacio sellado: sus clientes, su numeración, su sello. Alojamiento en la UE.' }
       ]
     },
