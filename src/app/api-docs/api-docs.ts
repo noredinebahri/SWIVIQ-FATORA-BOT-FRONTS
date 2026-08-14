@@ -36,8 +36,11 @@ interface ApiDict {
   deliverLead: string;
   deliverCards: { t: string; d: string }[];
   refTitle: string;
+  testedBadge: string;
+  exampleLabel: string;
   endpoints: Endpoint[];
   errTitle: string;
+  errIntro: string;
   errors: { code: string; label: string; fix: string }[];
   faqTitle: string;
   faq: { q: string; a: string }[];
@@ -50,6 +53,10 @@ interface ApiDict {
 }
 
 const BASE = 'https://bot.swiviq.com/v1';
+
+/* Tous les exemples ci-dessous ont été rejoués tels quels contre l'API de
+ * production le 15/08/2026 — les réponses sont les vraies, identifiants
+ * harmonisés (FAT-2026-0042, jeton a1b2c3d4e5). */
 
 const CREATE_REQ = `curl -X POST ${BASE}/documents \\
   -H "Authorization: Bearer fk_votre_cle" \\
@@ -67,6 +74,13 @@ const CREATE_REQ = `curl -X POST ${BASE}/documents \\
 const CREATE_RES = `{
   "number": "FAT-2026-0042",
   "type": "invoice",
+  "status": "issued",
+  "issueDate": "2026-08-15",
+  "client": { "name": "ATLAS DIGITAL SARL", "ice": "001122334455667", "type": "company" },
+  "items": [
+    { "description": "Abonnement CRM — pack annuel", "quantity": 1, "unitPrice": 4800, "vatRate": 20 },
+    { "description": "Formation équipe (2 jours)", "quantity": 2, "unitPrice": 1500, "vatRate": 20 }
+  ],
   "totals": { "ht": 7800, "vat": 1560, "ttc": 9360, "currency": "MAD" },
   "pdfUrl": "https://bot.swiviq.com/f/a1b2c3d4e5",
   "qrcodeUrl": "https://bot.swiviq.com/qr/a1b2c3d4e5.png",
@@ -84,13 +98,14 @@ const MODIFY_REQ = `curl -X POST ${BASE}/documents/FAT-2026-0042/modify \\
 
 const MODIFY_RES = `{
   "number": "FAT-2026-0042",
-  "client": { "name": "STE ATLAS DIGITAL MAROC SARL", ... },
+  "client": { "name": "STE ATLAS DIGITAL MAROC SARL", "ice": "001122334455667", "type": "company" },
   "items": [
-    { "description": "Abonnement CRM — pack annuel", "quantity": 1, "unitPrice": 4800 },
-    { "description": "Formation équipe (3 jours)", "quantity": 3, "unitPrice": 1200 }
+    { "description": "Abonnement CRM — pack annuel", "quantity": 1, "unitPrice": 4800, "vatRate": 20 },
+    { "description": "Formation équipe", "quantity": 3, "unitPrice": 1200, "vatRate": 20 }
   ],
   "totals": { "ht": 8400, "vat": 1680, "ttc": 10080, "currency": "MAD" },
-  "pdfUrl": "https://bot.swiviq.com/f/a1b2c3d4e5"
+  "pdfUrl": "https://bot.swiviq.com/f/a1b2c3d4e5",
+  "applied": "le client est en fait STE ATLAS DIGITAL MAROC SARL, et remplace…"
 }`;
 
 const SEND_REQ = `curl -X POST ${BASE}/documents/FAT-2026-0042/send \\
@@ -100,6 +115,105 @@ const SEND_REQ = `curl -X POST ${BASE}/documents/FAT-2026-0042/send \\
 
 const SEND_RES = `{ "ok": true, "number": "FAT-2026-0042",
   "channel": "email", "to": "client@exemple.ma", "status": "sent" }`;
+
+const QR_REQ = `<!-- directement dans votre page -->
+<img src="https://bot.swiviq.com/qr/a1b2c3d4e5.png" width="180" alt="QR facture">
+
+# ou en téléchargement
+curl -o facture-qr.png https://bot.swiviq.com/qr/a1b2c3d4e5.png`;
+
+const QR_RES = `HTTP 200 — image/png, 600 × 600 px
+Cache-Control: public, max-age=86400, immutable`;
+
+const LIST_REQ = `curl -H "Authorization: Bearer fk_votre_cle" \\
+  "${BASE}/documents?limit=5&type=invoice"`;
+
+const LIST_RES = `[
+  {
+    "number": "FAT-2026-0042",
+    "type": "invoice",
+    "status": "issued",
+    "issueDate": "2026-08-15",
+    "client": { "name": "STE ATLAS DIGITAL MAROC SARL", "ice": "001122334455667" },
+    "totals": { "ht": 8400, "vat": 1680, "ttc": 10080, "currency": "MAD" },
+    "pdfUrl": "https://bot.swiviq.com/f/a1b2c3d4e5",
+    "qrcodeUrl": "https://bot.swiviq.com/qr/a1b2c3d4e5.png"
+  },
+  { "number": "FAT-2026-0041", "...": "..." }
+]`;
+
+const READ_REQ = `curl -H "Authorization: Bearer fk_votre_cle" \\
+  ${BASE}/documents/FAT-2026-0042`;
+
+const READ_RES = `{
+  "number": "FAT-2026-0042",
+  "type": "invoice",
+  "status": "issued",
+  "issueDate": "2026-08-15",
+  "client": { "name": "STE ATLAS DIGITAL MAROC SARL", "ice": "001122334455667", "type": "company" },
+  "items": [
+    { "description": "Abonnement CRM — pack annuel", "quantity": 1, "unitPrice": 4800, "vatRate": 20 },
+    { "description": "Formation équipe", "quantity": 3, "unitPrice": 1200, "vatRate": 20 }
+  ],
+  "totals": { "ht": 8400, "vat": 1680, "ttc": 10080, "currency": "MAD" },
+  "pdfUrl": "https://bot.swiviq.com/f/a1b2c3d4e5",
+  "qrcodeUrl": "https://bot.swiviq.com/qr/a1b2c3d4e5.png"
+}`;
+
+const ACCOUNT_REQ = `curl -H "Authorization: Bearer fk_votre_cle" \\
+  ${BASE}/account`;
+
+const ACCOUNT_RES = `{
+  "company": {
+    "name": "ATLAS SERVICES SARL", "ice": "002233445566778",
+    "address": "Agdal, Rabat", "defaultVatRate": 20,
+    "taxRegime": "normal", "hasLogo": true, "hasStamp": true
+  },
+  "plan": { "key": "p100", "label": "100 factures / mois", "priceMAD": 90 },
+  "quota": { "used": 12, "limit": 100, "remaining": 88, "ok": true }
+}`;
+
+const COMPANY_REQ = `curl -X PUT ${BASE}/company \\
+  -H "Authorization: Bearer fk_votre_cle" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "address": "12 rue Oued Fès, Agdal, Rabat",
+    "paymentTerms": "Virement à 30 jours"
+  }'`;
+
+const COMPANY_RES = `{
+  "ok": true,
+  "company": {
+    "name": "ATLAS SERVICES SARL", "ice": "002233445566778",
+    "address": "12 rue Oued Fès, Agdal, Rabat", "defaultVatRate": 20
+  }
+}`;
+
+const LOGO_REQ = `curl -X POST ${BASE}/company/logo \\
+  -H "Authorization: Bearer fk_votre_cle" \\
+  -H "Content-Type: application/json" \\
+  -d "{ \\"image\\": \\"data:image/png;base64,$(base64 -w0 logo.png)\\" }"`;
+
+const LOGO_RES = `{ "ok": true, "logo": "saved",
+  "appliesTo": "toutes les prochaines factures" }`;
+
+const STAMP_REQ = `curl -X POST ${BASE}/company/stamp \\
+  -H "Authorization: Bearer fk_votre_cle" \\
+  -H "Content-Type: application/json" \\
+  -d "{ \\"image\\": \\"data:image/png;base64,$(base64 -w0 cachet.jpg)\\" }"`;
+
+const STAMP_RES = `{ "ok": true, "stamp": "saved",
+  "appliesTo": "toutes les prochaines factures" }`;
+
+const ERR_SAMPLE = `HTTP 402
+{
+  "error": "quota_exceeded",
+  "reason": "trial",
+  "used": 2,
+  "limit": 2,
+  "message": "Quota d'essai atteint (2 factures). Le commerçant peut passer
+              au plan supérieur depuis son WhatsApp Fatora."
+}`;
 
 const DICTS: Record<Lang, ApiDict> = {
   /* ═══════════════════════ FRANÇAIS ═══════════════════════ */
@@ -142,17 +256,19 @@ const DICTS: Record<Lang, ApiDict> = {
       { t: 'QR code', d: 'Chaque document expose « qrcodeUrl » : un PNG à afficher en caisse, imprimer sur un ticket ou intégrer dans votre interface. Le client scanne, la facture se télécharge.' }
     ],
     refTitle: 'Référence des endpoints',
+    testedBadge: 'Chaque exemple ci-dessous a été rejoué tel quel contre l’API de production le 15/08/2026 — les réponses affichées sont les vraies.',
+    exampleLabel: 'Voir l’exemple testé',
     endpoints: [
       {
         method: 'POST', path: '/v1/documents',
         title: 'Émettre une facture ou un devis',
-        desc: '« type »: « invoice » (défaut) ou « quote ». Options : « priceIsTtc », « vatRate » par ligne ou global, « sendToPhone » et « sendToEmail » pour la remise immédiate au client final, « notify »: false pour ne pas prévenir le commerçant.',
+        desc: '« type »: « invoice » (défaut) ou « quote ». Options : « priceIsTtc », « vatRate » par ligne ou global, « sendToPhone » et « sendToEmail » pour la remise immédiate au client final, « notify »: false pour ne pas prévenir le commerçant. Réponse 201 avec numéro, totaux, lien PDF et QR code.',
         req: CREATE_REQ, res: CREATE_RES
       },
       {
         method: 'POST', path: '/v1/documents/{number}/modify',
         title: 'Modifier en langage libre',
-        desc: 'Le corps ne contient qu’une « instruction » en texte libre (français, darija ou anglais). Même numéro, PDF régénéré.',
+        desc: 'Le corps ne contient qu’une « instruction » en texte libre (français, darija ou anglais). Même numéro, PDF régénéré, champ « applied » qui confirme l’instruction comprise.',
         req: MODIFY_REQ, res: MODIFY_RES
       },
       {
@@ -164,21 +280,60 @@ const DICTS: Record<Lang, ApiDict> = {
       {
         method: 'GET', path: '/qr/{token}.png',
         title: 'QR code de téléchargement (public)',
-        desc: 'Le PNG du QR pointant vers le PDF. Sans authentification : le jeton est le secret. À intégrer directement dans une balise <img> ou à imprimer.'
+        desc: 'Le PNG du QR pointant vers le PDF. Sans authentification : le jeton est le secret. À intégrer directement dans une balise <img> ou à imprimer sur un ticket de caisse.',
+        req: QR_REQ, res: QR_RES
       },
-      { method: 'GET', path: '/v1/documents', title: 'Lister les documents', desc: 'Les derniers documents émis (« limit » jusqu’à 50, « type » pour filtrer factures ou devis).' },
-      { method: 'GET', path: '/v1/documents/{number}', title: 'Lire un document', desc: 'Lignes, totaux, lien PDF, QR code — pratique pour afficher l’état dans votre interface.' },
-      { method: 'GET', path: '/v1/account', title: 'Compte et quota', desc: 'Profil société, plan actif, quota consommé/restant. Sert aussi de test de clé.' },
-      { method: 'PUT', path: '/v1/company', title: 'Mettre à jour la société', desc: 'Raison sociale, ICE, IF, taxe professionnelle, RC, adresse, TVA par défaut, conditions de règlement.' },
-      { method: 'POST', path: '/v1/company/logo', title: 'Envoyer le logo', desc: 'Corps : { « image »: « <base64 ou data-URI png/jpeg> » }. Nettoyé et recadré automatiquement.' },
-      { method: 'POST', path: '/v1/company/stamp', title: 'Envoyer le cachet', desc: 'Même format. Fond supprimé par extraction d’encre, puis apposé sur chaque PDF.' }
+      {
+        method: 'GET', path: '/v1/documents',
+        title: 'Lister les documents',
+        desc: 'Les derniers documents émis, du plus récent au plus ancien. « limit » jusqu’à 50, « type » pour filtrer factures (« invoice ») ou devis (« quote »).',
+        req: LIST_REQ, res: LIST_RES
+      },
+      {
+        method: 'GET', path: '/v1/documents/{number}',
+        title: 'Lire un document',
+        desc: 'Lignes, totaux, lien PDF, QR code — pratique pour afficher l’état dans votre interface ou vérifier une modification.',
+        req: READ_REQ, res: READ_RES
+      },
+      {
+        method: 'GET', path: '/v1/account',
+        title: 'Compte et quota',
+        desc: 'Profil société, plan actif, quota consommé/restant. C’est aussi le moyen le plus simple de tester qu’une clé est valide.',
+        req: ACCOUNT_REQ, res: ACCOUNT_RES
+      },
+      {
+        method: 'PUT', path: '/v1/company',
+        title: 'Mettre à jour la société',
+        desc: 'Champs acceptés : companyName, ice, if, taxePro, rc, address, email, defaultVatRate, paymentTerms. Seuls les champs envoyés sont modifiés.',
+        req: COMPANY_REQ, res: COMPANY_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/logo',
+        title: 'Envoyer le logo',
+        desc: 'Corps : { « image »: « <base64 ou data-URI png/jpeg> » } (6 Mo max). Le logo est nettoyé et recadré automatiquement, puis apposé sur les prochains PDF.',
+        req: LOGO_REQ, res: LOGO_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/stamp',
+        title: 'Envoyer le cachet',
+        desc: 'Même format que le logo. Le fond est supprimé par extraction d’encre (une photo du cachet sur papier suffit), puis le cachet est apposé sur chaque PDF.',
+        req: STAMP_REQ, res: STAMP_RES
+      }
     ],
     errTitle: 'Codes d’erreur',
+    errIntro:
+      'Toute erreur renvoie un JSON à deux champs constants : « error » (code machine stable, à tester dans votre code) et « message » (explication en clair, affichable telle quelle). Le 402 ajoute « used », « limit » et « reason » pour construire votre propre écran de quota.',
     errors: [
-      { code: '401', label: 'Clé absente ou invalide', fix: 'Vérifiez l’en-tête Authorization: Bearer fk_…' },
-      { code: '402', label: 'Quota du plan atteint', fix: 'Le commerçant passe au plan supérieur depuis WhatsApp — la réponse contient used/limit' },
-      { code: '422', label: 'Instruction incomprise', fix: 'Reformulez la modification plus précisément' },
-      { code: '429', label: 'Trop de requêtes', fix: '60 requêtes/minute par clé' }
+      { code: '400', label: 'Requête invalide', fix: 'Codes : invalid_json (corps illisible), empty_body (corps vide — vérifiez qu’aucun retour à la ligne ne casse vos en-têtes), missing_client, missing_items, invalid_channel, invalid_phone, invalid_email, invalid_image. Le message dit exactement quel champ corriger.' },
+      { code: '401', label: 'Clé absente ou invalide', fix: 'missing_api_key : ajoutez l’en-tête Authorization: Bearer fk_… · invalid_api_key : clé inconnue ou révoquée par « api reset » — redemandez-la au commerçant.' },
+      { code: '402', label: 'Quota du plan atteint', fix: 'quota_exceeded : la réponse contient used/limit/reason. Les devis ne comptent pas. Le commerçant passe au plan supérieur en deux messages WhatsApp.' },
+      { code: '403', label: 'Compte suspendu', fix: 'account_suspended : le compte du commerçant est suspendu — contactez contact@swiviq.com.' },
+      { code: '404', label: 'Document introuvable', fix: 'not_found : aucun document à ce numéro pour CE compte — chaque clé ne voit que ses propres documents.' },
+      { code: '409', label: 'Document annulé', fix: 'cancelled : le document a été annulé (avoir émis) — il ne peut plus être modifié ni renvoyé. Émettez-en un nouveau.' },
+      { code: '413', label: 'Corps trop volumineux', fix: 'body_too_large : 8 Mo maximum — compressez le logo ou le cachet avant l’envoi.' },
+      { code: '422', label: 'Instruction incomprise', fix: 'instruction_not_understood : l’IA n’a pas pu appliquer la modification sans risque — reformulez plus précisément. Rien n’a été modifié.' },
+      { code: '429', label: 'Trop de requêtes', fix: 'rate_limited : 60 requêtes/minute par clé — espacez ou mettez en file d’attente, puis réessayez.' },
+      { code: '500', label: 'Erreur interne', fix: 'internal : réessayez ; si l’erreur persiste, écrivez à contact@swiviq.com avec le corps de la réponse.' }
     ],
     faqTitle: 'Questions d’intégration',
     faq: [
@@ -234,17 +389,19 @@ const DICTS: Record<Lang, ApiDict> = {
       { t: 'QR code', d: 'كل وثيقة عندها « qrcodeUrl »: صورة PNG تعرضها فالكيسة، تطبعها فالتيكي أو تدمجها فالواجهة ديالك. الزبون كيسكاني وكيحمل.' }
     ],
     refTitle: 'مرجع الـEndpoints',
+    testedBadge: 'كل مثال هنا تعاود تشغيلو كما هو على API الإنتاج يوم 15/08/2026 — الأجوبة المعروضة حقيقية.',
+    exampleLabel: 'شوف المثال المجرب',
     endpoints: [
       {
         method: 'POST', path: '/v1/documents',
         title: 'إصدار فاتورة أو عرض ثمن',
-        desc: '« type »: « invoice » (افتراضي) أو « quote ». الخيارات: « priceIsTtc »، « vatRate » لكل سطر أو عام، « sendToPhone » و« sendToEmail » للتسليم الفوري للزبون، « notify »: false باش ما يتوصلش التاجر بإشعار.',
+        desc: '« type »: « invoice » (افتراضي) أو « quote ». الخيارات: « priceIsTtc »، « vatRate » لكل سطر أو عام، « sendToPhone » و« sendToEmail » للتسليم الفوري للزبون، « notify »: false باش ما يتوصلش التاجر بإشعار. الرد 201 فيه الرقم والمجاميع ورابط الـPDF والـQR.',
         req: CREATE_REQ, res: CREATE_RES
       },
       {
         method: 'POST', path: '/v1/documents/{number}/modify',
         title: 'التعديل بالكتابة الحرة',
-        desc: 'الطلب فيه فقط « instruction » بنص حر (فرنسية، دارجة أو إنجليزية). نفس الرقم، PDF جديد.',
+        desc: 'الطلب فيه فقط « instruction » بنص حر (فرنسية، دارجة أو إنجليزية). نفس الرقم، PDF جديد، وحقل « applied » كيأكد التعليمة اللي تفهمات.',
         req: MODIFY_REQ, res: MODIFY_RES
       },
       {
@@ -256,21 +413,60 @@ const DICTS: Record<Lang, ApiDict> = {
       {
         method: 'GET', path: '/qr/{token}.png',
         title: 'QR code التحميل (عمومي)',
-        desc: 'صورة PNG ديال الـQR كتوجه للـPDF. بلا مصادقة: الرمز هو السر. تدمجها مباشرة فـ<img> أو تطبعها.'
+        desc: 'صورة PNG ديال الـQR كتوجه للـPDF. بلا مصادقة: الرمز هو السر. تدمجها مباشرة فـ<img> أو تطبعها فتيكي الكيسة.',
+        req: QR_REQ, res: QR_RES
       },
-      { method: 'GET', path: '/v1/documents', title: 'لائحة الوثائق', desc: 'آخر الوثائق الصادرة (« limit » حتى 50، « type » للفلترة).' },
-      { method: 'GET', path: '/v1/documents/{number}', title: 'قراءة وثيقة', desc: 'السطور، المجاميع، رابط الـPDF والـQR — لعرض الحالة فواجهتك.' },
-      { method: 'GET', path: '/v1/account', title: 'الحساب والكوطا', desc: 'ملف الشركة، الباقة النشيطة، الكوطا المستهلكة/المتبقية. كيصلح حتى لاختبار المفتاح.' },
-      { method: 'PUT', path: '/v1/company', title: 'تحديث معلومات الشركة', desc: 'الاسم التجاري، ICE، التعريف الضريبي، الضريبة المهنية، السجل التجاري، العنوان، TVA الافتراضية.' },
-      { method: 'POST', path: '/v1/company/logo', title: 'إرسال اللوغو', desc: 'الطلب: { « image »: « <base64 أو data-URI png/jpeg> » }. كيتنقى وكيتقص أوتوماتيكيا.' },
-      { method: 'POST', path: '/v1/company/stamp', title: 'إرسال الطابع', desc: 'نفس الصيغة. الخلفية كتتحيد باستخراج الحبر، والطابع كيتحط على كل PDF.' }
+      {
+        method: 'GET', path: '/v1/documents',
+        title: 'لائحة الوثائق',
+        desc: 'آخر الوثائق الصادرة، من الأحدث للأقدم. « limit » حتى 50، « type » للفلترة بين الفواتير (« invoice ») وعروض الأثمنة (« quote »).',
+        req: LIST_REQ, res: LIST_RES
+      },
+      {
+        method: 'GET', path: '/v1/documents/{number}',
+        title: 'قراءة وثيقة',
+        desc: 'السطور، المجاميع، رابط الـPDF والـQR — لعرض الحالة فواجهتك أو التأكد من تعديل.',
+        req: READ_REQ, res: READ_RES
+      },
+      {
+        method: 'GET', path: '/v1/account',
+        title: 'الحساب والكوطا',
+        desc: 'ملف الشركة، الباقة النشيطة، الكوطا المستهلكة/المتبقية. وهي أبسط طريقة لاختبار صلاحية مفتاح.',
+        req: ACCOUNT_REQ, res: ACCOUNT_RES
+      },
+      {
+        method: 'PUT', path: '/v1/company',
+        title: 'تحديث معلومات الشركة',
+        desc: 'الحقول المقبولة: companyName، ice، if، taxePro، rc، address، email، defaultVatRate، paymentTerms. غير الحقول المرسلة هي اللي كتتبدل.',
+        req: COMPANY_REQ, res: COMPANY_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/logo',
+        title: 'إرسال اللوغو',
+        desc: 'الطلب: { « image »: « <base64 أو data-URI png/jpeg> » } (6 ميغا كحد أقصى). اللوغو كيتنقى وكيتقص أوتوماتيكيا وكيبان فالـPDF الجايين.',
+        req: LOGO_REQ, res: LOGO_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/stamp',
+        title: 'إرسال الطابع',
+        desc: 'نفس صيغة اللوغو. الخلفية كتتحيد باستخراج الحبر (تصويرة ديال الطابع على ورقة كافية)، والطابع كيتحط على كل PDF.',
+        req: STAMP_REQ, res: STAMP_RES
+      }
     ],
     errTitle: 'رموز الأخطاء',
+    errIntro:
+      'كل خطأ كيرجع JSON بجوج حقول ثابتة: « error » (رمز آلي مستقر تختبره فالكود ديالك) و« message » (شرح واضح تقدر تعرضه كما هو). الـ402 كيزيد « used » و« limit » و« reason » باش تبني شاشة الكوطا ديالك.',
     errors: [
-      { code: '401', label: 'مفتاح ناقص أو غير صالح', fix: 'تحقق من Authorization: Bearer fk_…' },
-      { code: '402', label: 'الكوطا وصلات للحد', fix: 'التاجر كيطلع للباقة الأعلى من الواتساب — الرد فيه used/limit' },
-      { code: '422', label: 'التعليمة ما تفهمتش', fix: 'عاود صياغة التعديل بدقة أكثر' },
-      { code: '429', label: 'طلبات كثيرة', fix: '60 طلب فالدقيقة لكل مفتاح' }
+      { code: '400', label: 'طلب غير صالح', fix: 'الرموز: invalid_json (جسم ما ينقراش)، empty_body (جسم فارغ — تأكد ما كاين حتى سطر جديد كيكسر الهيدرز)، missing_client، missing_items، invalid_channel، invalid_phone، invalid_email، invalid_image. الرسالة كتقول بالضبط شنو تصلح.' },
+      { code: '401', label: 'مفتاح ناقص أو غير صالح', fix: 'missing_api_key: زيد الهيدر Authorization: Bearer fk_… · invalid_api_key: مفتاح مجهول أو تلغى بـ« api reset » — طلبو من جديد من التاجر.' },
+      { code: '402', label: 'الكوطا وصلات للحد', fix: 'quota_exceeded: الرد فيه used/limit/reason. عروض الأثمنة ما كتحسبش. التاجر كيطلع للباقة الأعلى بجوج رسائل واتساب.' },
+      { code: '403', label: 'حساب موقوف', fix: 'account_suspended: حساب التاجر موقوف — تواصل مع contact@swiviq.com.' },
+      { code: '404', label: 'وثيقة غير موجودة', fix: 'not_found: ما كاين حتى وثيقة بهاد الرقم فهاد الحساب — كل مفتاح كيشوف غير وثائقو.' },
+      { code: '409', label: 'وثيقة ملغاة', fix: 'cancelled: الوثيقة تلغات (صدر فيها إشعار دائن) — ما بقاش ممكن تعديلها ولا إرسالها. أصدر وحدة جديدة.' },
+      { code: '413', label: 'جسم كبير بزاف', fix: 'body_too_large: 8 ميغا كحد أقصى — نقص من حجم اللوغو أو الطابع قبل الإرسال.' },
+      { code: '422', label: 'التعليمة ما تفهمتش', fix: 'instruction_not_understood: الذكاء الاصطناعي ما قدرش يطبق التعديل بأمان — عاود الصياغة بدقة. حتى شي حاجة ما تبدلات.' },
+      { code: '429', label: 'طلبات كثيرة', fix: 'rate_limited: 60 طلب فالدقيقة لكل مفتاح — بطئ الوتيرة أو دير طابور وعاود.' },
+      { code: '500', label: 'خطأ داخلي', fix: 'internal: عاود المحاولة؛ إلى بقى الخطأ، كتب لـcontact@swiviq.com مع جسم الرد.' }
     ],
     faqTitle: 'أسئلة الإدماج',
     faq: [
@@ -326,17 +522,19 @@ const DICTS: Record<Lang, ApiDict> = {
       { t: 'QR code', d: 'Every document exposes "qrcodeUrl": a PNG to show at the counter, print on a receipt or embed in your UI. The customer scans, the invoice downloads.' }
     ],
     refTitle: 'Endpoint reference',
+    testedBadge: 'Every example below was replayed as-is against the production API on 15/08/2026 — the responses shown are the real ones.',
+    exampleLabel: 'See the tested example',
     endpoints: [
       {
         method: 'POST', path: '/v1/documents',
         title: 'Issue an invoice or quote',
-        desc: '"type": "invoice" (default) or "quote". Options: "priceIsTtc", per-line or global "vatRate", "sendToPhone" and "sendToEmail" for immediate delivery, "notify": false to skip notifying the merchant.',
+        desc: '"type": "invoice" (default) or "quote". Options: "priceIsTtc", per-line or global "vatRate", "sendToPhone" and "sendToEmail" for immediate delivery, "notify": false to skip notifying the merchant. Responds 201 with number, totals, PDF link and QR code.',
         req: CREATE_REQ, res: CREATE_RES
       },
       {
         method: 'POST', path: '/v1/documents/{number}/modify',
         title: 'Modify in free text',
-        desc: 'The body carries a single free-text "instruction" (French, Darija or English). Same number, PDF regenerated.',
+        desc: 'The body carries a single free-text "instruction" (French, Darija or English). Same number, PDF regenerated, an "applied" field echoes the understood instruction.',
         req: MODIFY_REQ, res: MODIFY_RES
       },
       {
@@ -348,21 +546,60 @@ const DICTS: Record<Lang, ApiDict> = {
       {
         method: 'GET', path: '/qr/{token}.png',
         title: 'Download QR code (public)',
-        desc: 'The QR PNG pointing at the PDF. No authentication: the token is the secret. Embed it straight into an <img> tag or print it.'
+        desc: 'The QR PNG pointing at the PDF. No authentication: the token is the secret. Embed it straight into an <img> tag or print it on a receipt.',
+        req: QR_REQ, res: QR_RES
       },
-      { method: 'GET', path: '/v1/documents', title: 'List documents', desc: 'Latest documents ("limit" up to 50, "type" to filter invoices or quotes).' },
-      { method: 'GET', path: '/v1/documents/{number}', title: 'Read a document', desc: 'Lines, totals, PDF link, QR code — handy to render the state in your UI.' },
-      { method: 'GET', path: '/v1/account', title: 'Account & quota', desc: 'Company profile, active plan, quota used/remaining. Doubles as a key check.' },
-      { method: 'PUT', path: '/v1/company', title: 'Update the company', desc: 'Legal name, ICE, tax ID, professional tax, trade register, address, default VAT, payment terms.' },
-      { method: 'POST', path: '/v1/company/logo', title: 'Upload the logo', desc: 'Body: { "image": "<base64 or data-URI png/jpeg>" }. Cleaned and cropped automatically.' },
-      { method: 'POST', path: '/v1/company/stamp', title: 'Upload the stamp', desc: 'Same format. Background removed by ink extraction, then stamped on every PDF.' }
+      {
+        method: 'GET', path: '/v1/documents',
+        title: 'List documents',
+        desc: 'Latest documents, newest first. "limit" up to 50, "type" to filter invoices ("invoice") or quotes ("quote").',
+        req: LIST_REQ, res: LIST_RES
+      },
+      {
+        method: 'GET', path: '/v1/documents/{number}',
+        title: 'Read a document',
+        desc: 'Lines, totals, PDF link, QR code — handy to render the state in your UI or verify a modification.',
+        req: READ_REQ, res: READ_RES
+      },
+      {
+        method: 'GET', path: '/v1/account',
+        title: 'Account & quota',
+        desc: 'Company profile, active plan, quota used/remaining. Also the simplest way to check that a key is valid.',
+        req: ACCOUNT_REQ, res: ACCOUNT_RES
+      },
+      {
+        method: 'PUT', path: '/v1/company',
+        title: 'Update the company',
+        desc: 'Accepted fields: companyName, ice, if, taxePro, rc, address, email, defaultVatRate, paymentTerms. Only the fields you send are changed.',
+        req: COMPANY_REQ, res: COMPANY_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/logo',
+        title: 'Upload the logo',
+        desc: 'Body: { "image": "<base64 or data-URI png/jpeg>" } (6 MB max). Cleaned and cropped automatically, then applied to upcoming PDFs.',
+        req: LOGO_REQ, res: LOGO_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/stamp',
+        title: 'Upload the stamp',
+        desc: 'Same format as the logo. Background removed by ink extraction (a photo of the stamp on paper is enough), then stamped on every PDF.',
+        req: STAMP_REQ, res: STAMP_RES
+      }
     ],
     errTitle: 'Error codes',
+    errIntro:
+      'Every error returns a JSON with two constant fields: "error" (stable machine code to test in your code) and "message" (plain-language explanation, displayable as-is). The 402 adds "used", "limit" and "reason" so you can build your own quota screen.',
     errors: [
-      { code: '401', label: 'Missing or invalid key', fix: 'Check the Authorization: Bearer fk_… header' },
-      { code: '402', label: 'Plan quota reached', fix: 'The merchant upgrades from WhatsApp — the response carries used/limit' },
-      { code: '422', label: 'Instruction not understood', fix: 'Rephrase the modification more precisely' },
-      { code: '429', label: 'Too many requests', fix: '60 requests/minute per key' }
+      { code: '400', label: 'Invalid request', fix: 'Codes: invalid_json (unreadable body), empty_body (empty body — check no line break is corrupting your headers), missing_client, missing_items, invalid_channel, invalid_phone, invalid_email, invalid_image. The message says exactly which field to fix.' },
+      { code: '401', label: 'Missing or invalid key', fix: 'missing_api_key: add the Authorization: Bearer fk_… header · invalid_api_key: unknown key, or revoked by “api reset” — ask the merchant for the new one.' },
+      { code: '402', label: 'Plan quota reached', fix: 'quota_exceeded: the response carries used/limit/reason. Quotes don’t count. The merchant upgrades in two WhatsApp messages.' },
+      { code: '403', label: 'Account suspended', fix: 'account_suspended: the merchant’s account is suspended — contact contact@swiviq.com.' },
+      { code: '404', label: 'Document not found', fix: 'not_found: no document with that number on THIS account — each key only sees its own documents.' },
+      { code: '409', label: 'Document cancelled', fix: 'cancelled: the document was cancelled (credit note issued) — it can no longer be modified or resent. Issue a new one.' },
+      { code: '413', label: 'Body too large', fix: 'body_too_large: 8 MB max — compress the logo or stamp before uploading.' },
+      { code: '422', label: 'Instruction not understood', fix: 'instruction_not_understood: the AI could not apply the change safely — rephrase more precisely. Nothing was modified.' },
+      { code: '429', label: 'Too many requests', fix: 'rate_limited: 60 requests/minute per key — slow down or queue, then retry.' },
+      { code: '500', label: 'Internal error', fix: 'internal: retry; if it persists, write to contact@swiviq.com with the response body.' }
     ],
     faqTitle: 'Integration questions',
     faq: [
@@ -418,17 +655,19 @@ const DICTS: Record<Lang, ApiDict> = {
       { t: 'Código QR', d: 'Cada documento expone "qrcodeUrl": un PNG para mostrar en caja, imprimir en un ticket o integrar en tu interfaz. El cliente escanea, la factura se descarga.' }
     ],
     refTitle: 'Referencia de endpoints',
+    testedBadge: 'Cada ejemplo de abajo fue reproducido tal cual contra la API de producción el 15/08/2026 — las respuestas mostradas son las reales.',
+    exampleLabel: 'Ver el ejemplo probado',
     endpoints: [
       {
         method: 'POST', path: '/v1/documents',
         title: 'Emitir una factura o presupuesto',
-        desc: '"type": "invoice" (por defecto) o "quote". Opciones: "priceIsTtc", "vatRate" por línea o global, "sendToPhone" y "sendToEmail" para entrega inmediata, "notify": false para no avisar al comerciante.',
+        desc: '"type": "invoice" (por defecto) o "quote". Opciones: "priceIsTtc", "vatRate" por línea o global, "sendToPhone" y "sendToEmail" para entrega inmediata, "notify": false para no avisar al comerciante. Responde 201 con número, totales, enlace PDF y código QR.',
         req: CREATE_REQ, res: CREATE_RES
       },
       {
         method: 'POST', path: '/v1/documents/{number}/modify',
         title: 'Modificar en texto libre',
-        desc: 'El cuerpo lleva una única "instruction" en texto libre (francés, dariya o inglés). Mismo número, PDF regenerado.',
+        desc: 'El cuerpo lleva una única "instruction" en texto libre (francés, dariya o inglés). Mismo número, PDF regenerado, un campo "applied" confirma la instrucción entendida.',
         req: MODIFY_REQ, res: MODIFY_RES
       },
       {
@@ -440,21 +679,60 @@ const DICTS: Record<Lang, ApiDict> = {
       {
         method: 'GET', path: '/qr/{token}.png',
         title: 'Código QR de descarga (público)',
-        desc: 'El PNG del QR que apunta al PDF. Sin autenticación: el token es el secreto. Intégralo directamente en un <img> o imprímelo.'
+        desc: 'El PNG del QR que apunta al PDF. Sin autenticación: el token es el secreto. Intégralo directamente en un <img> o imprímelo en un ticket.',
+        req: QR_REQ, res: QR_RES
       },
-      { method: 'GET', path: '/v1/documents', title: 'Listar documentos', desc: 'Los últimos documentos emitidos ("limit" hasta 50, "type" para filtrar).' },
-      { method: 'GET', path: '/v1/documents/{number}', title: 'Leer un documento', desc: 'Líneas, totales, enlace PDF, código QR — útil para mostrar el estado en tu interfaz.' },
-      { method: 'GET', path: '/v1/account', title: 'Cuenta y cuota', desc: 'Perfil de empresa, plan activo, cuota usada/restante. Sirve también como test de clave.' },
-      { method: 'PUT', path: '/v1/company', title: 'Actualizar la empresa', desc: 'Razón social, ICE, identificador fiscal, tasa profesional, registro mercantil, dirección, IVA por defecto.' },
-      { method: 'POST', path: '/v1/company/logo', title: 'Subir el logo', desc: 'Cuerpo: { "image": "<base64 o data-URI png/jpeg>" }. Limpiado y recortado automáticamente.' },
-      { method: 'POST', path: '/v1/company/stamp', title: 'Subir el sello', desc: 'Mismo formato. Fondo eliminado por extracción de tinta, luego estampado en cada PDF.' }
+      {
+        method: 'GET', path: '/v1/documents',
+        title: 'Listar documentos',
+        desc: 'Los últimos documentos, del más reciente al más antiguo. "limit" hasta 50, "type" para filtrar facturas ("invoice") o presupuestos ("quote").',
+        req: LIST_REQ, res: LIST_RES
+      },
+      {
+        method: 'GET', path: '/v1/documents/{number}',
+        title: 'Leer un documento',
+        desc: 'Líneas, totales, enlace PDF, código QR — útil para mostrar el estado en tu interfaz o verificar una modificación.',
+        req: READ_REQ, res: READ_RES
+      },
+      {
+        method: 'GET', path: '/v1/account',
+        title: 'Cuenta y cuota',
+        desc: 'Perfil de empresa, plan activo, cuota usada/restante. También es la forma más simple de comprobar que una clave es válida.',
+        req: ACCOUNT_REQ, res: ACCOUNT_RES
+      },
+      {
+        method: 'PUT', path: '/v1/company',
+        title: 'Actualizar la empresa',
+        desc: 'Campos aceptados: companyName, ice, if, taxePro, rc, address, email, defaultVatRate, paymentTerms. Solo se modifican los campos enviados.',
+        req: COMPANY_REQ, res: COMPANY_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/logo',
+        title: 'Subir el logo',
+        desc: 'Cuerpo: { "image": "<base64 o data-URI png/jpeg>" } (6 MB máx). Limpiado y recortado automáticamente, luego aplicado a los próximos PDF.',
+        req: LOGO_REQ, res: LOGO_RES
+      },
+      {
+        method: 'POST', path: '/v1/company/stamp',
+        title: 'Subir el sello',
+        desc: 'Mismo formato que el logo. Fondo eliminado por extracción de tinta (basta una foto del sello sobre papel), luego estampado en cada PDF.',
+        req: STAMP_REQ, res: STAMP_RES
+      }
     ],
     errTitle: 'Códigos de error',
+    errIntro:
+      'Todo error devuelve un JSON con dos campos constantes: "error" (código máquina estable, para comprobar en tu código) y "message" (explicación en claro, mostrable tal cual). El 402 añade "used", "limit" y "reason" para construir tu propia pantalla de cuota.',
     errors: [
-      { code: '401', label: 'Clave ausente o inválida', fix: 'Revisa la cabecera Authorization: Bearer fk_…' },
-      { code: '402', label: 'Cuota del plan alcanzada', fix: 'El comerciante sube de plan desde WhatsApp — la respuesta lleva used/limit' },
-      { code: '422', label: 'Instrucción no entendida', fix: 'Reformula la modificación con más precisión' },
-      { code: '429', label: 'Demasiadas peticiones', fix: '60 peticiones/minuto por clave' }
+      { code: '400', label: 'Petición inválida', fix: 'Códigos: invalid_json (cuerpo ilegible), empty_body (cuerpo vacío — comprueba que ningún salto de línea rompe tus cabeceras), missing_client, missing_items, invalid_channel, invalid_phone, invalid_email, invalid_image. El mensaje dice exactamente qué campo corregir.' },
+      { code: '401', label: 'Clave ausente o inválida', fix: 'missing_api_key: añade la cabecera Authorization: Bearer fk_… · invalid_api_key: clave desconocida o revocada por «api reset» — pide la nueva al comerciante.' },
+      { code: '402', label: 'Cuota del plan alcanzada', fix: 'quota_exceeded: la respuesta lleva used/limit/reason. Los presupuestos no cuentan. El comerciante sube de plan en dos mensajes de WhatsApp.' },
+      { code: '403', label: 'Cuenta suspendida', fix: 'account_suspended: la cuenta del comerciante está suspendida — contacta contact@swiviq.com.' },
+      { code: '404', label: 'Documento no encontrado', fix: 'not_found: ningún documento con ese número en ESTA cuenta — cada clave solo ve sus propios documentos.' },
+      { code: '409', label: 'Documento anulado', fix: 'cancelled: el documento fue anulado (abono emitido) — ya no puede modificarse ni reenviarse. Emite uno nuevo.' },
+      { code: '413', label: 'Cuerpo demasiado grande', fix: 'body_too_large: 8 MB máximo — comprime el logo o el sello antes de subirlo.' },
+      { code: '422', label: 'Instrucción no entendida', fix: 'instruction_not_understood: la IA no pudo aplicar el cambio con seguridad — reformula con más precisión. Nada fue modificado.' },
+      { code: '429', label: 'Demasiadas peticiones', fix: 'rate_limited: 60 peticiones/minuto por clave — reduce el ritmo o encola, luego reintenta.' },
+      { code: '500', label: 'Error interno', fix: 'internal: reintenta; si persiste, escribe a contact@swiviq.com con el cuerpo de la respuesta.' }
     ],
     faqTitle: 'Preguntas de integración',
     faq: [
@@ -484,6 +762,7 @@ export class ApiDocs implements OnInit {
 
   readonly wa = WA_LINK;
   readonly base = BASE;
+  readonly errSample = ERR_SAMPLE;
   lang = signal<Lang>('fr');
   d = computed(() => DICTS[this.lang()] ?? DICTS.fr);
 
@@ -502,7 +781,7 @@ export class ApiDocs implements OnInit {
         url,
         title: d.metaTitle,
         desc: d.metaDesc,
-        keywords: 'api facturation maroc, api facture ICE, facturation saas maroc, api devis maroc, invoicing api morocco, api الفوترة المغرب',
+        keywords: 'api facturation maroc, api facture maroc, api facture ICE, générer facture pdf api, api devis maroc, facturation saas maroc, api facturation whatsapp, api facturation électronique maroc, invoicing api morocco, api الفوترة المغرب',
         alternates: DOC_LANGS.map((l) => ({ lang: l, url: `${SITE}/${l}/api` })),
         jsonLd: [
           ...this.seo.baseGraph(lang),

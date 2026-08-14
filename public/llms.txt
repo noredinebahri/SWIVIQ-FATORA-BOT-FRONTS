@@ -70,6 +70,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 
 - بديل برامج الفوترة بالمغرب: مقارنة صريحة : https://fatora.swiviq.com/ar/comparatif/alternative-logiciel-facturation
 - الفوترة فـExcel: المخاطر وإمتى خاصك تخرج منها : https://fatora.swiviq.com/ar/comparatif/excel-vs-facturation-whatsapp
+- API الفوترة في المغرب: دليل المطورين والشركات : https://fatora.swiviq.com/ar/guides/api-facturation-maroc
 - الفوترة الإلكترونية بالمغرب: دليل 2026 : https://fatora.swiviq.com/ar/guides/facturation-electronique-maroc
 - فاتورة المقاول الذاتي بالمغرب: القواعد والنموذج : https://fatora.swiviq.com/ar/guides/facture-auto-entrepreneur-maroc
 - كيفاش دير فاتورة من الواتساب: الطريقة كاملة : https://fatora.swiviq.com/ar/guides/facture-whatsapp-comment-faire
@@ -82,6 +83,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - فوترة النقل واللوجستيك بالمغرب بالصوت : https://fatora.swiviq.com/ar/secteurs/transport-logistique
 - Alternative aux logiciels de facturation au Maroc : https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation
 - Facturer sur Excel : les risques et quand en sortir : https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp
+- API de facturation au Maroc : le guide pour intégrateurs : https://fatora.swiviq.com/fr/guides/api-facturation-maroc
 - Conserver ses factures au Maroc : durée et archivage : https://fatora.swiviq.com/fr/guides/archivage-factures-maroc
 - Délais de paiement entre entreprises au Maroc : https://fatora.swiviq.com/fr/guides/delais-paiement-maroc
 - Devis au Maroc : mentions, validité et passage en facture : https://fatora.swiviq.com/fr/guides/devis-conforme-maroc
@@ -89,6 +91,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - Facture auto-entrepreneur au Maroc : règles et modèle : https://fatora.swiviq.com/fr/guides/facture-auto-entrepreneur-maroc
 - Facture d’avoir au Maroc : quand et comment l’émettre : https://fatora.swiviq.com/fr/guides/facture-avoir-maroc
 - Faire une facture sur WhatsApp : la méthode complète : https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire
+- Générer une facture PDF par API : tutoriel Maroc 2026 : https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api
 - Glossaire de la facturation au Maroc : 30 termes : https://fatora.swiviq.com/fr/guides/glossaire-facturation-maroc
 - ICE, IF, taxe professionnelle : quel numéro sur vos factures : https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle
 - Mentions obligatoires d’une facture au Maroc (liste 2026) : https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture

@@ -1,4 +1,4 @@
-<app-site-header [lang]="lang()" />
+<app-site-header [lang]="lang()" section="api" />
 
 <main class="page">
   <!-- ═══════════ HÉROS DÉVELOPPEURS ═══════════ -->
@@ -99,6 +99,7 @@
     <!-- ═══════════ RÉFÉRENCE ═══════════ -->
     <section class="block" id="reference">
       <h2>{{ d().refTitle }}</h2>
+      <p class="tested">✓ {{ d().testedBadge }}</p>
       <div class="endpoints">
         @for (e of d().endpoints; track e.path + e.method) {
           <article class="ep">
@@ -108,6 +109,21 @@
             </div>
             <h3>{{ e.title }}</h3>
             <p>{{ e.desc }}</p>
+            @if (e.req) {
+              <details class="ep-ex">
+                <summary>{{ d().exampleLabel }}</summary>
+                <div class="code-card">
+                  <div class="code-head req">{{ d().reqLabel }}</div>
+                  <pre dir="ltr">{{ e.req }}</pre>
+                </div>
+                @if (e.res) {
+                  <div class="code-card">
+                    <div class="code-head res">{{ d().resLabel }}</div>
+                    <pre dir="ltr">{{ e.res }}</pre>
+                  </div>
+                }
+              </details>
+            }
           </article>
         }
       </div>
@@ -116,6 +132,7 @@
     <!-- ═══════════ ERREURS ═══════════ -->
     <section class="block" id="erreurs">
       <h2>{{ d().errTitle }}</h2>
+      <p class="intro">{{ d().errIntro }}</p>
       <div class="tw">
         <table>
           <tbody>
@@ -128,6 +145,10 @@
             }
           </tbody>
         </table>
+      </div>
+      <div class="code-card err-sample">
+        <div class="code-head res">{{ d().resLabel }}</div>
+        <pre dir="ltr">{{ errSample }}</pre>
       </div>
     </section>
 

@@ -618,5 +618,174 @@ export const GUIDES_FR: Article[] = [
     related: ['mentions-obligatoires-facture', 'facture-auto-entrepreneur-maroc', 'alternative-logiciel-facturation'],
     updated: UPD,
     readMin: 6
+  },
+
+  {
+    slug: 'api-facturation-maroc',
+    section: 'guides',
+    lang: 'fr',
+    metaTitle: 'API de facturation au Maroc : le guide pour intégrateurs',
+    metaDesc:
+      'Intégrer la facturation marocaine conforme (ICE, TVA, numérotation continue) dans un SaaS, un CRM ou un site : ce qu’exige la loi, les options techniques comparées, et comment une API dédiée fait le travail en un appel HTTP.',
+    keywords:
+      'api facturation maroc, api facture maroc, api de facturation, facturation saas maroc, api devis maroc, intégrer facturation application maroc, api facturation électronique maroc',
+    title: 'API de facturation au Maroc : intégrer des factures conformes dans votre application',
+    intro:
+      'Votre SaaS, votre CRM ou votre plateforme e-commerce sert des clients marocains, et ils vous réclament des factures conformes. Développer un module de facturation marocaine soi-même est un projet en soi — mentions légales, numérotation, TVA, régimes fiscaux, e-facturation à venir. Voici ce que la loi exige, les options techniques qui existent réellement, et comment une API de facturation dédiée réduit le chantier à un appel HTTP.',
+    answer:
+      'Une API de facturation au Maroc permet à une application (SaaS, CRM, e-commerce, ERP) d’émettre des factures et devis conformes au Code Général des Impôts — ICE, identifiant fiscal, TVA ventilée, montant en toutes lettres, numérotation continue — par simple appel HTTP, sans développer de module de facturation. L’API Fatora est incluse dans tous les plans, avec remise par WhatsApp, email ou QR code.',
+    blocks: [
+      {
+        h: 'Pourquoi la facturation marocaine ne s’improvise pas',
+        p: [
+          'Une facture marocaine valable n’est pas un simple PDF avec un total. L’article 145 du Code Général des Impôts impose une liste de mentions précises : ICE et identifiant fiscal de l’émetteur, taxe professionnelle, ICE du client en B2B, TVA ventilée par taux, montant en toutes lettres, numérotation continue et chronologique sans trou. Une facture incomplète est refusable par le client et rejetable en contrôle fiscal.',
+          'S’y ajoutent les régimes particuliers : un auto-entrepreneur (loi 114-13) facture hors champ de TVA avec une mention obligatoire ; une entreprise exonérée porte une mention différente ; les taux de TVA ont été resserrés à 20 % et 10 % depuis 2026. Et l’e-facturation obligatoire (modèle de validation préalable) arrive par vagues — chaque facture devra transiter par la plateforme nationale.',
+          'Pour un éditeur de logiciel dont la facturation n’est pas le métier, maintenir tout cela à jour à chaque loi de finances est un coût récurrent, pas un développement ponctuel. C’est exactement le genre de brique qu’on délègue.'
+        ]
+      },
+      {
+        h: 'Les trois options techniques, comparées',
+        p: [
+          'Trois voies s’offrent à un intégrateur qui doit produire des factures marocaines depuis son application.'
+        ],
+        table: {
+          head: ['Option', 'Effort initial', 'Conformité', 'Maintenance'],
+          rows: [
+            ['Développer son module (génération PDF maison)', 'Semaines à mois', 'À votre charge, à chaque loi de finances', 'Permanente : taux, mentions, e-facturation'],
+            ['Générateur de PDF générique (international)', 'Jours', 'Aucune : pas d’ICE, pas de TVA marocaine, pas de numérotation légale', 'Faible mais le résultat n’est pas une facture conforme'],
+            ['API de facturation marocaine (Fatora)', 'Une heure — un appel HTTP', 'Portée par l’API : mentions 145 CGI, régimes, taux à jour', 'Aucune côté intégrateur']
+          ]
+        },
+        note:
+          'Le point souvent oublié : la numérotation. Une séquence FAT-2026-0001, 0002, 0003 sans trou appartient au commerçant, pas à votre application. Une API multi-tenant sérieuse gère une séquence par compte — c’est ce qui rend le document opposable.'
+      },
+      {
+        h: 'Comment fonctionne l’API Fatora',
+        p: [
+          'Chaque commerçant Fatora possède une clé API personnelle, obtenue en écrivant « api » à son bot WhatsApp. Votre application stocke cette clé et émet en son nom : la facture sort dans SA numérotation, avec SON cachet, SON logo et SON régime fiscal — que votre code n’a même pas besoin de connaître, l’API l’impose d’elle-même.',
+          'Un appel POST /v1/documents avec le client et les lignes suffit : l’API calcule la TVA, génère le PDF, et le remet au choix par WhatsApp, par email ou via un QR code à afficher ou imprimer. La modification se fait en langage libre : votre utilisateur écrit « remplace la formation par 3 jours à 1200 dh » dans un champ texte, l’IA applique la correction sur le même numéro de facture.',
+          'La documentation complète, avec des exemples testés en production pour chaque endpoint, est sur la page API du site (menu « API »). Tout est inclus dans l’abonnement du commerçant, dès l’essai gratuit — les devis ne consomment même pas le quota.'
+        ]
+      },
+      {
+        h: 'Qui a intérêt à intégrer une API de facturation',
+        p: [
+          'Les cas d’usage reviennent toujours aux mêmes profils :'
+        ],
+        list: [
+          'Éditeurs SaaS et CRM marocains : un bouton « Facturer » dans votre interface, la conformité en plus, sans écrire le module.',
+          'Plateformes e-commerce et marketplaces : facture automatique à chaque commande, remise au client par email ou QR sur le bon de livraison.',
+          'Agences web : offrez la facturation conforme à vos clients commerçants sans développer ni maintenir quoi que ce soit.',
+          'ERP verticaux (transport, BTP, distribution) : vos utilisateurs facturent depuis l’outil métier qu’ils ont déjà.',
+          'Logiciels de caisse : ticket + QR code de la facture imprimés ensemble — le client scanne et repart avec sa facture.'
+        ]
+      },
+      {
+        h: 'Et l’e-facturation obligatoire dans tout ça ?',
+        p: [
+          'C’est l’argument décisif pour déléguer plutôt que développer. Quand la plateforme nationale de validation préalable activera votre segment de clients, chaque facture devra être transmise dans un format structuré et validée avant d’être opposable. Si votre application génère ses PDF elle-même, ce raccordement sera votre chantier. Si elle passe par une API de facturation, c’est le fournisseur de l’API qui se raccorde — une fois, pour tous ses intégrateurs.',
+          'Émettre dès aujourd’hui des documents structurés, complets et correctement numérotés via une API, c’est précisément l’état dans lequel il faut être le jour où la bascule arrive.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'Combien coûte l’intégration de l’API Fatora ?',
+        a: 'Rien pour l’intégrateur. L’API est incluse dans tous les plans Fatora, dès l’essai gratuit. Chaque commerçant paie son propre abonnement (à partir de 30 DH/mois) et les factures émises par l’API comptent dans son quota ; les devis sont gratuits et illimités.'
+      },
+      {
+        q: 'Mon application doit-elle gérer les taux de TVA et les régimes fiscaux ?',
+        a: 'Non. Le régime fiscal du commerçant (normal, auto-entrepreneur, exonéré) est enregistré dans son compte Fatora et s’impose à l’API : un auto-entrepreneur sortira toujours des factures sans TVA avec la mention légale, quoi que votre application envoie. Vous pouvez préciser un taux par ligne si besoin.'
+      },
+      {
+        q: 'Comment le client final reçoit-il sa facture ?',
+        a: 'Trois canaux, cumulables : WhatsApp (le PDF arrive dans sa conversation), email (message avec pièce jointe), ou QR code (chaque document expose une image PNG à afficher en caisse ou imprimer — le client scanne et télécharge). Un document perdu se renvoie en un appel.'
+      },
+      {
+        q: 'Est-ce compatible avec un logiciel étranger qui n’a rien de marocain ?',
+        a: 'Oui, c’est le cas d’usage type : le logiciel étranger garde sa logique métier et appelle l’API au moment de facturer un client marocain. Toute la conformité locale — mentions, numérotation, TVA, langue du document — est portée par l’API.'
+      },
+      {
+        q: 'Que se passe-t-il si mon utilisateur veut corriger une facture émise ?',
+        a: 'Votre application envoie la correction en texte libre à l’endpoint de modification : « le client est en fait STE X, remplace la ligne 2 par… ». L’IA applique le changement sur le même numéro, régénère le PDF et recalcule les totaux. Si l’instruction est ambiguë, l’API répond 422 sans rien modifier.'
+      }
+    ],
+    related: ['generer-facture-pdf-api', 'facturation-electronique-maroc', 'mentions-obligatoires-facture', 'devis-conforme-maroc'],
+    updated: '2026-08-15',
+    readMin: 8
+  },
+
+  {
+    slug: 'generer-facture-pdf-api',
+    section: 'guides',
+    lang: 'fr',
+    metaTitle: 'Générer une facture PDF par API : tutoriel Maroc 2026',
+    metaDesc:
+      'Générer une facture PDF conforme par API en un appel HTTP : obtenir la clé, émettre le document, gérer TVA et montants TTC, remettre au client par WhatsApp, email ou QR code. Tutoriel pas à pas, exemples testés.',
+    keywords:
+      'générer facture pdf api, créer facture automatique api, api génération facture, facture pdf automatique maroc, api facture pdf, générer devis api',
+    title: 'Générer une facture PDF par API : le tutoriel pas à pas',
+    intro:
+      'Vous voulez qu’un clic dans votre application produise une vraie facture marocaine — PDF conforme, numérotée, avec cachet — et qu’elle arrive chez le client. Voici le parcours complet avec l’API Fatora, du premier appel à la remise, tel qu’il fonctionne en production.',
+    answer:
+      'Pour générer une facture PDF par API au Maroc : obtenir la clé API du commerçant (il écrit « api » à son bot WhatsApp Fatora), puis envoyer un POST à bot.swiviq.com/v1/documents avec le client et les lignes. L’API calcule la TVA, génère un PDF conforme numéroté dans la séquence du commerçant, et le remet par WhatsApp, email ou QR code.',
+    blocks: [
+      {
+        h: 'Étape 1 — la clé API, sans inscription développeur',
+        p: [
+          'Il n’y a ni console développeur ni validation manuelle. Le commerçant ouvre sa conversation WhatsApp Fatora-Bot et écrit « api » : le bot répond avec sa clé personnelle, au format fk_ suivi de 40 caractères. C’est cette clé que votre application stocke et passe dans l’en-tête Authorization: Bearer.',
+          'La clé est propre à chaque commerçant : elle émet dans SA numérotation et ne voit que SES documents. « api reset » la régénère à tout moment — l’ancienne est immédiatement révoquée. Un GET /v1/account est le moyen le plus simple de vérifier qu’une clé collée par l’utilisateur est valide : il renvoie le profil société, le plan et le quota restant.'
+        ]
+      },
+      {
+        h: 'Étape 2 — émettre le document',
+        p: [
+          'Un seul appel : POST /v1/documents, avec le nom du client (et son ICE en B2B), puis les lignes — description, quantité, prix unitaire. L’API calcule la TVA ligne par ligne, applique le régime fiscal du commerçant, génère le PDF avec logo et cachet, et répond en 201 avec le numéro attribué, les totaux HT/TVA/TTC, le lien du PDF et l’URL d’un QR code.',
+          'Deux options changent tout au quotidien. « type »: « quote » émet un devis (numéroté DEV-, valable 30 jours, hors quota) au lieu d’une facture. « priceIsTtc »: true indique que vos montants sont TTC : l’API reconstitue la base hors taxe elle-même — indispensable quand vos prix de vente sont affichés TTC.',
+          'Pour corriger un document déjà émis, pas de schéma de mise à jour à apprendre : l’endpoint de modification accepte une instruction en texte libre (« remplace la formation par 3 jours à 1200 dh le jour ») et l’applique sur le même numéro, PDF régénéré, totaux recalculés.'
+        ],
+        note:
+          'La numérotation reste continue : modifier ne crée jamais de trou dans la séquence, et annuler passe par un avoir — comme l’exige la réglementation marocaine.'
+      },
+      {
+        h: 'Étape 3 — remettre la facture au client',
+        p: [
+          'Générer le PDF ne sert à rien si le client ne le reçoit pas. Trois canaux sont disponibles, à la création (champs « sendToPhone » et « sendToEmail ») ou après coup via l’endpoint d’envoi :'
+        ],
+        list: [
+          'WhatsApp : le PDF part dans la conversation du client, au nom du commerçant.',
+          'Email : message soigné avec la facture en pièce jointe.',
+          'QR code : chaque document expose une image PNG publique — affichez-la en caisse, imprimez-la sur le ticket, le client scanne et télécharge sa facture.'
+        ]
+      },
+      {
+        h: 'Les erreurs à gérer dans votre code',
+        p: [
+          'L’API renvoie toujours un JSON à deux champs : « error » (code machine stable) et « message » (explication affichable telle quelle). Quatre cas méritent un traitement spécifique dans votre interface : le 402 quota atteint (la réponse contient used et limit — affichez-les, le commerçant change de plan en deux messages WhatsApp), le 401 clé invalide (souvent une clé régénérée par « api reset » — redemandez-la), le 422 instruction incomprise (proposez de reformuler, rien n’a été modifié), et le 429 au-delà de 60 requêtes par minute (mettez en file et réessayez).',
+          'La liste complète des codes, avec un exemple de réponse pour chacun, figure sur la page API du site — chaque exemple y a été rejoué contre l’API de production.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'Faut-il un compte développeur ou une validation pour utiliser l’API ?',
+        a: 'Non. La clé s’obtient en écrivant « api » au bot WhatsApp du compte Fatora concerné, en quelques secondes. Il n’y a ni console, ni contrat, ni frais : l’API est incluse dans tous les plans, essai gratuit compris.'
+      },
+      {
+        q: 'Le PDF généré est-il vraiment conforme pour un contrôle fiscal ?',
+        a: 'Le PDF porte les mentions de l’article 145 CGI : ICE, identifiant fiscal, taxe professionnelle, TVA ventilée, montant en toutes lettres, numérotation continue, et les mentions de régime (auto-entrepreneur, exonéré) quand elles s’appliquent. Le cachet et le logo du commerçant sont apposés automatiquement.'
+      },
+      {
+        q: 'Puis-je générer des devis et les transformer en factures ?',
+        a: 'Oui. « type »: « quote » émet un devis numéroté DEV- valable 30 jours, gratuit et hors quota. La conversion en facture se fait ensuite par l’instruction libre (« transforme le devis DEV-2026-0012 en facture ») — la facture prend un numéro FAT- normal.'
+      },
+      {
+        q: 'Comment tester sans polluer la numérotation du commerçant ?',
+        a: 'Émettez des devis pendant vos tests : ils sont gratuits, illimités et n’entament pas la séquence des factures. Gardez l’émission de vraies factures pour la mise en production — chaque facture émise entre dans la numérotation légale et s’annule par avoir, pas par suppression.'
+      }
+    ],
+    related: ['api-facturation-maroc', 'numerotation-factures', 'taux-tva-maroc', 'facture-whatsapp-comment-faire'],
+    updated: '2026-08-15',
+    readMin: 6
   }
 ];

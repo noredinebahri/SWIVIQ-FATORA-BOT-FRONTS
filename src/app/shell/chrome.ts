@@ -27,7 +27,7 @@ import { CONTENT_UI } from '../content/ui';
       <div class="nav-right">
         <div class="lang-switch">
           @for (l of langs; track l) {
-            <a [class.active]="l === lang()" [routerLink]="['/', l, 'guides']">{{ l.toUpperCase() }}</a>
+            <a [class.active]="l === lang()" [routerLink]="['/', l, section()]">{{ l.toUpperCase() }}</a>
           }
         </div>
         <a class="btn-gold" [href]="wa" target="_blank" rel="noopener">{{ d().nav.cta }}</a>
@@ -64,6 +64,8 @@ import { CONTENT_UI } from '../content/ui';
 })
 export class SiteHeader {
   lang = input<Lang>('fr');
+  /** Cible du sélecteur de langue : rester sur la même rubrique en changeant de langue. */
+  section = input<string>('guides');
   readonly langs = LANGS;
   readonly wa = WA_LINK;
   d = computed(() => DICT[this.lang()]);
