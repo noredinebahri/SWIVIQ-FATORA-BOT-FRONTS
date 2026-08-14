@@ -224,6 +224,7 @@
     <div class="foot-links">
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
       <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
+      <a [routerLink]="['/', lang() === 'en' ? 'en' : 'fr', 'api']">API</a>
       <a href="https://bot.swiviq.com/privacy" target="_blank" rel="noopener">{{ t().footer.privacy }}</a>
       <a [href]="waLink" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:contact@swiviq.com">contact&#64;swiviq.com</a>

@@ -105,5 +105,6 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - الصفحة بالعربية : https://fatora.swiviq.com/ar
 - English : https://fatora.swiviq.com/en
 - Español : https://fatora.swiviq.com/es
+- API de facturation pour SaaS/CRM (documentation) : https://fatora.swiviq.com/fr/api
 - Politique de confidentialité : https://bot.swiviq.com/privacy
 - Essayer : https://wa.me/212691020805

@@ -24,6 +24,14 @@ export const serverRoutes: ServerRoute[] = [
     }
   },
   {
+    // Documentation API : redigee en francais et anglais (public developpeurs)
+    path: ':lang/api',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return [{ lang: 'fr' }, { lang: 'en' }];
+    }
+  },
+  {
     path: ':lang/a-propos',
     renderMode: RenderMode.Prerender,
     async getPrerenderParams() {

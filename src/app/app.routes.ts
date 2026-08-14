@@ -13,6 +13,7 @@ export const routes: Routes = [
   // Les routes à plusieurs segments passent avant `:lang`, qui ne consomme
   // qu'un segment et ne matcherait de toute façon pas les URL éditoriales.
   { path: ':lang/guides', loadComponent: () => import('./article/hub').then((m) => m.Hub) },
+  { path: ':lang/api', loadComponent: () => import('./api-docs/api-docs').then((m) => m.ApiDocs) },
   { path: ':lang/a-propos', loadComponent: () => import('./article/about').then((m) => m.About) },
   { path: ':lang/:section/:slug', loadComponent: () => import('./article/article').then((m) => m.Article) },
   { path: ':lang', component: Landing },

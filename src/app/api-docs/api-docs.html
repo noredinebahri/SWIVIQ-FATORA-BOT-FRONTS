@@ -1,0 +1,131 @@
+<app-site-header [lang]="lang()" />
+
+<main class="page">
+  <!-- ═══════════ HÉROS DÉVELOPPEURS ═══════════ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="badge">{{ d().badge }}</span>
+        <h1>{{ d().title }}</h1>
+        <p class="lead">{{ d().lead }}</p>
+        <ul class="bullets">
+          @for (b of d().heroBullets; track b) { <li>{{ b }}</li> }
+        </ul>
+        <div class="hero-ctas">
+          <a class="btn-gold" [href]="wa" target="_blank" rel="noopener">{{ d().ctaBtn }}</a>
+          <a class="btn-ghost" href="#quickstart">Quickstart ↓</a>
+        </div>
+      </div>
+      <div class="hero-code" aria-hidden="true">
+        <div class="term">
+          <div class="term-bar"><i></i><i></i><i></i><span>POST {{ base }}/documents</span></div>
+          <pre>{{ d().endpoints[0].req }}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- ═══════════ CLÉ API ═══════════ -->
+    <section class="block" id="cle">
+      <h2>{{ d().keyTitle }}</h2>
+      <ol class="steps">
+        @for (s of d().keySteps; track s; let i = $index) {
+          <li><span class="n">{{ i + 1 }}</span>{{ s }}</li>
+        }
+      </ol>
+      <p class="note">{{ d().keyNote }}</p>
+    </section>
+
+    <!-- ═══════════ QUICKSTART ═══════════ -->
+    <section class="block" id="quickstart">
+      <h2>{{ d().quickTitle }}</h2>
+      <p class="intro">{{ d().quickIntro }}</p>
+      <div class="duo">
+        <div class="code-card">
+          <div class="code-head req">{{ lang() === 'en' ? 'Request' : 'Requête' }}</div>
+          <pre>{{ d().endpoints[0].req }}</pre>
+        </div>
+        <div class="code-card">
+          <div class="code-head res">{{ lang() === 'en' ? 'Response' : 'Réponse' }} — 201</div>
+          <pre>{{ d().endpoints[0].res }}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ LA STAR : MODIFICATION LIBRE ═══════════ -->
+    <section class="block star" id="modification">
+      <span class="star-tag">★ {{ lang() === 'en' ? 'Unique to Fatora' : 'Unique à Fatora' }}</span>
+      <h2>{{ d().starTitle }}</h2>
+      <p class="intro">{{ d().starLead }}</p>
+      <div class="duo">
+        <div class="code-card">
+          <div class="code-head req">{{ lang() === 'en' ? 'Request' : 'Requête' }}</div>
+          <pre>{{ d().endpoints[1].req }}</pre>
+        </div>
+        <div class="code-card">
+          <div class="code-head res">{{ lang() === 'en' ? 'Response' : 'Réponse' }} — 200</div>
+          <pre>{{ d().endpoints[1].res }}</pre>
+        </div>
+      </div>
+      <p class="note">{{ d().starExplain }}</p>
+    </section>
+
+    <!-- ═══════════ RÉFÉRENCE ═══════════ -->
+    <section class="block" id="reference">
+      <h2>{{ d().refTitle }}</h2>
+      <div class="endpoints">
+        @for (e of d().endpoints; track e.path + e.method) {
+          <article class="ep">
+            <div class="ep-head">
+              <span class="method" [class.post]="e.method === 'POST'" [class.put]="e.method === 'PUT'">{{ e.method }}</span>
+              <code class="path">{{ e.path }}</code>
+            </div>
+            <h3>{{ e.title }}</h3>
+            <p>{{ e.desc }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <!-- ═══════════ ERREURS ═══════════ -->
+    <section class="block" id="erreurs">
+      <h2>{{ d().errTitle }}</h2>
+      <div class="tw">
+        <table>
+          <tbody>
+            @for (er of d().errors; track er.code) {
+              <tr>
+                <td><code class="err-code">{{ er.code }}</code></td>
+                <td><b>{{ er.label }}</b></td>
+                <td>{{ er.fix }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══════════ FAQ ═══════════ -->
+    <section class="block" id="faq">
+      <h2>{{ d().faqTitle }}</h2>
+      @for (f of d().faq; track f.q) {
+        <div class="qa">
+          <h3>{{ f.q }}</h3>
+          <p>{{ f.a }}</p>
+        </div>
+      }
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <aside class="cta">
+      <h2>{{ d().ctaTitle }}</h2>
+      <p>{{ d().ctaText }}</p>
+      <a class="btn-wa" [href]="wa" target="_blank" rel="noopener">{{ d().ctaBtn }} →</a>
+    </aside>
+
+  </div>
+</main>
+
+<app-site-footer [lang]="lang()" />

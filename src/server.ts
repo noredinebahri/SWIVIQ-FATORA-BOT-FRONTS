@@ -20,7 +20,9 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
  * et dépense du budget de crawl à recharger la même page d'accueil.
  */
 const VALID_ROUTES = new Set<string>(
-  APP_LANGS.flatMap((l) => [`/${l}`, `/${l}/guides`, `/${l}/a-propos`]).concat(
+  APP_LANGS.flatMap((l) => [`/${l}`, `/${l}/guides`, `/${l}/a-propos`])
+    .concat(['/fr/api', '/en/api'])
+    .concat(
     ALL_ARTICLES.map((a) => `/${a.lang}/${a.section}/${a.slug}`),
   ),
 );
