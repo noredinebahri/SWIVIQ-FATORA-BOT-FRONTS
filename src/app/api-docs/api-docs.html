@@ -16,7 +16,7 @@
           <a class="btn-ghost" href="#quickstart">Quickstart ↓</a>
         </div>
       </div>
-      <div class="hero-code" aria-hidden="true">
+      <div class="hero-code" aria-hidden="true" dir="ltr">
         <div class="term">
           <div class="term-bar"><i></i><i></i><i></i><span>POST {{ base }}/documents</span></div>
           <pre>{{ d().endpoints[0].req }}</pre>
@@ -44,32 +44,56 @@
       <p class="intro">{{ d().quickIntro }}</p>
       <div class="duo">
         <div class="code-card">
-          <div class="code-head req">{{ lang() === 'en' ? 'Request' : 'Requête' }}</div>
-          <pre>{{ d().endpoints[0].req }}</pre>
+          <div class="code-head req">{{ d().reqLabel }}</div>
+          <pre dir="ltr">{{ d().endpoints[0].req }}</pre>
         </div>
         <div class="code-card">
-          <div class="code-head res">{{ lang() === 'en' ? 'Response' : 'Réponse' }} — 201</div>
-          <pre>{{ d().endpoints[0].res }}</pre>
+          <div class="code-head res">{{ d().resLabel }} — 201</div>
+          <pre dir="ltr">{{ d().endpoints[0].res }}</pre>
         </div>
       </div>
     </section>
 
     <!-- ═══════════ LA STAR : MODIFICATION LIBRE ═══════════ -->
     <section class="block star" id="modification">
-      <span class="star-tag">★ {{ lang() === 'en' ? 'Unique to Fatora' : 'Unique à Fatora' }}</span>
+      <span class="star-tag">★ {{ d().uniqueLabel }}</span>
       <h2>{{ d().starTitle }}</h2>
       <p class="intro">{{ d().starLead }}</p>
       <div class="duo">
         <div class="code-card">
-          <div class="code-head req">{{ lang() === 'en' ? 'Request' : 'Requête' }}</div>
-          <pre>{{ d().endpoints[1].req }}</pre>
+          <div class="code-head req">{{ d().reqLabel }}</div>
+          <pre dir="ltr">{{ d().endpoints[1].req }}</pre>
         </div>
         <div class="code-card">
-          <div class="code-head res">{{ lang() === 'en' ? 'Response' : 'Réponse' }} — 200</div>
-          <pre>{{ d().endpoints[1].res }}</pre>
+          <div class="code-head res">{{ d().resLabel }} — 200</div>
+          <pre dir="ltr">{{ d().endpoints[1].res }}</pre>
         </div>
       </div>
       <p class="note">{{ d().starExplain }}</p>
+    </section>
+
+    <!-- ═══════════ REMISE : WHATSAPP, EMAIL, QR ═══════════ -->
+    <section class="block" id="remise">
+      <h2>{{ d().deliverTitle }}</h2>
+      <p class="intro">{{ d().deliverLead }}</p>
+      <div class="deliver-grid">
+        @for (c of d().deliverCards; track c.t) {
+          <article class="deliver-card">
+            <h3>{{ c.t }}</h3>
+            <p>{{ c.d }}</p>
+          </article>
+        }
+      </div>
+      <div class="duo">
+        <div class="code-card">
+          <div class="code-head req">{{ d().reqLabel }}</div>
+          <pre dir="ltr">{{ d().endpoints[2].req }}</pre>
+        </div>
+        <div class="code-card">
+          <div class="code-head res">{{ d().resLabel }} — 200</div>
+          <pre dir="ltr">{{ d().endpoints[2].res }}</pre>
+        </div>
+      </div>
     </section>
 
     <!-- ═══════════ RÉFÉRENCE ═══════════ -->
@@ -78,7 +102,7 @@
       <div class="endpoints">
         @for (e of d().endpoints; track e.path + e.method) {
           <article class="ep">
-            <div class="ep-head">
+            <div class="ep-head" dir="ltr">
               <span class="method" [class.post]="e.method === 'POST'" [class.put]="e.method === 'PUT'">{{ e.method }}</span>
               <code class="path">{{ e.path }}</code>
             </div>
@@ -97,7 +121,7 @@
           <tbody>
             @for (er of d().errors; track er.code) {
               <tr>
-                <td><code class="err-code">{{ er.code }}</code></td>
+                <td><code class="err-code" dir="ltr">{{ er.code }}</code></td>
                 <td><b>{{ er.label }}</b></td>
                 <td>{{ er.fix }}</td>
               </tr>

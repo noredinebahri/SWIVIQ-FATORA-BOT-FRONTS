@@ -33,6 +33,18 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/ar/api</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/api"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/api"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/api"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/ar/comparatif/alternative-logiciel-facturation</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -196,7 +208,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/api"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/api"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/api"/>
   </url>
 
@@ -236,6 +250,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/a-propos"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/a-propos"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/a-propos"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/es/api</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/api"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/api"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/api"/>
   </url>
 
   <url>
@@ -282,7 +308,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/api"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/api"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/api"/>
   </url>
 

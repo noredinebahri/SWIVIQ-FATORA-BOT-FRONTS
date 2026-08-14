@@ -21,6 +21,7 @@ import { CONTENT_UI } from '../content/ui';
       <nav class="nav-links">
         <a [routerLink]="['/', lang()]">{{ ui().home }}</a>
         <a [routerLink]="['/', lang(), 'guides']">{{ ui().navGuides }}</a>
+        <a [routerLink]="['/', lang(), 'api']">API</a>
         <a [routerLink]="['/', lang()]" fragment="pricing">{{ d().nav.pricing }}</a>
       </nav>
       <div class="nav-right">
@@ -85,7 +86,7 @@ export class SiteHeader {
       <div class="foot-links">
         <a [routerLink]="['/', lang(), 'guides']">{{ ui().navGuides }}</a>
         <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
-        <a [routerLink]="['/', lang() === 'en' ? 'en' : 'fr', 'api']">API</a>
+        <a [routerLink]="['/', lang(), 'api']">API</a>
         <a href="https://bot.swiviq.com/privacy" target="_blank" rel="noopener">{{ d().footer.privacy }}</a>
         <a [href]="wa" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:contact&#64;swiviq.com">contact&#64;swiviq.com</a>
