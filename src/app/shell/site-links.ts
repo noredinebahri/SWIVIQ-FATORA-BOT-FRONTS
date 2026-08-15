@@ -19,22 +19,28 @@ export const PRICING_LABEL: Record<Lang, string> = {
   fr: 'Tarifs', ar: 'الأثمنة', en: 'Pricing', es: 'Precios'
 };
 
-/** Groupe « API » : documentation + guides d'intégration disponibles dans la langue. */
+/** Groupe « API » : documentation + les deux guides d'intégration, dans les 4 langues. */
 export function apiMenu(l: Lang): SiteLink[] {
-  const items: SiteLink[] = [{
-    label: { fr: 'Documentation API', ar: 'توثيق الـAPI', en: 'API documentation', es: 'Documentación API' }[l],
-    path: `/${l}/api`
-  }];
-  if (l === 'fr' || l === 'ar') {
-    items.push({
-      label: { fr: 'API de facturation au Maroc', ar: 'API الفوترة في المغرب' }[l]!,
+  return [
+    {
+      label: { fr: 'Documentation API', ar: 'توثيق الـAPI', en: 'API documentation', es: 'Documentación API' }[l],
+      path: `/${l}/api`
+    },
+    {
+      label: {
+        fr: 'API de facturation au Maroc', ar: 'API الفوترة في المغرب',
+        en: 'Morocco invoicing API', es: 'API de facturación en Marruecos'
+      }[l],
       path: `/${l}/guides/api-facturation-maroc`
-    });
-  }
-  if (l === 'fr') {
-    items.push({ label: 'Générer une facture PDF par API', path: '/fr/guides/generer-facture-pdf-api' });
-  }
-  return items;
+    },
+    {
+      label: {
+        fr: 'Générer une facture PDF par API', ar: 'توليد فاتورة PDF عبر الـAPI',
+        en: 'Generate an invoice PDF via API', es: 'Generar factura PDF por API'
+      }[l],
+      path: `/${l}/guides/generer-facture-pdf-api`
+    }
+  ];
 }
 
 /** Groupe « Site » du footer : les pages piliers, toutes prérendues en 4 langues. */

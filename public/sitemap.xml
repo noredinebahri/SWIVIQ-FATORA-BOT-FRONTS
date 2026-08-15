@@ -6,7 +6,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr"/>
@@ -22,7 +22,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/a-propos</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/a-propos"/>
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/api</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
@@ -46,7 +46,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/comparatif/alternative-logiciel-facturation</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation"/>
@@ -56,7 +56,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/comparatif/excel-vs-facturation-whatsapp</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp"/>
@@ -66,27 +66,31 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides"/>
   </url>
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/api-facturation-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/api-facturation-maroc"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
   </url>
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/facturation-electronique-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facturation-electronique-maroc"/>
@@ -96,7 +100,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/facture-auto-entrepreneur-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facture-auto-entrepreneur-maroc"/>
@@ -106,7 +110,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/facture-whatsapp-comment-faire</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire"/>
@@ -115,8 +119,20 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/ar/guides/ice-if-taxe-professionnelle</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle"/>
@@ -126,7 +142,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/mentions-obligatoires-facture</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture"/>
@@ -136,7 +152,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/numerotation-factures</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/numerotation-factures"/>
@@ -146,7 +162,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/guides/taux-tva-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/taux-tva-maroc"/>
@@ -156,7 +172,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/secteurs/btp-menuiserie</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/btp-menuiserie"/>
@@ -166,7 +182,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/secteurs/commerce-detail</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/commerce-detail"/>
@@ -176,7 +192,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/ar/secteurs/transport-logistique</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/transport-logistique"/>
@@ -186,7 +202,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/en</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr"/>
@@ -202,7 +218,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/en/a-propos</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/a-propos"/>
@@ -214,7 +230,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/en/api</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
@@ -226,17 +242,43 @@
 
   <url>
     <loc>https://fatora.swiviq.com/en/guides</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides"/>
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/en/guides/api-facturation-maroc</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/en/guides/generer-facture-pdf-api</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/es</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr"/>
@@ -252,7 +294,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/es/a-propos</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/a-propos"/>
@@ -264,7 +306,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/es/api</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
@@ -276,17 +318,43 @@
 
   <url>
     <loc>https://fatora.swiviq.com/es/guides</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides"/>
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/es/guides/api-facturation-maroc</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/es/guides/generer-facture-pdf-api</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/fr</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr"/>
@@ -302,7 +370,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/a-propos</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/a-propos"/>
@@ -314,7 +382,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/api</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/api"/>
@@ -326,7 +394,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation"/>
@@ -336,7 +404,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp"/>
@@ -346,27 +414,31 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides"/>
   </url>
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/api-facturation-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/api-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/api-facturation-maroc"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/api-facturation-maroc"/>
   </url>
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/archivage-factures-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/archivage-factures-maroc"/>
@@ -375,7 +447,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/delais-paiement-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/delais-paiement-maroc"/>
@@ -384,7 +456,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/devis-conforme-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/devis-conforme-maroc"/>
@@ -393,7 +465,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/facturation-electronique-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facturation-electronique-maroc"/>
@@ -403,7 +475,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/facture-auto-entrepreneur-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facture-auto-entrepreneur-maroc"/>
@@ -413,7 +485,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/facture-avoir-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facture-avoir-maroc"/>
@@ -422,7 +494,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire"/>
@@ -432,16 +504,19 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fatora.swiviq.com/en/guides/generer-facture-pdf-api"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fatora.swiviq.com/es/guides/generer-facture-pdf-api"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api"/>
   </url>
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/glossaire-facturation-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/glossaire-facturation-maroc"/>
@@ -450,7 +525,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle"/>
@@ -460,7 +535,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture"/>
@@ -470,7 +545,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/numerotation-factures</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/numerotation-factures"/>
@@ -480,7 +555,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/guides/taux-tva-maroc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/taux-tva-maroc"/>
@@ -490,7 +565,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/secteurs/btp-menuiserie</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/btp-menuiserie"/>
@@ -500,7 +575,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/secteurs/commerce-detail</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/commerce-detail"/>
@@ -510,7 +585,7 @@
 
   <url>
     <loc>https://fatora.swiviq.com/fr/secteurs/transport-logistique</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/transport-logistique"/>

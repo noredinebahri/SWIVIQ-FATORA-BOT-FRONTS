@@ -5,6 +5,8 @@ import { METIERS_FR } from './metiers.fr';
 import { PRATIQUE_FR } from './pratique.fr';
 import { GUIDES_AR } from './guides.ar';
 import { METIERS_AR } from './metiers.ar';
+import { GUIDES_EN } from './guides.en';
+import { GUIDES_ES } from './guides.es';
 
 export { CONTENT_UI } from './ui';
 export const SITE = 'https://fatora.swiviq.com';
@@ -14,11 +16,16 @@ export const ALL_ARTICLES: Article[] = [
   ...PRATIQUE_FR,
   ...METIERS_FR,
   ...GUIDES_AR,
-  ...METIERS_AR
+  ...METIERS_AR,
+  ...GUIDES_EN,
+  ...GUIDES_ES
 ];
 
-/** Langues qui disposent d'un pôle éditorial. Les autres renvoient vers /fr. */
-export const CONTENT_LANGS: Lang[] = ['fr', 'ar'];
+/**
+ * Langues qui disposent d'un pôle éditorial. fr/ar couvrent tout le contenu
+ * commerçant ; en/es ne portent que les guides développeurs (API).
+ */
+export const CONTENT_LANGS: Lang[] = ['fr', 'ar', 'en', 'es'];
 
 export function articlesFor(lang: Lang): Article[] {
   return ALL_ARTICLES.filter((a) => a.lang === lang);

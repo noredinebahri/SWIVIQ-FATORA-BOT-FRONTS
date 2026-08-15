@@ -1,5 +1,5 @@
 import { Component, OnInit, computed, inject, signal } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { WA_LINK, type Lang } from '../i18n';
 import { SiteHeader, SiteFooter } from '../shell/chrome';
 import { PageSeo } from '../seo/page-seo';
@@ -751,7 +751,7 @@ const DICTS: Record<Lang, ApiDict> = {
 
 @Component({
   selector: 'app-api-docs',
-  imports: [SiteHeader, SiteFooter],
+  imports: [RouterLink, SiteHeader, SiteFooter],
   templateUrl: './api-docs.html',
   styleUrl: './api-docs.scss'
 })

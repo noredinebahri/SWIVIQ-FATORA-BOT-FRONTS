@@ -74,6 +74,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - الفوترة الإلكترونية بالمغرب: دليل 2026 : https://fatora.swiviq.com/ar/guides/facturation-electronique-maroc
 - فاتورة المقاول الذاتي بالمغرب: القواعد والنموذج : https://fatora.swiviq.com/ar/guides/facture-auto-entrepreneur-maroc
 - كيفاش دير فاتورة من الواتساب: الطريقة كاملة : https://fatora.swiviq.com/ar/guides/facture-whatsapp-comment-faire
+- توليد فاتورة PDF عبر API: دليل خطوة بخطوة : https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api
 - ICE والرقم الضريبي والضريبة المهنية: شنو الفرق : https://fatora.swiviq.com/ar/guides/ice-if-taxe-professionnelle
 - البيانات الإجبارية فالفاتورة المغربية (لائحة 2026) : https://fatora.swiviq.com/ar/guides/mentions-obligatoires-facture
 - ترقيم الفواتير بالمغرب: القواعد والأخطاء : https://fatora.swiviq.com/ar/guides/numerotation-factures
@@ -81,6 +82,10 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - فوترة البناء والنجارة بالمغرب من الورش : https://fatora.swiviq.com/ar/secteurs/btp-menuiserie
 - الفوترة فالحانوت للتجار وتجار الجملة : https://fatora.swiviq.com/ar/secteurs/commerce-detail
 - فوترة النقل واللوجستيك بالمغرب بالصوت : https://fatora.swiviq.com/ar/secteurs/transport-logistique
+- Morocco invoicing API: the integrator’s guide (2026) : https://fatora.swiviq.com/en/guides/api-facturation-maroc
+- Generate an invoice PDF via API: Morocco tutorial 2026 : https://fatora.swiviq.com/en/guides/generer-facture-pdf-api
+- API de facturación en Marruecos: guía del integrador : https://fatora.swiviq.com/es/guides/api-facturation-maroc
+- Generar factura PDF por API: tutorial Marruecos 2026 : https://fatora.swiviq.com/es/guides/generer-facture-pdf-api
 - Alternative aux logiciels de facturation au Maroc : https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation
 - Facturer sur Excel : les risques et quand en sortir : https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp
 - API de facturation au Maroc : le guide pour intégrateurs : https://fatora.swiviq.com/fr/guides/api-facturation-maroc

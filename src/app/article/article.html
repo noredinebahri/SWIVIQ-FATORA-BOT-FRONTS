@@ -36,10 +36,12 @@
         <nav class="toc" [attr.aria-label]="ui().tocLabel">
           <b>{{ ui().tocLabel }}</b>
           <ol>
+            <!-- Pas de href="#…" : avec <base href="/">, l'ancre nue renvoie à la
+                 racine. routerLink vide + fragment reste sur la page et scrolle. -->
             @for (b of art.blocks; track b.h; let i = $index) {
-              <li><a [href]="'#s' + (i + 1)">{{ b.h }}</a></li>
+              <li><a [routerLink]="[]" [fragment]="'s' + (i + 1)">{{ b.h }}</a></li>
             }
-            <li><a href="#faq">{{ ui().faqLabel }}</a></li>
+            <li><a [routerLink]="[]" fragment="faq">{{ ui().faqLabel }}</a></li>
           </ol>
         </nav>
 

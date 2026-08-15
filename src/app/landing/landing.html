@@ -6,10 +6,10 @@
       <span class="logo-txt">Fatora<em>Bot</em></span>
     </a>
     <nav class="nav-links" [class.open]="navOpen()">
-      <a href="#demo">{{ t().nav.features }}</a>
-      <a href="#how">{{ t().nav.how }}</a>
-      <a href="#pricing">{{ t().nav.pricing }}</a>
-      <a href="#faq">{{ t().nav.faq }}</a>
+      <a [routerLink]="[]" fragment="demo" (click)="navOpen.set(false)">{{ t().nav.features }}</a>
+      <a [routerLink]="[]" fragment="how" (click)="navOpen.set(false)">{{ t().nav.how }}</a>
+      <a [routerLink]="[]" fragment="pricing" (click)="navOpen.set(false)">{{ t().nav.pricing }}</a>
+      <a [routerLink]="[]" fragment="faq" (click)="navOpen.set(false)">{{ t().nav.faq }}</a>
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
       <div class="dd">
         <a class="dd-top" [routerLink]="['/', lang(), 'api']">API <span class="caret">▾</span></a>
@@ -234,7 +234,7 @@
       <h4>{{ footGroups().site }}</h4>
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
       <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
-      <a href="#pricing">{{ t().nav.pricing }}</a>
+      <a [routerLink]="[]" fragment="pricing">{{ t().nav.pricing }}</a>
     </div>
     <div class="foot-col">
       <h4>{{ footGroups().api }}</h4>
