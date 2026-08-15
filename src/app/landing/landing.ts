@@ -183,14 +183,14 @@ export class Landing implements OnInit, OnDestroy {
           logo: { '@type': 'ImageObject', url: `${SITE}/og-fr.png`, width: 1200, height: 630 },
           image: ogImage,
           email: 'contact@swiviq.com',
-          telephone: '+212691020805',
+          telephone: '+212621323085',
           address: { '@type': 'PostalAddress', addressLocality: 'Rabat', addressCountry: 'MA' },
           areaServed: { '@type': 'Country', name: 'Morocco' },
           sameAs: ['https://wa.me/212691020805'],
           contactPoint: [{
             '@type': 'ContactPoint',
             contactType: 'sales',
-            telephone: '+212691020805',
+            telephone: '+212621323085',
             email: 'contact@swiviq.com',
             availableLanguage: ['ar', 'fr', 'en', 'es']
           }]

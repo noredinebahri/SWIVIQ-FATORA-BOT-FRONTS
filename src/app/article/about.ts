@@ -214,7 +214,7 @@ const ABOUT: Record<Lang, AboutDict> = {
           <ul>
             <li><b>Swiviq</b> — Rabat, Maroc</li>
             <li><a href="mailto:contact&#64;swiviq.com">contact&#64;swiviq.com</a></li>
-            <li><a [href]="wa" target="_blank" rel="noopener">WhatsApp +212 691 02 08 05</a></li>
+            <li><a href="https://wa.me/212621323085" target="_blank" rel="noopener">WhatsApp +212 621 32 30 85</a></li>
             <li><a href="https://bot.swiviq.com/privacy" target="_blank" rel="noopener">Politique de confidentialité</a></li>
           </ul>
         </section>

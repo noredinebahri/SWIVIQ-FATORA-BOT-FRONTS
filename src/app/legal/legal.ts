@@ -39,7 +39,7 @@ const PAGES: Record<LegalSlug, LegalPage> = {
         p: [
           'Le site fatora.swiviq.com et le service Fatora-Bot sont édités par SWIVIQ, société à responsabilité limitée à associé unique (SARL AU) de droit marocain, dont le siège social est situé à Rabat, Maroc.',
           'Identifiants de la société (ICE, identifiant fiscal, registre de commerce de Rabat) : communiqués sur toute demande adressée à contact@swiviq.com, et portés sur les factures émises par la société.',
-          'Contact : contact@swiviq.com · WhatsApp +212 691 02 08 05.',
+          'Contact : contact@swiviq.com · WhatsApp +212 621 32 30 85.',
           'Directeur de la publication : le gérant de SWIVIQ.'
         ]
       },
