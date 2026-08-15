@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LANGS, WA_LINK, DICT, type Lang } from '../i18n';
 import { CONTENT_UI } from '../content/ui';
@@ -21,21 +21,21 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
       </a>
       <!-- Mêmes entrées, même ordre que le menu de la landing : un seul menu
            pour tout le site. Les ancres renvoient aux sections de l'accueil. -->
-      <nav class="nav-links">
-        <a [routerLink]="['/', lang()]" fragment="demo">{{ d().nav.features }}</a>
-        <a [routerLink]="['/', lang()]" fragment="how">{{ d().nav.how }}</a>
-        <a [routerLink]="['/', lang()]" fragment="pricing">{{ d().nav.pricing }}</a>
-        <a [routerLink]="['/', lang()]" fragment="faq">{{ d().nav.faq }}</a>
-        <a [routerLink]="['/', lang(), 'guides']">{{ ui().navGuides }}</a>
+      <nav class="nav-links" [class.open]="open()">
+        <a [routerLink]="['/', lang()]" fragment="demo" (click)="open.set(false)">{{ d().nav.features }}</a>
+        <a [routerLink]="['/', lang()]" fragment="how" (click)="open.set(false)">{{ d().nav.how }}</a>
+        <a [routerLink]="['/', lang()]" fragment="pricing" (click)="open.set(false)">{{ d().nav.pricing }}</a>
+        <a [routerLink]="['/', lang()]" fragment="faq" (click)="open.set(false)">{{ d().nav.faq }}</a>
+        <a [routerLink]="['/', lang(), 'guides']" (click)="open.set(false)">{{ ui().navGuides }}</a>
         <div class="dd">
-          <a class="dd-top" [routerLink]="['/', lang(), 'api']">API <span class="caret">▾</span></a>
+          <a class="dd-top" [routerLink]="['/', lang(), 'api']" (click)="open.set(false)">API <span class="caret">▾</span></a>
           <div class="dd-menu">
             @for (it of apiLinks(); track it.path) {
-              <a [routerLink]="it.path">{{ it.label }}</a>
+              <a [routerLink]="it.path" (click)="open.set(false)">{{ it.label }}</a>
             }
           </div>
         </div>
-        <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
+        <a [routerLink]="['/', lang(), 'a-propos']" (click)="open.set(false)">{{ aboutLabel() }}</a>
       </nav>
       <div class="nav-right">
         <div class="lang-switch">
@@ -44,6 +44,7 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
           }
         </div>
         <a class="btn-gold" [href]="wa" target="_blank" rel="noopener">{{ d().nav.cta }}</a>
+        <button class="burger" (click)="open.set(!open())" aria-label="menu">☰</button>
       </div>
     </div>
   </header>`,
@@ -51,14 +52,18 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
   :host { display: block; }
   .nav { position: sticky; top: 0; z-index: 50; background: rgba(247,248,251,.88);
     backdrop-filter: blur(14px); border-bottom: 1px solid rgba(16,19,28,.08); }
-  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-  .nav-in { display: flex; align-items: center; gap: 20px; height: 66px; }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #10131c; }
+  /* Même gabarit que le header de la landing : 1180px, items sur UNE ligne. */
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .nav-in { display: flex; align-items: center; flex-wrap: nowrap; gap: 16px; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #10131c;
+    flex-shrink: 0; }
   .logo-mark { width: 34px; height: 34px; display: block; flex-shrink: 0; }
   .logo-txt { font-family: 'Sora','Tajawal',sans-serif; font-weight: 800; letter-spacing: -.02em;
     em { font-style: normal; color: #c9902a; } }
-  .nav-links { display: flex; align-items: center; gap: 22px; margin-inline-start: auto;
-    a { color: #4a5163; text-decoration: none; font-size: .93rem; font-weight: 600;
+  .nav-links { display: flex; align-items: center; flex-wrap: nowrap; gap: 18px;
+    margin-inline-start: auto;
+    a { color: #4a5163; text-decoration: none; font-size: .9rem; font-weight: 600;
+      white-space: nowrap;
       &:hover { color: #10131c; } } }
   .dd { position: relative;
     .caret { font-size: .7em; opacity: .6; }
@@ -69,7 +74,7 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
       a { display: block; padding: 9px 18px; font-size: .88rem;
         &:hover { background: #f4f5f9; } } }
     &:hover .dd-menu, &:focus-within .dd-menu { display: flex; } }
-  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
   /* Même habillage que le sélecteur de la landing : blanc, actif doré. */
   .lang-switch { display: flex; padding: 3px; border-radius: 999px; background: #fff;
     border: 1px solid rgba(16,19,28,.1); box-shadow: 0 2px 10px rgba(16,19,28,.06);
@@ -79,10 +84,23 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
   .btn-gold { padding: 9px 17px; border-radius: 999px; font-weight: 700; font-size: .87rem;
     text-decoration: none; color: #17120a; background: linear-gradient(135deg,#e8b64c,#c9902a);
     box-shadow: 0 6px 18px rgba(201,144,42,.32); white-space: nowrap; }
-  @media (max-width: 860px) {
-    .nav-links { display: none; }
-    .wrap { padding: 0 16px; }
+  .burger { display: none; background: none; border: 0; color: #10131c; font-size: 1.5rem;
+    cursor: pointer; padding: 4px 6px; }
+  /* Sous 1120px le menu complet ne tient plus sur une ligne : il passe en
+     panneau vertical ouvert par le burger — même comportement que la landing. */
+  @media (max-width: 1120px) {
+    .nav-links { display: none; position: fixed; top: 68px; inset-inline: 0;
+      flex-direction: column; align-items: stretch; gap: 16px; padding: 22px;
+      background: rgba(255,255,255,.98); border-bottom: 1px solid rgba(16,19,28,.1);
+      box-shadow: 0 18px 40px rgba(16,19,28,.10);
+      &.open { display: flex; }
+      .dd { .dd-top { display: none; }
+        .dd-menu { display: flex; position: static; min-width: 0; padding: 0;
+          border: 0; box-shadow: none; background: none; gap: 16px;
+          a { padding: 0; font-size: .9rem; } } } }
+    .burger { display: block; }
   }
+  @media (max-width: 860px) { .wrap { padding: 0 16px; } }
   @media (max-width: 520px) { .btn-gold { display: none; } }
   `]
 })
@@ -93,6 +111,7 @@ export class SiteHeader {
    * existe. À défaut, on retombe sur le hub des guides — prérendu en 4 langues.
    */
   alt = input<Partial<Record<Lang, string>>>({});
+  open = signal(false);
   readonly langs = LANGS;
   readonly wa = WA_LINK;
   d = computed(() => DICT[this.lang()]);
