@@ -154,7 +154,7 @@
           }
 
           <!-- 6 · Mémoire clients : photo → nom exact -->
-          @default {
+          @case (5) {
             <div class="sc-in st-mem">
               <div class="photo">
                 <div class="pl w50"></div>
@@ -176,6 +176,31 @@
                 <div class="dc" style="--i:2">Madrasat Al Quds</div>
               </div>
               <div class="flash"><ico name="check" [size]="14"/> {{ d().ui.saved }}</div>
+            </div>
+          }
+
+          <!-- 7 · Boutique WhatsApp : galerie → panier → commande -->
+          @default {
+            <div class="sc-in st-shop">
+              <div class="shop-head">
+                <span class="live"></span> <b>Dalila</b> <i>{{ d().ui.shopLive }}</i>
+              </div>
+              <div class="shop-grid" dir="ltr">
+                <div class="sp" style="--i:0"><span class="spi">🍲</span><b>Tajine</b><i>120 DH</i><em class="add">+</em></div>
+                <div class="sp picked" style="--i:1"><span class="spi">☕</span><b>Théière</b><i>180 DH</i><em class="add">+</em><span class="tick">✓</span></div>
+                <div class="sp picked p2" style="--i:2"><span class="spi">🧺</span><b>Panier</b><i>90 DH</i><em class="add">+</em><span class="tick">✓</span></div>
+              </div>
+              <div class="cartline">
+                <span class="cbadge">🛒<b class="n"></b></span>
+                <span class="clbl">{{ d().ui.addedCart }}</span>
+              </div>
+              <div class="order" dir="ltr">
+                <b>{{ d().ui.orderTitle }}</b>
+                <div class="ol" style="--i:0">1 × Théière — 180 DH</div>
+                <div class="ol" style="--i:1">2 × Panier — 180 DH</div>
+                <div class="ot">Total · 360 DH</div>
+              </div>
+              <div class="flash"><ico name="check" [size]="14"/> {{ d().ui.shopReceived }}</div>
             </div>
           }
         }

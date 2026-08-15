@@ -31,7 +31,7 @@ export class Showcase implements OnDestroy {
 
   active = signal(0);
 
-  readonly icons = ['mic', 'file', 'stamp', 'qr', 'globe', 'users'];
+  readonly icons = ['mic', 'file', 'stamp', 'qr', 'globe', 'users', 'card'];
   readonly bars = Array.from({ length: 16 }, (_, i) => i);
   /** Transcription mot à mot affichée progressivement */
   readonly words = 'sayab liya fatora l Ahmed Transport, tlata dyal l-bibane b 1500 dh'.split(' ');
