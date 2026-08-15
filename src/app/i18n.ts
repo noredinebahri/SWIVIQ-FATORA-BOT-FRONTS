@@ -22,6 +22,11 @@ export interface Dict {
     permonth: string; invoices: string; popular: string; cta: string; note: string;
     plans: { name: string; n: number; price: number }[];
   };
+  shop: {
+    badge: string; title: string; sub: string;
+    points: { icon: string; t: string; d: string }[];
+    cta: string; note: string;
+  };
   faq: { title: string; items: { q: string; a: string }[] };
   lead: { title: string; sub: string; name: string; email: string; phone: string; msg: string; send: string; ok: string; err: string };
   footer: { tag: string; privacy: string; rights: string; made: string };
@@ -108,6 +113,20 @@ export const DICT: Record<Lang, Dict> = {
         { name: 'Commerce', n: 30, price: 50 },
         { name: 'Entreprise', n: 100, price: 90 }
       ]
+    },
+    shop: {
+      badge: 'Nouveau',
+      title: 'Votre boutique en ligne, dans WhatsApp',
+      sub: 'Photographiez vos produits : Fatora en fait une boutique complète — catalogue, panier, commandes, factures. Sans site à construire, sans commission sur vos ventes.',
+      points: [
+        { icon: 'card', t: 'Catalogue par photos', d: 'Une photo suffit : nom et code-barres lus automatiquement, vous donnez le prix et le stock, le produit est en ligne.' },
+        { icon: 'send', t: 'Panier natif WhatsApp', d: 'Vos clients parcourent la galerie, remplissent leur panier et envoient la commande — sans quitter WhatsApp, sans créer de compte.' },
+        { icon: 'qr', t: 'QR et vitrine web à partager', d: 'Un QR pour le comptoir, un lien pour Instagram et Facebook, et une page boutique élégante à votre nom.' },
+        { icon: 'file', t: 'De la commande à la facture, en un mot', d: 'Chaque commande arrive chiffrée avec le contact du client. Un mot — le PDF conforme part, le stock se met à jour.' },
+        { icon: 'users', t: 'La relation client reste à vous', d: 'Les messages de vos acheteurs vous sont transmis avec leur numéro : vous vendez, Fatora fait le secrétariat.' }
+      ],
+      cta: 'Créer ma boutique',
+      note: 'Incluse dans votre abonnement — 0 % de commission sur vos ventes.'
     },
     faq: {
       title: 'Questions fréquentes',
@@ -213,6 +232,20 @@ export const DICT: Record<Lang, Dict> = {
         { name: 'مقاولة', n: 100, price: 90 }
       ]
     },
+    shop: {
+      badge: 'جديد',
+      title: 'البوتيك ديالك أونلاين، فالواتساب',
+      sub: 'صوّر البرودوي ديالك: فاتورة كتديرهم بوتيك كاملة — كاطالوغ، بانيي، طلبيات وفواتير. بلا موقع تبنيه، بلا كوميسيون على المبيعات ديالك.',
+      points: [
+        { icon: 'card', t: 'كاطالوغ بالتصاور', d: 'تصويرة وحدة كافية: السمية والكود بار كيتقراو بوحدهم، نتا كتعطي الثمن والسطوك، والبرودوي يولي أونلاين.' },
+        { icon: 'send', t: 'بانيي واتساب أصلي', d: 'الكليان كيتصفحو، كيعمرو البانيي وكيصيفطو الطلبية — بلا ما يخرجو من الواتساب، بلا حساب جديد.' },
+        { icon: 'qr', t: 'QR وفيترينة ويب للمشاركة', d: 'كود QR للحانوت، لين للإنستغرام والفيسبوك، وصفحة بوتيك أنيقة بسميتك.' },
+        { icon: 'file', t: 'من الطلبية للفاتورة بكلمة وحدة', d: 'كل طلبية كتوصلك محسوبة مع رقم الكليان. كلمة وحدة — والفاتورة القانونية كتخرج والسطوك كيتحدث.' },
+        { icon: 'users', t: 'العلاقة مع الكليان ديالك نتا', d: 'رسائل المشترين كتوصلك مع أرقامهم: نتا كتبيع، وفاتورة كدير السكرتارية.' }
+      ],
+      cta: 'نصاوب البوتيك ديالي',
+      note: 'داخلة فالاشتراك ديالك — 0٪ كوميسيون على المبيعات.'
+    },
     faq: {
       title: 'أسئلة متكررة',
       items: [
@@ -317,6 +350,20 @@ export const DICT: Record<Lang, Dict> = {
         { name: 'Enterprise', n: 100, price: 90 }
       ]
     },
+    shop: {
+      badge: 'New',
+      title: 'Your online shop, inside WhatsApp',
+      sub: 'Photograph your products: Fatora turns them into a full shop — catalog, cart, orders, invoices. No website to build, zero commission on your sales.',
+      points: [
+        { icon: 'card', t: 'Catalog by photos', d: 'One photo is enough: name and barcode read automatically, you set price and stock, the product is live.' },
+        { icon: 'send', t: 'Native WhatsApp cart', d: 'Customers browse the gallery, fill a cart and send their order — without leaving WhatsApp or creating an account.' },
+        { icon: 'qr', t: 'QR and web storefront to share', d: 'A QR for the counter, a link for Instagram and Facebook, and an elegant shop page in your name.' },
+        { icon: 'file', t: 'From order to invoice, in one word', d: 'Every order arrives priced, with the customer contact. One word — the compliant PDF goes out, stock updates.' },
+        { icon: 'users', t: 'The customer relationship stays yours', d: 'Buyer messages are forwarded to you with their number: you sell, Fatora does the desk work.' }
+      ],
+      cta: 'Create my shop',
+      note: 'Included in your plan — 0% commission on sales.'
+    },
     faq: {
       title: 'Frequently asked questions',
       items: [
@@ -420,6 +467,20 @@ export const DICT: Record<Lang, Dict> = {
         { name: 'Comercio', n: 30, price: 50 },
         { name: 'Empresa', n: 100, price: 90 }
       ]
+    },
+    shop: {
+      badge: 'Nuevo',
+      title: 'Tu tienda online, dentro de WhatsApp',
+      sub: 'Fotografía tus productos: Fatora los convierte en una tienda completa — catálogo, carrito, pedidos, facturas. Sin web que construir, sin comisión sobre tus ventas.',
+      points: [
+        { icon: 'card', t: 'Catálogo por fotos', d: 'Una foto basta: nombre y código de barras leídos automáticamente, tú pones precio y stock, y el producto está en línea.' },
+        { icon: 'send', t: 'Carrito nativo de WhatsApp', d: 'Tus clientes navegan, llenan su carrito y envían el pedido — sin salir de WhatsApp ni crear cuenta.' },
+        { icon: 'qr', t: 'QR y escaparate web para compartir', d: 'Un QR para el mostrador, un enlace para Instagram y Facebook, y una página elegante a tu nombre.' },
+        { icon: 'file', t: 'Del pedido a la factura, en una palabra', d: 'Cada pedido llega valorado con el contacto del cliente. Una palabra — el PDF conforme sale y el stock se actualiza.' },
+        { icon: 'users', t: 'La relación con el cliente es tuya', d: 'Los mensajes de tus compradores te llegan con su número: tú vendes, Fatora hace la secretaría.' }
+      ],
+      cta: 'Crear mi tienda',
+      note: 'Incluida en tu plan — 0% de comisión.'
     },
     faq: {
       title: 'Preguntas frecuentes',

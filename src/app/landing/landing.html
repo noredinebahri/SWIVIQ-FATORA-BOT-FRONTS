@@ -98,6 +98,45 @@
 <!-- ══════════ DÉMONSTRATION ANIMÉE ══════════ -->
 <app-showcase [lang]="lang()" />
 
+<!-- ── Boutique WhatsApp ── -->
+<section id="shop" class="shopsec">
+  <div class="wrap shop-grid2">
+    <div class="shop-visual reveal" aria-hidden="true">
+      <div class="phone">
+        <div class="ph-top"><span class="pdot"></span><b>{{ t().shop.points[0] ? 'Ma Boutique' : '' }}</b><i class="plive"></i></div>
+        <div class="ph-grid">
+          <div class="pt" style="--i:0"><span>🍲</span><b>120 DH</b></div>
+          <div class="pt" style="--i:1"><span>☕</span><b>180 DH</b></div>
+          <div class="pt" style="--i:2"><span>🧺</span><b>90 DH</b></div>
+          <div class="pt" style="--i:3"><span>🕯️</span><b>45 DH</b></div>
+        </div>
+        <div class="ph-order">🛒 2 articles · <b>360 DH</b></div>
+      </div>
+      <span class="chip c1">📦 Stock automatique</span>
+      <span class="chip c2">🔗 QR + lien à partager</span>
+      <span class="chip c3">🧾 Facture en un mot</span>
+    </div>
+
+    <div class="shop-copy">
+      <span class="shop-badge reveal">✨ {{ t().shop.badge }}</span>
+      <h2 class="reveal">{{ t().shop.title }}</h2>
+      <p class="sub reveal">{{ t().shop.sub }}</p>
+      <ul class="shop-points">
+        @for (pt of t().shop.points; track pt.t; let i = $index) {
+          <li class="reveal" [style.transition-delay.ms]="i * 80">
+            <span class="pi"><ico [name]="pt.icon" [size]="20"/></span>
+            <div><b>{{ pt.t }}</b><p>{{ pt.d }}</p></div>
+          </li>
+        }
+      </ul>
+      <div class="shop-cta reveal">
+        <a class="btn btn-wa" [href]="waLink" target="_blank" rel="noopener">{{ t().shop.cta }} →</a>
+        <span class="note">{{ t().shop.note }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ LANGUES ══════════ -->
 <section class="langsec reveal">
   <div class="wrap center">
