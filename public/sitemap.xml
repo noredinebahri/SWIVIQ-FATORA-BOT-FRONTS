@@ -16,7 +16,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr"/>
     <image:image>
       <image:loc>https://fatora.swiviq.com/og-ar.png</image:loc>
-      <image:title>فاتورة بوت — الفوترة الصوتية عبر الواتساب للمقاولات المغربية</image:title>
+      <image:title>برنامج الفوترة في المغرب عبر الواتساب — فاتورة بوت</image:title>
     </image:image>
   </url>
 
@@ -151,6 +151,16 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/ar/guides/modele-facture-maroc</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/modele-facture-maroc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/modele-facture-maroc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/modele-facture-maroc"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/ar/guides/numerotation-factures</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -212,7 +222,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr"/>
     <image:image>
       <image:loc>https://fatora.swiviq.com/og-en.png</image:loc>
-      <image:title>Fatora-Bot — Voice invoicing on WhatsApp for Moroccan businesses</image:title>
+      <image:title>Invoicing software for Morocco, on WhatsApp — Fatora-Bot</image:title>
     </image:image>
   </url>
 
@@ -288,7 +298,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr"/>
     <image:image>
       <image:loc>https://fatora.swiviq.com/og-es.png</image:loc>
-      <image:title>Fatora-Bot — Facturación por voz en WhatsApp para empresas marroquíes</image:title>
+      <image:title>Software de facturación en Marruecos por WhatsApp — Fatora-Bot</image:title>
     </image:image>
   </url>
 
@@ -364,7 +374,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr"/>
     <image:image>
       <image:loc>https://fatora.swiviq.com/og-fr.png</image:loc>
-      <image:title>Fatora-Bot — La facturation vocale WhatsApp pour les entreprises marocaines</image:title>
+      <image:title>Logiciel de facturation au Maroc sur WhatsApp — Fatora-Bot</image:title>
     </image:image>
   </url>
 
@@ -541,6 +551,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/mentions-obligatoires-facture"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/guides/modele-facture-maroc</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/modele-facture-maroc"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/modele-facture-maroc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/modele-facture-maroc"/>
   </url>
 
   <url>

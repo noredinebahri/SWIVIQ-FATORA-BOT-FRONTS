@@ -31,9 +31,9 @@ export interface Dict {
 export const DICT: Record<Lang, Dict> = {
   fr: {
     meta: {
-      title: 'Fatora-Bot — La facturation vocale WhatsApp pour les entreprises marocaines',
-      desc: 'Équipez votre entreprise : vos équipes dictent une facture sur WhatsApp — en darija, français ou amazigh — et un PDF conforme (ICE, IF, TVA) part chez le client avec votre cachet. Sans logiciel, sans formation. Essai gratuit.',
-      kw: 'facturation entreprise maroc, facturation whatsapp, facture darija, facture ICE TVA, facturation électronique maroc, logiciel facturation TPE PME'
+      title: 'Logiciel de facturation au Maroc sur WhatsApp — Fatora-Bot',
+      desc: 'Le logiciel de facturation marocain qui tient dans WhatsApp : dictez la facture en darija, français ou amazigh — le PDF conforme (ICE, IF, TVA) part chez le client avec votre cachet. Devis, avoirs, bons de livraison. Essai gratuit, dès 30 DH/mois.',
+      kw: 'logiciel de facturation maroc, logiciel facturation gratuit maroc, application facture maroc, facturation whatsapp, facture darija, facture ICE TVA, facturation électronique maroc, devis facture maroc'
     },
     nav: { features: 'Fonctionnalités', how: 'Comment ça marche', pricing: 'Tarifs', faq: 'FAQ', cta: 'Essayer gratuitement' },
     hero: {
@@ -135,9 +135,9 @@ export const DICT: Record<Lang, Dict> = {
 
   ar: {
     meta: {
-      title: 'فاتورة بوت — الفوترة الصوتية عبر الواتساب للمقاولات المغربية',
-      desc: 'جهّز مقاولتك: فرق العمل ديالك كيدكتيو الفاتورة على الواتساب — بالدارجة، الفرنسية ولا الأمازيغية — وPDF قانوني (ICE، IF، TVA) كيوصل للعميل بطابع الشركة. بلا برنامج، بلا تكوين. تجربة مجانية.',
-      kw: 'فوترة المقاولات المغرب, فواتير واتساب, فاتورة بالدارجة, الفوترة الإلكترونية المغرب, برنامج فوترة'
+      title: 'برنامج الفوترة في المغرب عبر الواتساب — فاتورة بوت',
+      desc: 'برنامج الفوترة المغربي اللي كيخدم من الواتساب: دكتي الفاتورة بالدارجة أو الفرنسية أو الأمازيغية — وPDF قانوني (ICE، IF، TVA) كيوصل للعميل بطابع الشركة. عروض أثمنة، إشعارات دائنة، بونات التسليم. تجربة مجانية، من 30 درهم فالشهر.',
+      kw: 'برنامج الفوترة المغرب, برنامج فواتير مجاني المغرب, تطبيق فاتورة المغرب, فواتير واتساب, فاتورة بالدارجة, الفوترة الإلكترونية المغرب, نموذج فاتورة المغرب'
     },
     nav: { features: 'المميزات', how: 'كيفاش خدام', pricing: 'الأثمنة', faq: 'أسئلة', cta: 'جرب مجانا' },
     hero: {
@@ -239,9 +239,9 @@ export const DICT: Record<Lang, Dict> = {
 
   en: {
     meta: {
-      title: 'Fatora-Bot — Voice invoicing on WhatsApp for Moroccan businesses',
-      desc: 'Equip your business: your teams dictate an invoice on WhatsApp — in Darija, French or Amazigh — and a compliant PDF (ICE, IF, VAT) reaches your customer with your company stamp. No software, no training. Free trial.',
-      kw: 'business invoicing morocco, whatsapp invoicing, darija invoice, morocco e-invoicing, SME invoicing software'
+      title: 'Invoicing software for Morocco, on WhatsApp — Fatora-Bot',
+      desc: 'Moroccan invoicing software that lives in WhatsApp: dictate the invoice in Darija, French or Amazigh — a compliant PDF (ICE, tax ID, VAT) reaches your customer with your company stamp. Quotes, credit notes, delivery notes. Free trial, from 30 MAD/month.',
+      kw: 'invoicing software morocco, morocco invoicing software, invoice app morocco, whatsapp invoicing, darija invoice, morocco e-invoicing, invoicing api morocco'
     },
     nav: { features: 'Features', how: 'How it works', pricing: 'Pricing', faq: 'FAQ', cta: 'Try for free' },
     hero: {
@@ -343,9 +343,9 @@ export const DICT: Record<Lang, Dict> = {
 
   es: {
     meta: {
-      title: 'Fatora-Bot — Facturación por voz en WhatsApp para empresas marroquíes',
-      desc: 'Equipa tu empresa: tus equipos dictan una factura por WhatsApp — en dariya, francés o amazigh — y un PDF conforme (ICE, IF, IVA) llega a tu cliente con el sello de la empresa. Sin software, sin formación. Prueba gratuita.',
-      kw: 'facturación empresas marruecos, facturación whatsapp, factura dariya, facturación electrónica marruecos'
+      title: 'Software de facturación en Marruecos por WhatsApp — Fatora-Bot',
+      desc: 'El software de facturación marroquí que vive en WhatsApp: dicta la factura en dariya, francés o amazigh — el PDF conforme (ICE, IF, IVA) llega a tu cliente con el sello de la empresa. Presupuestos, abonos, albaranes. Prueba gratuita, desde 30 MAD/mes.',
+      kw: 'software facturación marruecos, programa facturación marruecos, aplicación factura marruecos, facturación whatsapp, factura dariya, facturación electrónica marruecos'
     },
     nav: { features: 'Funciones', how: 'Cómo funciona', pricing: 'Precios', faq: 'FAQ', cta: 'Probar gratis' },
     hero: {

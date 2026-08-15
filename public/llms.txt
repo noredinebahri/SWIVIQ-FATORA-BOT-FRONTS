@@ -77,6 +77,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - توليد فاتورة PDF عبر API: دليل خطوة بخطوة : https://fatora.swiviq.com/ar/guides/generer-facture-pdf-api
 - ICE والرقم الضريبي والضريبة المهنية: شنو الفرق : https://fatora.swiviq.com/ar/guides/ice-if-taxe-professionnelle
 - البيانات الإجبارية فالفاتورة المغربية (لائحة 2026) : https://fatora.swiviq.com/ar/guides/mentions-obligatoires-facture
+- نموذج فاتورة المغرب 2026: البنية والبيانات الإجبارية : https://fatora.swiviq.com/ar/guides/modele-facture-maroc
 - ترقيم الفواتير بالمغرب: القواعد والأخطاء : https://fatora.swiviq.com/ar/guides/numerotation-factures
 - نسب TVA بالمغرب: أشنا نسبة تطبق فالفاتورة : https://fatora.swiviq.com/ar/guides/taux-tva-maroc
 - فوترة البناء والنجارة بالمغرب من الورش : https://fatora.swiviq.com/ar/secteurs/btp-menuiserie
@@ -86,7 +87,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - Generate an invoice PDF via API: Morocco tutorial 2026 : https://fatora.swiviq.com/en/guides/generer-facture-pdf-api
 - API de facturación en Marruecos: guía del integrador : https://fatora.swiviq.com/es/guides/api-facturation-maroc
 - Generar factura PDF por API: tutorial Marruecos 2026 : https://fatora.swiviq.com/es/guides/generer-facture-pdf-api
-- Alternative aux logiciels de facturation au Maroc : https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation
+- Logiciel de facturation au Maroc : le comparatif honnête : https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation
 - Facturer sur Excel : les risques et quand en sortir : https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp
 - API de facturation au Maroc : le guide pour intégrateurs : https://fatora.swiviq.com/fr/guides/api-facturation-maroc
 - Conserver ses factures au Maroc : durée et archivage : https://fatora.swiviq.com/fr/guides/archivage-factures-maroc
@@ -100,6 +101,7 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - Glossaire de la facturation au Maroc : 30 termes : https://fatora.swiviq.com/fr/guides/glossaire-facturation-maroc
 - ICE, IF, taxe professionnelle : quel numéro sur vos factures : https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle
 - Mentions obligatoires d’une facture au Maroc (liste 2026) : https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture
+- Modèle de facture Maroc 2026 : structure et mentions : https://fatora.swiviq.com/fr/guides/modele-facture-maroc
 - Numérotation des factures au Maroc : règles et erreurs : https://fatora.swiviq.com/fr/guides/numerotation-factures
 - Taux de TVA au Maroc : lequel appliquer sur vos factures : https://fatora.swiviq.com/fr/guides/taux-tva-maroc
 - Facturation BTP et menuiserie au Maroc depuis le chantier : https://fatora.swiviq.com/fr/secteurs/btp-menuiserie

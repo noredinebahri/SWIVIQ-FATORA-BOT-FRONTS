@@ -787,5 +787,92 @@ export const GUIDES_FR: Article[] = [
     related: ['api-facturation-maroc', 'numerotation-factures', 'taux-tva-maroc', 'facture-whatsapp-comment-faire'],
     updated: '2026-08-15',
     readMin: 6
+  },
+
+  {
+    slug: 'modele-facture-maroc',
+    section: 'guides',
+    lang: 'fr',
+    metaTitle: 'Modèle de facture Maroc 2026 : structure et mentions',
+    metaDesc:
+      'Le modèle de facture marocaine conforme, section par section : en-tête ICE/IF, identité du client, lignes et TVA, montant en lettres, pied de page légal. Ce qu’un modèle Word ou Excel ne gère pas, et comment l’éviter.',
+    keywords:
+      'modèle facture maroc, exemple facture maroc, modèle facture word maroc, modèle facture excel maroc, facture type maroc, modèle facture ICE, modèle devis maroc',
+    title: 'Modèle de facture au Maroc : la structure complète, section par section',
+    intro:
+      'Vous cherchez un modèle de facture conforme aux règles marocaines ? Voici exactement ce qu’il doit contenir, bloc par bloc, du premier ICE au montant en toutes lettres — puis ce qu’aucun modèle Word ou Excel ne gérera jamais à votre place : la numérotation continue, l’archivage et les régimes fiscaux.',
+    answer:
+      'Un modèle de facture marocaine conforme comporte cinq blocs : l’en-tête émetteur (raison sociale, ICE, IF, taxe professionnelle, RC, adresse), l’identité du client (raison sociale et ICE en B2B), le numéro et la date, le tableau des lignes avec TVA ventilée par taux, et le pied avec totaux HT/TVA/TTC, montant en toutes lettres et conditions de règlement.',
+    blocks: [
+      {
+        h: 'Bloc 1 — l’en-tête de l’émetteur',
+        p: [
+          'En haut de la facture figurent les identifiants de votre entreprise, tous obligatoires : raison sociale (ou nom pour un auto-entrepreneur), ICE à 15 chiffres, identifiant fiscal (IF), numéro de taxe professionnelle, numéro de registre de commerce pour les sociétés, et adresse du siège. Le logo et le cachet ne sont pas exigés par la loi, mais un client B2B structuré s’attend à les voir — et beaucoup de services de l’État refusent en pratique une facture sans cachet.',
+          'Pour une société, ajoutez la forme juridique et le capital social (SARL au capital de X DH). Un auto-entrepreneur mentionne à la place « TVA non applicable — auto-entrepreneur, loi n° 114-13 ».'
+        ]
+      },
+      {
+        h: 'Bloc 2 — l’identité du client',
+        p: [
+          'En B2B, la raison sociale exacte et l’ICE du client sont obligatoires : sans son ICE, votre client ne peut pas déduire la TVA, et c’est le premier motif de rejet d’une facture. En B2C, le nom du particulier suffit ; pour certaines professions, le CIN est d’usage.',
+          'Le piège classique du modèle Word : l’orthographe de la raison sociale recopiée à la main change d’une facture à l’autre (STE ATLAS, Sté Atlas Digital, ATLAS DIGITAL SARL…). Un même client doit apparaître à l’identique partout — c’est ce qu’un référentiel clients garantit et qu’un modèle ne garantit pas.'
+        ]
+      },
+      {
+        h: 'Bloc 3 — numéro, date, et le problème que le modèle ne résout pas',
+        p: [
+          'Chaque facture porte un numéro unique, dans une séquence continue et chronologique, sans trou ni doublon : FAT-2026-0001, 0002, 0003… La date d’émission est obligatoire ; l’échéance de règlement l’est aussi depuis la loi 69-21 sur les délais de paiement.',
+          'C’est ici que les modèles Word et Excel échouent structurellement : le numéro est tapé à la main. Un doublon, un trou après une facture abandonnée, deux collaborateurs qui facturent en même temps — et votre séquence n’est plus opposable. En contrôle fiscal, la rupture de séquence se détecte mécaniquement.'
+        ],
+        note:
+          'Une facture ratée ne se supprime pas et ne se refait pas sous le même numéro « propre » : elle s’annule par une facture d’avoir, et le numéro reste dans la séquence. Aucun modèle téléchargé ne vous l’imposera — un outil, si.'
+      },
+      {
+        h: 'Bloc 4 — les lignes et la TVA',
+        p: [
+          'Chaque ligne porte : désignation précise, quantité, prix unitaire hors taxe, taux de TVA et montant. Depuis 2026, il ne reste que deux taux au Maroc : 20 % (taux normal) et 10 % (taux réduit). Si des lignes portent des taux différents, la TVA doit être ventilée par taux dans le récapitulatif.',
+          'Les entreprises hors champ de TVA (auto-entrepreneurs) ou exonérées facturent à 0 % avec la mention légale correspondante — un modèle générique international ne connaît ni ces mentions ni ces régimes.'
+        ]
+      },
+      {
+        h: 'Bloc 5 — le pied de facture',
+        p: [
+          'Le pied comporte : total hors taxe, TVA (ventilée si plusieurs taux), total TTC en dirhams, et la formule « Arrêtée la présente facture à la somme de… » avec le montant TTC en toutes lettres — mention obligatoire et premier oubli des modèles Excel. S’y ajoutent les conditions de règlement (mode et échéance) et, en bas de page, le rappel des identifiants de l’émetteur.',
+          'Pour un devis, la structure est identique avec trois différences : le titre « Devis », une numérotation séparée (DEV-2026-…), et une durée de validité (30 jours d’usage).'
+        ]
+      },
+      {
+        h: 'Modèle téléchargé ou outil : le vrai critère',
+        p: [
+          'Un modèle Word ou Excel convient si vous émettez deux ou trois factures par mois, toujours au même client, et que vous tenez la séquence avec rigueur. Au-delà, les risques s’accumulent : numérotation cassée, TVA calculée à la main, mentions oubliées, archives éparpillées — et l’e-facturation obligatoire qui arrive exigera de toute façon des documents structurés, pas des fichiers bureautiques.',
+          'L’alternative n’est pas forcément un logiciel à installer : avec Fatora-Bot, la facture se dicte sur WhatsApp en darija ou en français, et le PDF sort conforme — numérotation continue gérée, TVA calculée, montant en lettres, cachet apposé, archives retrouvables. Deux factures offertes pour comparer avec votre modèle actuel.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'Existe-t-il un modèle de facture officiel de la DGI ?',
+        a: 'Non. La DGI n’impose pas de gabarit graphique : elle impose un contenu — les mentions de l’article 145 du CGI. Tout modèle qui porte ces mentions, dans n’importe quelle mise en page lisible, est valable. C’est le contenu qui fait la conformité, pas le design.'
+      },
+      {
+        q: 'Un modèle de facture Word ou Excel est-il légal au Maroc ?',
+        a: 'Oui, tant que toutes les mentions obligatoires y figurent et que la numérotation reste continue. C’est cette seconde condition qui casse en pratique : le numéro tapé à la main finit par sauter ou se dédoubler, et la séquence n’est plus défendable en contrôle.'
+      },
+      {
+        q: 'Quelle est la différence entre un modèle de facture et un modèle de devis ?',
+        a: 'La structure est la même. Le devis porte le titre « Devis », sa propre numérotation (séparée de celle des factures), une durée de validité, et n’a aucun effet fiscal tant qu’il n’est pas transformé en facture. Ne convertissez jamais un devis en facture en changeant juste le titre : la facture doit prendre un numéro de la séquence des factures.'
+      },
+      {
+        q: 'Le montant en toutes lettres est-il vraiment obligatoire ?',
+        a: 'Oui — « Arrêtée la présente facture à la somme de… » suivie du montant TTC en lettres est une mention exigée. C’est l’oubli le plus fréquent des modèles Excel téléchargés, car aucune formule standard ne convertit un nombre en lettres en français correctement.'
+      },
+      {
+        q: 'Puis-je facturer en anglais ou en euros ?',
+        a: 'La facture destinée à un client marocain se libelle en dirhams. Pour l’export, la facture peut être en devise et en langue étrangère, mais votre comptabilité enregistre la contre-valeur en dirhams. En cas de doute sur un cas export, votre comptable tranche.'
+      }
+    ],
+    related: ['mentions-obligatoires-facture', 'numerotation-factures', 'excel-vs-facturation-whatsapp', 'facture-auto-entrepreneur-maroc', 'devis-conforme-maroc'],
+    updated: '2026-08-15',
+    readMin: 7
   }
 ];

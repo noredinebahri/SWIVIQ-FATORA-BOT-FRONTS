@@ -265,11 +265,11 @@ export const METIERS_FR: Article[] = [
     slug: 'alternative-logiciel-facturation',
     section: 'comparatif',
     lang: 'fr',
-    metaTitle: 'Alternative aux logiciels de facturation au Maroc',
+    metaTitle: 'Logiciel de facturation au Maroc : le comparatif honnête',
     metaDesc:
-      'Facturation conversationnelle ou logiciel classique : coût réel, délai de mise en route, adoption par les équipes de terrain et limites de chaque approche, sans complaisance.',
+      'Quel logiciel de facturation choisir au Maroc ? Facturation conversationnelle ou logiciel classique : coût réel, délai de mise en route, adoption par les équipes de terrain et limites de chaque approche, sans complaisance.',
     keywords:
-      'alternative logiciel facturation maroc, logiciel facturation TPE maroc, comparatif facturation maroc, logiciel facture pas cher maroc',
+      'logiciel de facturation maroc, logiciel facturation gratuit maroc, alternative logiciel facturation maroc, logiciel facturation TPE maroc, comparatif facturation maroc, logiciel facture pas cher maroc',
     title: 'Facturation conversationnelle ou logiciel classique : comment choisir',
     intro:
       'Un logiciel de facturation reste le bon choix pour beaucoup d’entreprises. Ce comparatif dit dans quels cas, et dans quels autres cas une approche conversationnelle est plus réaliste — y compris là où Fatora-Bot n’est pas la bonne réponse.',
