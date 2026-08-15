@@ -61,8 +61,29 @@ export function siteMenu(l: Lang, homeLabel: string, guidesLabel: string): SiteL
 }
 
 export const FOOT_GROUPS: Record<Lang, { site: string; api: string; contact: string }> = {
-  fr: { site: 'Le site', api: 'API & intégration', contact: 'Contact' },
-  ar: { site: 'الموقع', api: 'API والإدماج', contact: 'التواصل' },
-  en: { site: 'Site', api: 'API & integration', contact: 'Contact' },
-  es: { site: 'Sitio', api: 'API e integración', contact: 'Contacto' }
+  fr: { site: 'Le site', api: 'API & intégration', contact: 'Contact & légal' },
+  ar: { site: 'الموقع', api: 'API والإدماج', contact: 'التواصل والقانوني' },
+  en: { site: 'Site', api: 'API & integration', contact: 'Contact & legal' },
+  es: { site: 'Sitio', api: 'API e integración', contact: 'Contacto y legal' }
 };
+
+/**
+ * Pages légales — rédigées en français (version faisant foi), liées depuis
+ * les footers des quatre langues avec un libellé traduit.
+ */
+export function legalMenu(l: Lang): SiteLink[] {
+  return [
+    {
+      label: { fr: 'Mentions légales', ar: 'إشعار قانوني', en: 'Legal notice', es: 'Aviso legal' }[l],
+      path: '/fr/mentions-legales'
+    },
+    {
+      label: { fr: 'Conditions d’utilisation', ar: 'شروط الاستخدام', en: 'Terms of use', es: 'Condiciones de uso' }[l],
+      path: '/fr/cgu'
+    },
+    {
+      label: { fr: 'Confidentialité', ar: 'الخصوصية', en: 'Privacy', es: 'Privacidad' }[l],
+      path: '/fr/confidentialite'
+    }
+  ];
+}

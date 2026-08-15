@@ -16,6 +16,9 @@ export const routes: Routes = [
   { path: ':lang/api', loadComponent: () => import('./api-docs/api-docs').then((m) => m.ApiDocs) },
   { path: ':lang/generateur-facture', loadComponent: () => import('./generateur/generateur').then((m) => m.Generateur) },
   { path: ':lang/a-propos', loadComponent: () => import('./article/about').then((m) => m.About) },
+  { path: ':lang/mentions-legales', loadComponent: () => import('./legal/legal').then((m) => m.Legal), data: { page: 'mentions-legales' } },
+  { path: ':lang/cgu', loadComponent: () => import('./legal/legal').then((m) => m.Legal), data: { page: 'cgu' } },
+  { path: ':lang/confidentialite', loadComponent: () => import('./legal/legal').then((m) => m.Legal), data: { page: 'confidentialite' } },
   { path: ':lang/:section/:slug', loadComponent: () => import('./article/article').then((m) => m.Article) },
   { path: ':lang', component: Landing },
   { path: '**', redirectTo: 'fr' }

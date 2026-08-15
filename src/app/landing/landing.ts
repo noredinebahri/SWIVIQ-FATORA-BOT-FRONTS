@@ -12,7 +12,7 @@ import { Ico } from '../icon';
 import { Showcase } from '../showcase/showcase';
 import { SeoSection } from '../seo/seo-section';
 import { CONTENT_UI } from '../content/ui';
-import { ABOUT_LABEL, FOOT_GROUPS, apiMenu } from '../shell/site-links';
+import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, legalMenu } from '../shell/site-links';
 
 const SITE = 'https://fatora.swiviq.com';
 const CONTACT_API = 'https://bot.swiviq.com/lead';
@@ -41,6 +41,7 @@ export class Landing implements OnInit, OnDestroy {
   aboutLabel = computed(() => ABOUT_LABEL[this.lang()]);
   apiLinks = computed(() => apiMenu(this.lang()));
   footGroups = computed(() => FOOT_GROUPS[this.lang()]);
+  legalLinks = computed(() => legalMenu(this.lang()));
 
   openFaq = signal<number>(-1);
   navOpen = signal(false);

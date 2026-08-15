@@ -40,6 +40,22 @@ export const serverRoutes: ServerRoute[] = [
     }
   },
   {
+    // Pages légales : français uniquement, version faisant foi
+    path: ':lang/mentions-legales',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() { return [{ lang: 'fr' }]; }
+  },
+  {
+    path: ':lang/cgu',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() { return [{ lang: 'fr' }]; }
+  },
+  {
+    path: ':lang/confidentialite',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() { return [{ lang: 'fr' }]; }
+  },
+  {
     path: ':lang/a-propos',
     renderMode: RenderMode.Prerender,
     async getPrerenderParams() {

@@ -413,6 +413,13 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/fr/cgu</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/fr/comparatif/alternative-logiciel-facturation</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -430,6 +437,13 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/comparatif/excel-vs-facturation-whatsapp"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/comparatif/excel-vs-facturation-whatsapp"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/confidentialite</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
@@ -610,6 +624,13 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/taux-tva-maroc"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/guides/taux-tva-maroc"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/taux-tva-maroc"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/mentions-legales</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>

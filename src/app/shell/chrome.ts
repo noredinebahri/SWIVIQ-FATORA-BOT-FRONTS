@@ -2,7 +2,7 @@ import { Component, computed, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LANGS, WA_LINK, DICT, type Lang } from '../i18n';
 import { CONTENT_UI } from '../content/ui';
-import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
+import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, legalMenu, siteMenu } from './site-links';
 
 /**
  * En-tête et pied de page des pages éditoriales.
@@ -152,9 +152,11 @@ export class SiteHeader {
       </div>
       <div class="foot-col">
         <h4>{{ groups().contact }}</h4>
-        <a href="https://bot.swiviq.com/privacy" target="_blank" rel="noopener">{{ d().footer.privacy }}</a>
         <a [href]="wa" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:contact&#64;swiviq.com">contact&#64;swiviq.com</a>
+        @for (it of legalLinks(); track it.path) {
+          <a [routerLink]="it.path">{{ it.label }}</a>
+        }
       </div>
     </div>
     <div class="wrap foot-base">
@@ -190,4 +192,5 @@ export class SiteFooter {
   groups = computed(() => FOOT_GROUPS[this.lang()]);
   apiLinks = computed(() => apiMenu(this.lang()));
   siteLinks = computed(() => siteMenu(this.lang(), this.ui().home, this.ui().navGuides));
+  legalLinks = computed(() => legalMenu(this.lang()));
 }

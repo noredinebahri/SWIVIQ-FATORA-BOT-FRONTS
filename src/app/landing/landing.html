@@ -247,9 +247,11 @@
     </div>
     <div class="foot-col">
       <h4>{{ footGroups().contact }}</h4>
-      <a href="https://bot.swiviq.com/privacy" target="_blank" rel="noopener">{{ t().footer.privacy }}</a>
       <a [href]="waLink" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:contact@swiviq.com">contact&#64;swiviq.com</a>
+      @for (it of legalLinks(); track it.path) {
+        <a [routerLink]="it.path">{{ it.label }}</a>
+      }
     </div>
   </div>
   <div class="wrap foot-base">
