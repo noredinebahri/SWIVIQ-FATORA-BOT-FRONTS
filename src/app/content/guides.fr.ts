@@ -530,11 +530,11 @@ export const GUIDES_FR: Article[] = [
     slug: 'facture-whatsapp-comment-faire',
     section: 'guides',
     lang: 'fr',
-    metaTitle: 'Faire une facture sur WhatsApp : la méthode complète',
+    metaTitle: 'Facture WhatsApp au Maroc : PDF conforme en 30 secondes',
     metaDesc:
-      'Comment émettre une facture conforme depuis WhatsApp, en dictant en darija ou en français : mise en route, dictée, validation, remise au client par QR code ou email.',
+      'Facture par WhatsApp au Maroc : dictez en darija ou en français, le PDF conforme (ICE, TVA, numérotation) part chez le client par QR code, WhatsApp ou email. Devis WhatsApp aussi. La méthode complète, étape par étape.',
     keywords:
-      'facture whatsapp, facturation whatsapp maroc, faire une facture par whatsapp, facture vocale darija, facture sans logiciel',
+      'facture whatsapp, facture whatsapp maroc, faire une facture sur whatsapp, devis whatsapp, facturation whatsapp business, facture vocale darija, facture sans logiciel',
     title: 'Émettre une facture depuis WhatsApp, en parlant',
     intro:
       'WhatsApp est déjà sur le téléphone de vos équipes. Il ne manque qu’un interlocuteur au bout de la conversation capable de comprendre une facture dictée et de la transformer en PDF conforme. Voici comment se déroule le processus, étape par étape.',
@@ -874,5 +874,85 @@ export const GUIDES_FR: Article[] = [
     related: ['mentions-obligatoires-facture', 'numerotation-factures', 'excel-vs-facturation-whatsapp', 'facture-auto-entrepreneur-maroc', 'devis-conforme-maroc'],
     updated: '2026-08-15',
     readMin: 7
+  },
+
+  {
+    slug: 'logiciel-facturation-maroc',
+    section: 'guides',
+    lang: 'fr',
+    metaTitle: 'Logiciel de facturation au Maroc conforme DGI 2026',
+    metaDesc:
+      'Comment choisir un logiciel de facturation au Maroc : conformité DGI 2026, mentions obligatoires, numérotation, TVA, prix réels du marché — et pourquoi le bon « logiciel » tient parfois dans WhatsApp, dès 30 DH/mois, essai gratuit.',
+    keywords:
+      'logiciel de facturation maroc, logiciel facturation maroc dgi 2026, meilleur logiciel facturation maroc, logiciel facturation gratuit maroc, logiciel devis facture maroc, programme facturation maroc, application facturation maroc',
+    title: 'Logiciel de facturation au Maroc : le guide de choix, conformité DGI 2026 comprise',
+    intro:
+      'Le marché marocain compte une dizaine de logiciels de facturation, du gratuit limité à l’ERP complet. Ce guide donne les critères qui comptent vraiment — conformité DGI, numérotation, régimes fiscaux, prix réels — puis explique dans quels cas un logiciel classique est le bon choix, et dans quels cas une solution qui tient dans WhatsApp sert mieux une équipe de terrain.',
+    answer:
+      'Un logiciel de facturation au Maroc doit garantir quatre choses : les mentions obligatoires de l’article 145 du CGI (ICE, IF, TVA ventilée, montant en lettres), une numérotation continue infalsifiable, la gestion des régimes fiscaux (TVA 20/10 %, auto-entrepreneur sans TVA), et une trajectoire vers la facturation électronique DGI. Les prix du marché vont de gratuit (limité) à 100-350 DH/mois.',
+    blocks: [
+      {
+        h: 'Critère 1 — la conformité DGI, aujourd’hui et en 2026',
+        p: [
+          'La conformité a deux étages. Aujourd’hui : chaque facture émise doit porter les mentions de l’article 145 du CGI — ICE et IF de l’émetteur, taxe professionnelle, ICE du client en B2B, TVA ventilée par taux (20 % ou 10 % depuis 2026), montant en toutes lettres, numérotation continue. Un logiciel qui laisse émettre une facture incomplète ne vous protège de rien.',
+          'Demain : la facturation électronique obligatoire (article 145-IX, modèle de validation préalable) se déploie par vagues. Le bon réflexe n’est pas d’acheter une promesse de « conformité 2026 garantie » — les spécifications ne sont pas toutes publiées — mais de vérifier que votre outil produit déjà des documents structurés, complets et correctement numérotés : c’est l’état qui rendra le raccordement trivial le jour venu.'
+        ]
+      },
+      {
+        h: 'Critère 2 — la numérotation et les corrections',
+        p: [
+          'C’est le critère qui sépare les vrais logiciels des générateurs de PDF : la séquence FAT-2026-0001, 0002, 0003 doit être gérée par l’outil, sans trou ni doublon possible, avec annulation par facture d’avoir et correction sous le même numéro. Testez précisément ce scénario avant de payer : « je me suis trompé sur la facture d’hier, que se passe-t-il ? ». Si la réponse est « on la supprime », fuyez.'
+        ]
+      },
+      {
+        h: 'Critère 3 — les régimes fiscaux et les documents annexes',
+        p: [
+          'Votre logiciel doit connaître votre régime : TVA normale, taux réduit, auto-entrepreneur hors champ (mention loi 114-13 obligatoire), exonération. Et couvrir les documents qui accompagnent la facture : devis avec validité et numérotation séparée, bons de livraison, factures d’avoir, factures récurrentes.',
+          'Vérifiez aussi la langue : au Maroc, une partie des équipes travaille en arabe. Un logiciel uniquement francophone exclut de fait les personnes qui saisiraient les factures.'
+        ]
+      },
+      {
+        h: 'Les prix réels du marché marocain',
+        p: [
+          'Le marché se répartit en trois bandes. Les gratuits (avec limites : volume, logo imposé, ou données revendues en contrepartie) ; les abonnements TPE entre 30 et 100 DH/mois ; les suites de gestion complètes de 100 à 350 DH/mois et plus, qui ajoutent stocks, comptabilité ou paie.',
+          'Le bon calcul n’est pas le prix affiché mais le coût complet : licence + temps de formation + temps de saisie. Un outil à 50 DH/mois que votre équipe de terrain n’utilise pas — parce qu’il faut un ordinateur, un login et une formation — coûte plus cher qu’un outil à 90 DH utilisé tous les jours.'
+        ],
+        note:
+          'Fatora-Bot se situe dans la bande TPE : essai gratuit (2 factures), puis 30, 50 ou 90 DH/mois selon le volume. La différence n’est pas le prix : c’est qu’il n’y a ni logiciel à installer, ni formation — la facture se dicte dans WhatsApp, en darija, en français ou en amazigh.'
+      },
+      {
+        h: 'Logiciel classique ou WhatsApp : le vrai partage',
+        p: [
+          'Un logiciel classique (poste de travail, tableau de bord, modules) est le bon choix quand une personne dédiée traite l’administratif depuis un bureau, avec des besoins de gestion étendus — stocks, comptabilité intégrée, multi-dépôts.',
+          'Une solution conversationnelle sur WhatsApp sert mieux les équipes de terrain : commerçants, artisans, transporteurs, chantiers — là où la facture doit partir sur place, depuis un téléphone, par des personnes qui écrivent peu ou pas. La dictée vocale en darija fait toute la différence d’adoption : l’outil s’adapte aux équipes, pas l’inverse.',
+          'Les deux approches produisent des documents également conformes. Le choix se fait sur l’usage réel de vos équipes, pas sur la longueur de la liste de fonctionnalités.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'Quel est le meilleur logiciel de facturation au Maroc ?',
+        a: 'Celui que vos équipes utiliseront vraiment. Pour un bureau avec une personne dédiée à l’administratif, un logiciel classique conforme DGI fait l’affaire. Pour des équipes de terrain qui facturent depuis le téléphone, une solution WhatsApp à dictée vocale s’adopte sans formation. Vérifiez dans tous les cas : mentions 145 CGI, numérotation gérée, avoirs, régimes fiscaux.'
+      },
+      {
+        q: 'Un logiciel de facturation gratuit suffit-il ?',
+        a: 'Pour tester, oui. En usage réel, lisez les limites : plafond de documents, logo du prestataire sur vos factures, fonctionnalités bloquées (avoirs, devis), et surtout le modèle économique — si c’est gratuit sans limite, demandez-vous ce qui finance le service. Un abonnement TPE au Maroc coûte entre 30 et 100 DH/mois : moins qu’une erreur de TVA.'
+      },
+      {
+        q: 'Mon logiciel doit-il déjà être « conforme facturation électronique 2026 » ?',
+        a: 'Personne ne peut le garantir totalement : une partie des spécifications de la plateforme nationale n’est pas publiée. Ce qui compte : que vos documents soient déjà structurés, complets et numérotés en continu, et que votre prestataire s’engage à assurer le raccordement. Méfiez-vous des garanties absolues vendues avant les textes.'
+      },
+      {
+        q: 'Puis-je facturer depuis mon téléphone uniquement ?',
+        a: 'Oui — c’est même le mode principal pour les TPE de terrain. Avec Fatora-Bot, tout se passe dans WhatsApp : dictée de la facture (voix ou texte), validation, PDF conforme avec cachet, remise au client par WhatsApp, email ou QR code, archives consultables. Aucune application à installer.'
+      },
+      {
+        q: 'Et si mon activité a besoin de stocks ou de comptabilité ?',
+        a: 'Alors il vous faut une suite de gestion, pas un outil de facturation seul. La facturation conversationnelle peut coexister : les équipes de terrain émettent sur WhatsApp, et l’export CSV alimente le comptable ou l’ERP. Beaucoup d’entreprises combinent les deux.'
+      }
+    ],
+    related: ['alternative-logiciel-facturation', 'modele-facture-maroc', 'facturation-electronique-maroc', 'facture-whatsapp-comment-faire', 'mentions-obligatoires-facture'],
+    updated: '2026-08-15',
+    readMin: 8
   }
 ];

@@ -544,6 +544,15 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/fr/guides/logiciel-facturation-maroc</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/guides/logiciel-facturation-maroc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/guides/logiciel-facturation-maroc"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>

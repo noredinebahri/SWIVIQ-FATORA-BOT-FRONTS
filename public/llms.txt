@@ -96,10 +96,11 @@ Contenu intégral de ces pages : https://fatora.swiviq.com/llms-full.txt
 - Facturation électronique au Maroc : le guide 2026 : https://fatora.swiviq.com/fr/guides/facturation-electronique-maroc
 - Facture auto-entrepreneur au Maroc : règles et modèle : https://fatora.swiviq.com/fr/guides/facture-auto-entrepreneur-maroc
 - Facture d’avoir au Maroc : quand et comment l’émettre : https://fatora.swiviq.com/fr/guides/facture-avoir-maroc
-- Faire une facture sur WhatsApp : la méthode complète : https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire
+- Facture WhatsApp au Maroc : PDF conforme en 30 secondes : https://fatora.swiviq.com/fr/guides/facture-whatsapp-comment-faire
 - Générer une facture PDF par API : tutoriel Maroc 2026 : https://fatora.swiviq.com/fr/guides/generer-facture-pdf-api
 - Glossaire de la facturation au Maroc : 30 termes : https://fatora.swiviq.com/fr/guides/glossaire-facturation-maroc
 - ICE, IF, taxe professionnelle : quel numéro sur vos factures : https://fatora.swiviq.com/fr/guides/ice-if-taxe-professionnelle
+- Logiciel de facturation au Maroc conforme DGI 2026 : https://fatora.swiviq.com/fr/guides/logiciel-facturation-maroc
 - Mentions obligatoires d’une facture au Maroc (liste 2026) : https://fatora.swiviq.com/fr/guides/mentions-obligatoires-facture
 - Modèle de facture Maroc 2026 : structure et mentions : https://fatora.swiviq.com/fr/guides/modele-facture-maroc
 - Numérotation des factures au Maroc : règles et erreurs : https://fatora.swiviq.com/fr/guides/numerotation-factures
