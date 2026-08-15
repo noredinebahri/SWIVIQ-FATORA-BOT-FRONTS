@@ -19,8 +19,13 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
         <img class="logo-mark" src="/logo.svg" alt="" width="34" height="34">
         <span class="logo-txt">Fatora<em>Bot</em></span>
       </a>
+      <!-- Mêmes entrées, même ordre que le menu de la landing : un seul menu
+           pour tout le site. Les ancres renvoient aux sections de l'accueil. -->
       <nav class="nav-links">
-        <a [routerLink]="['/', lang()]">{{ ui().home }}</a>
+        <a [routerLink]="['/', lang()]" fragment="demo">{{ d().nav.features }}</a>
+        <a [routerLink]="['/', lang()]" fragment="how">{{ d().nav.how }}</a>
+        <a [routerLink]="['/', lang()]" fragment="pricing">{{ d().nav.pricing }}</a>
+        <a [routerLink]="['/', lang()]" fragment="faq">{{ d().nav.faq }}</a>
         <a [routerLink]="['/', lang(), 'guides']">{{ ui().navGuides }}</a>
         <div class="dd">
           <a class="dd-top" [routerLink]="['/', lang(), 'api']">API <span class="caret">▾</span></a>
@@ -30,7 +35,6 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
             }
           </div>
         </div>
-        <a [routerLink]="['/', lang()]" fragment="pricing">{{ d().nav.pricing }}</a>
         <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
       </nav>
       <div class="nav-right">
@@ -66,10 +70,12 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, siteMenu } from './site-links';
         &:hover { background: #f4f5f9; } } }
     &:hover .dd-menu, &:focus-within .dd-menu { display: flex; } }
   .nav-right { display: flex; align-items: center; gap: 14px; }
-  .lang-switch { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #eceef4;
-    a { padding: 5px 9px; border-radius: 999px; font-size: .72rem; font-weight: 700; color: #6b7284;
+  /* Même habillage que le sélecteur de la landing : blanc, actif doré. */
+  .lang-switch { display: flex; padding: 3px; border-radius: 999px; background: #fff;
+    border: 1px solid rgba(16,19,28,.1); box-shadow: 0 2px 10px rgba(16,19,28,.06);
+    a { padding: 6px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; color: #6b7284;
       text-decoration: none;
-      &.active { background: #fff; color: #10131c; box-shadow: 0 1px 3px rgba(16,19,28,.12); } } }
+      &.active { background: linear-gradient(135deg,#e8b64c,#c9902a); color: #17120a; } } }
   .btn-gold { padding: 9px 17px; border-radius: 999px; font-weight: 700; font-size: .87rem;
     text-decoration: none; color: #17120a; background: linear-gradient(135deg,#e8b64c,#c9902a);
     box-shadow: 0 6px 18px rgba(201,144,42,.32); white-space: nowrap; }
