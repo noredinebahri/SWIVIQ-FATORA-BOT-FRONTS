@@ -11,7 +11,15 @@
       <a href="#pricing">{{ t().nav.pricing }}</a>
       <a href="#faq">{{ t().nav.faq }}</a>
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
-      <a [routerLink]="['/', lang(), 'api']">API</a>
+      <div class="dd">
+        <a class="dd-top" [routerLink]="['/', lang(), 'api']">API <span class="caret">▾</span></a>
+        <div class="dd-menu">
+          @for (it of apiLinks(); track it.path) {
+            <a [routerLink]="it.path">{{ it.label }}</a>
+          }
+        </div>
+      </div>
+      <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
     </nav>
     <div class="nav-right">
       <div class="lang-switch">
@@ -222,10 +230,20 @@
       </a>
       <p class="tag">{{ t().footer.tag }}</p>
     </div>
-    <div class="foot-links">
+    <div class="foot-col">
+      <h4>{{ footGroups().site }}</h4>
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
       <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
-      <a [routerLink]="['/', lang(), 'api']">API</a>
+      <a href="#pricing">{{ t().nav.pricing }}</a>
+    </div>
+    <div class="foot-col">
+      <h4>{{ footGroups().api }}</h4>
+      @for (it of apiLinks(); track it.path) {
+        <a [routerLink]="it.path">{{ it.label }}</a>
+      }
+    </div>
+    <div class="foot-col">
+      <h4>{{ footGroups().contact }}</h4>
       <a href="https://bot.swiviq.com/privacy" target="_blank" rel="noopener">{{ t().footer.privacy }}</a>
       <a [href]="waLink" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:contact@swiviq.com">contact&#64;swiviq.com</a>

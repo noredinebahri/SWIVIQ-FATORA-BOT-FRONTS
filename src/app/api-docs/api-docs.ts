@@ -763,6 +763,8 @@ export class ApiDocs implements OnInit {
   readonly wa = WA_LINK;
   readonly base = BASE;
   readonly errSample = ERR_SAMPLE;
+  /** Le sélecteur de langue reste sur la doc API — elle existe dans les 4 langues. */
+  readonly langAlt = Object.fromEntries(DOC_LANGS.map((l) => [l, `/${l}/api`]));
   lang = signal<Lang>('fr');
   d = computed(() => DICTS[this.lang()] ?? DICTS.fr);
 

@@ -31,6 +31,16 @@ export class Article implements OnInit {
     const art = this.a();
     return art ? relatedOf(art) : [];
   });
+  /** Sélecteur de langue : le même article quand il existe dans l'autre langue. */
+  altMap = computed(() => {
+    const art = this.a();
+    if (!art) return {};
+    const out: Partial<Record<Lang, string>> = {};
+    for (const l of langsWithSlug(art.section, art.slug)) {
+      out[l] = `/${l}/${art.section}/${art.slug}`;
+    }
+    return out;
+  });
   prettyDate = computed(() => {
     const art = this.a();
     if (!art) return '';

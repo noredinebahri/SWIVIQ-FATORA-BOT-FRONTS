@@ -12,6 +12,7 @@ import { Ico } from '../icon';
 import { Showcase } from '../showcase/showcase';
 import { SeoSection } from '../seo/seo-section';
 import { CONTENT_UI } from '../content/ui';
+import { ABOUT_LABEL, FOOT_GROUPS, apiMenu } from '../shell/site-links';
 
 const SITE = 'https://fatora.swiviq.com';
 const CONTACT_API = 'https://bot.swiviq.com/lead';
@@ -37,9 +38,9 @@ export class Landing implements OnInit, OnDestroy {
   t = computed<Dict>(() => DICT[this.lang()]);
   rtl = computed(() => RTL[this.lang()]);
   cu = computed(() => CONTENT_UI[this.lang()]);
-  aboutLabel = computed(
-    () => ({ fr: 'À propos', ar: 'من نحن', en: 'About', es: 'Quiénes somos' })[this.lang()]
-  );
+  aboutLabel = computed(() => ABOUT_LABEL[this.lang()]);
+  apiLinks = computed(() => apiMenu(this.lang()));
+  footGroups = computed(() => FOOT_GROUPS[this.lang()]);
 
   openFaq = signal<number>(-1);
   navOpen = signal(false);

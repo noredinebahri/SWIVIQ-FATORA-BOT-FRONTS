@@ -186,7 +186,7 @@ const ABOUT: Record<Lang, AboutDict> = {
   selector: 'app-about',
   imports: [RouterLink, SiteHeader, SiteFooter],
   template: `
-  <app-site-header [lang]="lang()" />
+  <app-site-header [lang]="lang()" [alt]="altMap" />
 
   <main class="page">
     <div class="wrap">
@@ -252,6 +252,8 @@ export class About implements OnInit {
   private seo = inject(PageSeo);
 
   readonly wa = WA_LINK;
+  /** La page existe dans les 4 langues : le sélecteur de langue reste dessus. */
+  readonly altMap = Object.fromEntries(LANGS.map((l) => [l, `/${l}/a-propos`]));
   lang = signal<Lang>('fr');
   d = computed(() => ABOUT[this.lang()]);
   ui = computed(() => CONTENT_UI[this.lang()]);
