@@ -21,6 +21,7 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
  */
 const VALID_ROUTES = new Set<string>(
   APP_LANGS.flatMap((l) => [`/${l}`, `/${l}/guides`, `/${l}/a-propos`, `/${l}/api`])
+    .concat(['/fr/generateur-facture', '/ar/generateur-facture'])
     .concat(
     ALL_ARTICLES.map((a) => `/${a.lang}/${a.section}/${a.slug}`),
   ),

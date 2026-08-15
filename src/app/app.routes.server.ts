@@ -32,6 +32,14 @@ export const serverRoutes: ServerRoute[] = [
     }
   },
   {
+    // Générateur de facture gratuit : fr + ar (le document produit est en français)
+    path: ':lang/generateur-facture',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return [{ lang: 'fr' }, { lang: 'ar' }];
+    }
+  },
+  {
     path: ':lang/a-propos',
     renderMode: RenderMode.Prerender,
     async getPrerenderParams() {

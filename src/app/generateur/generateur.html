@@ -1,0 +1,151 @@
+<app-site-header [lang]="lang()" [alt]="langAlt" />
+
+<main class="page" [attr.dir]="rtl() ? 'rtl' : 'ltr'">
+  <div class="wrap">
+    <header class="head">
+      <h1>{{ d().title }}</h1>
+      <p class="lead">{{ d().lead }}</p>
+    </header>
+
+    <div class="grid">
+      <!-- ═══════ FORMULAIRE ═══════ -->
+      <section class="form">
+        <h2>{{ d().seller }}</h2>
+        <div class="fields">
+          <label>{{ d().sellerName }}<input [ngModel]="seller().name" (ngModelChange)="seller.set({ ...seller(), name: $event })" placeholder="ATLAS SERVICES SARL"></label>
+          <label>{{ d().sellerIce }}<input [ngModel]="seller().ice" (ngModelChange)="seller.set({ ...seller(), ice: $event })" placeholder="001234567000089" maxlength="15" dir="ltr"></label>
+          <label>{{ d().sellerIf }}<input [ngModel]="seller().fisc" (ngModelChange)="seller.set({ ...seller(), fisc: $event })" dir="ltr"></label>
+          <label>{{ d().sellerTp }}<input [ngModel]="seller().tp" (ngModelChange)="seller.set({ ...seller(), tp: $event })" dir="ltr"></label>
+          <label>{{ d().sellerRc }}<input [ngModel]="seller().rc" (ngModelChange)="seller.set({ ...seller(), rc: $event })" dir="ltr"></label>
+          <label class="full">{{ d().sellerAddr }}<input [ngModel]="seller().addr" (ngModelChange)="seller.set({ ...seller(), addr: $event })"></label>
+        </div>
+
+        <h2>{{ d().client }}</h2>
+        <div class="fields">
+          <label>{{ d().clientName }}<input [ngModel]="client().name" (ngModelChange)="client.set({ ...client(), name: $event })"></label>
+          <label>{{ d().clientIce }}<input [ngModel]="client().ice" (ngModelChange)="client.set({ ...client(), ice: $event })" maxlength="15" dir="ltr"></label>
+        </div>
+
+        <h2>{{ d().meta }}</h2>
+        <div class="fields">
+          <label>{{ d().number }}<input [ngModel]="docMeta().number" (ngModelChange)="docMeta.set({ ...docMeta(), number: $event })" dir="ltr"></label>
+          <label>{{ d().date }}<input type="date" [ngModel]="docMeta().date" (ngModelChange)="docMeta.set({ ...docMeta(), date: $event })" dir="ltr"></label>
+          <label>{{ d().due }}<input type="date" [ngModel]="docMeta().due" (ngModelChange)="docMeta.set({ ...docMeta(), due: $event })" dir="ltr"></label>
+        </div>
+
+        <h2>{{ d().lines }}</h2>
+        @for (l of lines(); track $index; let i = $index) {
+          <div class="line" dir="ltr">
+            <input class="l-desc" [placeholder]="d().desc" [(ngModel)]="l.desc" (ngModelChange)="touch()">
+            <input class="l-num" type="number" min="0" [title]="d().qty" [(ngModel)]="l.qty" (ngModelChange)="touch()">
+            <input class="l-num" type="number" min="0" step="0.01" [title]="d().pu" [(ngModel)]="l.pu" (ngModelChange)="touch()">
+            <select [title]="d().vat" [(ngModel)]="l.vat" (ngModelChange)="touch()">
+              <option [ngValue]="20">20%</option>
+              <option [ngValue]="10">10%</option>
+              <option [ngValue]="0">0%</option>
+            </select>
+            <button type="button" class="rm" (click)="removeLine(i)" [attr.aria-label]="d().removeLine">✕</button>
+          </div>
+        }
+        <button type="button" class="add" (click)="addLine()">{{ d().addLine }}</button>
+
+        <div class="totals">
+          <div><span>Total HT</span><b dir="ltr">{{ fmt(totalHt()) }} DH</b></div>
+          <div><span>TVA</span><b dir="ltr">{{ fmt(totalVat()) }} DH</b></div>
+          <div class="ttc"><span>Total TTC</span><b dir="ltr">{{ fmt(totalTtc()) }} DH</b></div>
+        </div>
+
+        <button type="button" class="btn-print" (click)="print()">{{ d().print }} ⤓</button>
+        <p class="note"><b>{{ d().warnTitle }}.</b> {{ d().warn }}</p>
+      </section>
+
+      <!-- ═══════ APERÇU (toujours LTR — document français) ═══════ -->
+      <section class="preview" dir="ltr">
+        <h2 class="pv-label">{{ d().preview }}</h2>
+        <div class="sheet" id="facture-print">
+          <div class="head">
+            <div>
+              <h1>{{ seller().name || 'VOTRE RAISON SOCIALE' }}</h1>
+              <p class="muted">{{ seller().addr || 'Adresse' }}</p>
+              <p class="muted">
+                ICE : {{ seller().ice || '………………' }} · IF : {{ seller().fisc || '………' }}
+                @if (seller().tp) { · TP : {{ seller().tp }} }
+                @if (seller().rc) { · RC : {{ seller().rc }} }
+              </p>
+            </div>
+            <div>
+              <h1>FACTURE</h1>
+              <p><b>N° {{ docMeta().number }}</b></p>
+              <p class="muted">Date : {{ docMeta().date }}</p>
+              @if (docMeta().due) { <p class="muted">Échéance : {{ docMeta().due }}</p> }
+            </div>
+          </div>
+          <p style="margin-top:14px"><b>Client :</b> {{ client().name || '—' }}
+            @if (client().ice) { <span class="muted"> · ICE : {{ client().ice }}</span> }
+          </p>
+          <table>
+            <thead>
+              <tr><th>Désignation</th><th>Qté</th><th>PU HT</th><th>TVA</th><th>Total HT</th></tr>
+            </thead>
+            <tbody>
+              @for (l of lines(); track $index) {
+                <tr>
+                  <td>{{ l.desc || '—' }}</td>
+                  <td>{{ l.qty }}</td>
+                  <td>{{ fmt(l.pu) }}</td>
+                  <td>{{ l.vat }}%</td>
+                  <td>{{ fmt(l.qty * l.pu) }}</td>
+                </tr>
+              }
+              <tr class="tot"><td colspan="4">Total HT</td><td>{{ fmt(totalHt()) }} DH</td></tr>
+              @for (v of vatBreakdown(); track v.rate) {
+                <tr class="tot"><td colspan="4">TVA {{ v.rate }}%</td><td>{{ fmt(v.amount) }} DH</td></tr>
+              }
+              <tr class="ttc"><td colspan="4">Total TTC</td><td>{{ fmt(totalTtc()) }} DH</td></tr>
+            </tbody>
+          </table>
+          <p class="arret">Arrêtée la présente facture à la somme de : {{ amountWords() }}.</p>
+          <p class="muted">Conditions de règlement : à réception — pénalités de retard selon la loi n° 69-21.</p>
+          <p class="foot">
+            {{ seller().name || 'Raison sociale' }} — ICE {{ seller().ice || '………' }} · IF {{ seller().fisc || '………' }}
+            @if (seller().tp) { · TP {{ seller().tp }} } @if (seller().rc) { · RC {{ seller().rc }} }
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════ MODÈLES À TÉLÉCHARGER ═══════ -->
+    <section class="dl">
+      <h2>{{ d().dlTitle }}</h2>
+      <p class="intro">{{ d().dlLead }}</p>
+      <div class="dl-row" dir="ltr">
+        <a class="dl-card" href="/modeles/modele-facture-maroc.docx" download>
+          <span class="ext">DOCX</span>{{ d().dlWord }}
+        </a>
+        <a class="dl-card" href="/modeles/modele-facture-maroc.xlsx" download>
+          <span class="ext xl">XLSX</span>{{ d().dlExcel }}
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════ FAQ ═══════ -->
+    <section class="faq">
+      <h2>{{ d().faqTitle }}</h2>
+      @for (f of d().faq; track f.q) {
+        <div class="qa">
+          <h3>{{ f.q }}</h3>
+          <p>{{ f.a }}</p>
+        </div>
+      }
+    </section>
+
+    <!-- ═══════ CTA WHATSAPP ═══════ -->
+    <aside class="cta">
+      <h2>{{ d().ctaTitle }}</h2>
+      <p>{{ d().ctaText }}</p>
+      <a class="btn-wa" [href]="wa" target="_blank" rel="noopener">{{ d().ctaBtn }} →</a>
+    </aside>
+  </div>
+</main>
+
+<app-site-footer [lang]="lang()" />

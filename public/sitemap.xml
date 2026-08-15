@@ -65,6 +65,16 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/ar/generateur-facture</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/generateur-facture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/generateur-facture"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/generateur-facture"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/ar/guides</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -423,6 +433,16 @@
   </url>
 
   <url>
+    <loc>https://fatora.swiviq.com/fr/generateur-facture</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/generateur-facture"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/generateur-facture"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/generateur-facture"/>
+  </url>
+
+  <url>
     <loc>https://fatora.swiviq.com/fr/guides</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -620,6 +640,60 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/secteurs/transport-logistique"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://fatora.swiviq.com/ar/secteurs/transport-logistique"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/secteurs/transport-logistique"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/villes/logiciel-facturation-agadir</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-agadir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-agadir"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/villes/logiciel-facturation-casablanca</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-casablanca"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-casablanca"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/villes/logiciel-facturation-fes</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-fes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-fes"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/villes/logiciel-facturation-marrakech</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-marrakech"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-marrakech"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/villes/logiciel-facturation-rabat</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-rabat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-rabat"/>
+  </url>
+
+  <url>
+    <loc>https://fatora.swiviq.com/fr/villes/logiciel-facturation-tanger</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-tanger"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fatora.swiviq.com/fr/villes/logiciel-facturation-tanger"/>
   </url>
 
 </urlset>

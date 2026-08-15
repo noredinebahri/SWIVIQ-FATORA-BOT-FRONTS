@@ -8,7 +8,7 @@ import {
 } from '../content/registry';
 import type { Article as Art, Section } from '../content/types';
 
-const SECTIONS: Section[] = ['guides', 'secteurs', 'comparatif'];
+const SECTIONS: Section[] = ['guides', 'secteurs', 'comparatif', 'villes'];
 const DATE_LOCALE: Record<Lang, string> = { fr: 'fr-MA', ar: 'ar-MA', en: 'en-GB', es: 'es-ES' };
 
 @Component({

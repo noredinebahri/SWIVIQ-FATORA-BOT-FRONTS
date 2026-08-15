@@ -7,6 +7,7 @@ import { GUIDES_AR } from './guides.ar';
 import { METIERS_AR } from './metiers.ar';
 import { GUIDES_EN } from './guides.en';
 import { GUIDES_ES } from './guides.es';
+import { VILLES_FR } from './villes.fr';
 
 export { CONTENT_UI } from './ui';
 export const SITE = 'https://fatora.swiviq.com';
@@ -18,7 +19,8 @@ export const ALL_ARTICLES: Article[] = [
   ...GUIDES_AR,
   ...METIERS_AR,
   ...GUIDES_EN,
-  ...GUIDES_ES
+  ...GUIDES_ES,
+  ...VILLES_FR
 ];
 
 /**

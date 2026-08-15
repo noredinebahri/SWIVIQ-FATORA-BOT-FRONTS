@@ -235,6 +235,9 @@
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
       <a [routerLink]="['/', lang(), 'a-propos']">{{ aboutLabel() }}</a>
       <a [routerLink]="[]" fragment="pricing">{{ t().nav.pricing }}</a>
+      @if (lang() === 'fr' || lang() === 'ar') {
+        <a [routerLink]="['/', lang(), 'generateur-facture']">{{ lang() === 'ar' ? 'مولد الفواتير المجاني' : 'Générateur de facture gratuit' }}</a>
+      }
     </div>
     <div class="foot-col">
       <h4>{{ footGroups().api }}</h4>

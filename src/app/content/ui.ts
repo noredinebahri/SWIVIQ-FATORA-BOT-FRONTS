@@ -15,7 +15,7 @@ export const CONTENT_UI: Record<Lang, ContentUi> = {
       'Guides pratiques sur la facturation au Maroc : mentions obligatoires, ICE et identifiant fiscal, taux de TVA, numérotation, facturation électronique et cas par métier.',
     hubIntro:
       'Des guides écrits pour être utiles avant d’être trouvés : ce que la réglementation marocaine exige d’une facture, comment l’appliquer selon votre métier, et ce que la facturation électronique obligatoire va changer.',
-    sections: { guides: 'Guides', secteurs: 'Par métier', comparatif: 'Comparatifs' },
+    sections: { guides: 'Guides', secteurs: 'Par métier', comparatif: 'Comparatifs', villes: 'Par ville' },
     navGuides: 'Guides',
     answerLabel: 'En bref',
     tocLabel: 'Sur cette page',
@@ -39,7 +39,7 @@ export const CONTENT_UI: Record<Lang, ContentUi> = {
       'أدلة عملية على الفوترة بالمغرب: البيانات الإجبارية، ICE والرقم الضريبي، نسب TVA، الترقيم، الفوترة الإلكترونية وحالات حسب المهنة.',
     hubIntro:
       'أدلة متكتبات باش تنفع قبل ما تتلقى: شنو كيفرض القانون المغربي فالفاتورة، كيفاش تطبقو حسب المهنة ديالك، وشنو غادي تبدل الفوترة الإلكترونية الإجبارية.',
-    sections: { guides: 'أدلة', secteurs: 'حسب المهنة', comparatif: 'مقارنات' },
+    sections: { guides: 'أدلة', secteurs: 'حسب المهنة', comparatif: 'مقارنات', villes: 'حسب المدينة' },
     navGuides: 'أدلة',
     answerLabel: 'باختصار',
     tocLabel: 'فهاد الصفحة',
@@ -61,7 +61,7 @@ export const CONTENT_UI: Record<Lang, ContentUi> = {
     hubMetaDesc:
       'Practical guides to invoicing in Morocco: mandatory mentions, ICE and tax identifier, VAT rates, numbering and the mandatory e-invoicing rollout.',
     hubIntro: 'Practical guides to invoicing in Morocco. Currently published in French and Arabic.',
-    sections: { guides: 'Guides', secteurs: 'By trade', comparatif: 'Comparisons' },
+    sections: { guides: 'Guides', secteurs: 'By trade', comparatif: 'Comparisons', villes: 'By city' },
     navGuides: 'Guides',
     answerLabel: 'In short',
     tocLabel: 'On this page',
@@ -84,7 +84,7 @@ export const CONTENT_UI: Record<Lang, ContentUi> = {
     hubMetaDesc:
       'Guías prácticas sobre la facturación en Marruecos: menciones obligatorias, ICE e identificador fiscal, tipos de IVA, numeración y factura electrónica.',
     hubIntro: 'Guías prácticas sobre la facturación en Marruecos. Publicadas actualmente en francés y árabe.',
-    sections: { guides: 'Guías', secteurs: 'Por oficio', comparatif: 'Comparativas' },
+    sections: { guides: 'Guías', secteurs: 'Por oficio', comparatif: 'Comparativas', villes: 'Por ciudad' },
     navGuides: 'Guías',
     answerLabel: 'En resumen',
     tocLabel: 'En esta página',

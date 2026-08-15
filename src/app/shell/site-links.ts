@@ -45,11 +45,19 @@ export function apiMenu(l: Lang): SiteLink[] {
 
 /** Groupe « Site » du footer : les pages piliers, toutes prérendues en 4 langues. */
 export function siteMenu(l: Lang, homeLabel: string, guidesLabel: string): SiteLink[] {
-  return [
+  const items: SiteLink[] = [
     { label: homeLabel, path: `/${l}` },
     { label: guidesLabel, path: `/${l}/guides` },
     { label: ABOUT_LABEL[l], path: `/${l}/a-propos` }
   ];
+  // Le générateur n'existe qu'en fr/ar — jamais de lien vers un 404.
+  if (l === 'fr' || l === 'ar') {
+    items.push({
+      label: { fr: 'Générateur de facture gratuit', ar: 'مولد الفواتير المجاني' }[l]!,
+      path: `/${l}/generateur-facture`
+    });
+  }
+  return items;
 }
 
 export const FOOT_GROUPS: Record<Lang, { site: string; api: string; contact: string }> = {

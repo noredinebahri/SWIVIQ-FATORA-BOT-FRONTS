@@ -6,7 +6,7 @@ import { PageSeo } from '../seo/page-seo';
 import { CONTENT_LANGS, CONTENT_UI, SITE, articlesFor, articleUrl } from '../content/registry';
 import type { Article as Art, Section } from '../content/types';
 
-const ORDER: Section[] = ['guides', 'secteurs', 'comparatif'];
+const ORDER: Section[] = ['guides', 'secteurs', 'comparatif', 'villes'];
 
 /** Index éditorial : /:lang/guides — le hub qui distribue le maillage interne. */
 @Component({
@@ -109,7 +109,7 @@ export class Hub implements OnInit {
   ui = computed(() => CONTENT_UI[this.lang()]);
   hasContent = computed(() => this.items().length > 0);
   bySection = computed(() => {
-    const map = { guides: [], secteurs: [], comparatif: [] } as Record<Section, Art[]>;
+    const map = { guides: [], secteurs: [], comparatif: [], villes: [] } as Record<Section, Art[]>;
     for (const a of this.items()) map[a.section].push(a);
     return map;
   });

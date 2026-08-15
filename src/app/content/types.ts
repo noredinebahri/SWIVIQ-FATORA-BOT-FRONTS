@@ -3,7 +3,7 @@
 // BreadcrumbList, son entrée de sitemap et son bloc dans llms-full.txt.
 import type { Lang } from '../i18n';
 
-export type Section = 'guides' | 'secteurs' | 'comparatif';
+export type Section = 'guides' | 'secteurs' | 'comparatif' | 'villes';
 
 /** Un bloc de corps : titre + paragraphes, éventuellement une liste ou un tableau. */
 export interface Block {
