@@ -111,6 +111,7 @@
             @if (seller().tp) { · TP {{ seller().tp }} } @if (seller().rc) { · RC {{ seller().rc }} }
           </p>
         </div>
+        <p class="wm-hint">{{ d().watermark }}</p>
       </section>
     </div>
 
@@ -146,6 +147,18 @@
       <a class="btn-wa" [href]="wa" target="_blank" rel="noopener">{{ d().ctaBtn }} →</a>
     </aside>
   </div>
+
+  <!-- ═══════ LIMITE DOUCE : upsell à la 3e facture ═══════ -->
+  @if (showUpsell()) {
+    <div class="upsell-veil" (click)="showUpsell.set(false)">
+      <div class="upsell" (click)="$event.stopPropagation()">
+        <h2>{{ d().upsellTitle }}</h2>
+        <p>{{ d().upsellText }}</p>
+        <a class="btn-wa" [href]="wa" target="_blank" rel="noopener">{{ d().upsellCta }} →</a>
+        <button type="button" class="continue" (click)="continuePrint()">{{ d().upsellContinue }}</button>
+      </div>
+    </div>
+  }
 </main>
 
 <app-site-footer [lang]="lang()" />

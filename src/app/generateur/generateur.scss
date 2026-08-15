@@ -57,6 +57,21 @@ input, select { padding: 9px 11px; border: 1px solid rgba(16,19,28,.16); border-
   .foot { margin-top: 18px; font-size: .68rem; color: #5b6272;
     border-top: 1px solid #d5d9e2; padding-top: 6px; } }
 
+.wm-hint { margin-top: 10px; font-size: .74rem; color: #8b93a8; line-height: 1.6; }
+
+/* ── Upsell (limite douce à la 3e facture) ── */
+.upsell-veil { position: fixed; inset: 0; z-index: 90; background: rgba(16,19,28,.55);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  backdrop-filter: blur(3px); }
+.upsell { max-width: 480px; background: #fff; border-radius: 18px; padding: 30px;
+  text-align: center; box-shadow: 0 30px 80px rgba(16,19,28,.35);
+  h2 { font-family: 'Sora','Tajawal',sans-serif; margin: 0 0 12px; }
+  p { color: #4a5163; line-height: 1.75; font-size: .93rem; margin: 0 0 20px; }
+  .btn-wa { display: block; }
+  .continue { margin-top: 12px; background: none; border: 0; cursor: pointer;
+    font: inherit; font-size: .84rem; color: #8b93a8; text-decoration: underline;
+    &:hover { color: #4a5163; } } }
+
 /* ── Téléchargements ── */
 .dl { margin: 46px 0 0;
   h2 { font-family: 'Sora','Tajawal',sans-serif; margin: 0 0 8px; }

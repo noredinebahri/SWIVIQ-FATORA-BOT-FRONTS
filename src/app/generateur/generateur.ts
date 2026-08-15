@@ -45,6 +45,11 @@ interface GenDict {
   removeLine: string;
   print: string;
   preview: string;
+  watermark: string;
+  upsellTitle: string;
+  upsellText: string;
+  upsellCta: string;
+  upsellContinue: string;
   warnTitle: string;
   warn: string;
   dlTitle: string;
@@ -90,6 +95,12 @@ const DICTS: Record<string, GenDict> = {
     removeLine: 'Retirer',
     print: 'Imprimer / Enregistrer en PDF',
     preview: 'Aperçu de la facture',
+    watermark: 'Document généré gratuitement sur fatora.swiviq.com — sur WhatsApp, vos factures portent votre cachet, sans cette mention.',
+    upsellTitle: 'Vous facturez régulièrement ?',
+    upsellText:
+      'Vous venez de générer votre 3ᵉ facture ici. Le générateur reste gratuit — mais la numérotation est manuelle, il n’y a ni archive, ni cachet, et chaque document porte la mention Fatora. Sur WhatsApp, Fatora gère la séquence automatiquement, appose votre cachet, archive tout et envoie la facture au client. Deux factures offertes, puis dès 30 DH/mois.',
+    upsellCta: 'Essayer sur WhatsApp — 2 factures offertes',
+    upsellContinue: 'Continuer avec le générateur',
     warnTitle: 'Ce qu’un générateur ne fait pas',
     warn:
       'La numérotation continue reste sous votre responsabilité : aucun trou, aucun doublon, et une facture ratée s’annule par un avoir — jamais par suppression. Ce générateur ne garde pas d’historique et ne gère pas votre séquence. Pour une numérotation gérée, un cachet apposé et des archives retrouvables, passez à l’étape d’après.',
@@ -153,6 +164,12 @@ const DICTS: Record<string, GenDict> = {
     removeLine: 'حيد',
     print: 'اطبع / سجل PDF',
     preview: 'معاينة الفاتورة',
+    watermark: 'وثيقة مولدة مجانا على fatora.swiviq.com — فالواتساب، فواتيرك كتحمل طابعك، بلا هاد العبارة.',
+    upsellTitle: 'كتفوتر بانتظام؟',
+    upsellText:
+      'هادي ثالث فاتورة كتولدها هنا. المولد كيبقى مجاني — ولكن الترقيم يدوي، ما كاين لا أرشيف لا طابع، وكل وثيقة كتحمل عبارة فاتورة. فالواتساب، فاتورة كتدبر السلسلة أوتوماتيكيا، كتحط طابعك، كتأرشيف كلشي وكترسل الفاتورة للعميل. جوج فواتير مجانية، ومن بعد من 30 درهم فالشهر.',
+    upsellCta: 'جرب على الواتساب — جوج فواتير مجانية',
+    upsellContinue: 'كمل مع المولد',
     warnTitle: 'شنو ما كيديروش المولد',
     warn:
       'الترقيم المتسلسل كيبقى مسؤوليتك: بلا فراغ، بلا تكرار، والفاتورة الغالطة كتلغى بإشعار دائن — عمرها بالحذف. هاد المولد ما كيحتفظش بالتاريخ وما كيدبرش السلسلة ديالك. باش يكون الترقيم مضبوط والطابع محطوط والأرشيف كيتلقى، دوز للمرحلة الموالية.',
@@ -238,7 +255,29 @@ export class Generateur implements OnInit {
     return n.toLocaleString('fr-MA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
+  /** Limite douce : à partir de la 3e impression, un écran propose WhatsApp d'abord. */
+  showUpsell = signal(false);
+  private readonly COUNT_KEY = 'fatora_gen_prints';
+
+  private printCount(): number {
+    try { return Number(localStorage.getItem(this.COUNT_KEY)) || 0; } catch { return 0; }
+  }
+
   print(): void {
+    if (this.printCount() >= 2) {
+      this.showUpsell.set(true);
+      return;
+    }
+    this.doPrint();
+  }
+
+  continuePrint(): void {
+    this.showUpsell.set(false);
+    this.doPrint();
+  }
+
+  private doPrint(): void {
+    try { localStorage.setItem(this.COUNT_KEY, String(this.printCount() + 1)); } catch { /* navigation privée */ }
     const zone = document.getElementById('facture-print');
     if (!zone) return;
     const w = window.open('', '_blank', 'width=840,height=1100');
@@ -257,7 +296,8 @@ export class Generateur implements OnInit {
   .head { display: flex; justify-content: space-between; gap: 24px; }
   .arret { font-weight: 600; margin-top: 14px; }
   .foot { margin-top: 26px; font-size: 11px; color: #5b6272; border-top: 1px solid #d5d9e2; padding-top: 8px; }
-</style></head><body>${zone.innerHTML}</body></html>`);
+  .wm { margin-top: 10px; font-size: 10px; color: #8b93a8; }
+</style></head><body>${zone.innerHTML}<p class="wm">${this.d().watermark}</p></body></html>`);
     w.document.close();
     w.focus();
     setTimeout(() => w.print(), 250);
