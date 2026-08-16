@@ -11,6 +11,11 @@
       <a [routerLink]="[]" fragment="pricing" (click)="navOpen.set(false)">{{ t().nav.pricing }}</a>
       <a [routerLink]="[]" fragment="faq" (click)="navOpen.set(false)">{{ t().nav.faq }}</a>
       <a [routerLink]="['/', lang(), 'guides']">{{ cu().navGuides }}</a>
+      @if (gen()) {
+        <a class="nav-gen" [routerLink]="['/', lang(), 'generateur-facture']" (click)="navOpen.set(false)">
+          {{ lang() === 'ar' ? 'مولد فواتير مجاني' : 'Générateur gratuit' }}
+        </a>
+      }
       <div class="dd">
         <a class="dd-top" [routerLink]="['/', lang(), 'api']">API <span class="caret">▾</span></a>
         <div class="dd-menu">
@@ -192,6 +197,54 @@
 </section>
 
 <!-- ══════════ PRICING ══════════ -->
+<!-- ── Générateur de facture gratuit (fr/ar : les seules langues prérendues) ── -->
+@if (gen(); as g) {
+  <section id="generateur" class="gensec">
+    <div class="wrap gen-grid">
+      <div class="gen-copy">
+        <span class="gen-badge reveal">🎁 {{ g.badge }}</span>
+        <h2 class="reveal">{{ g.title }}</h2>
+        <p class="sub reveal">{{ g.lead }}</p>
+        <ul class="gen-points">
+          @for (pt of g.points; track pt; let i = $index) {
+            <li class="reveal" [style.transition-delay.ms]="i * 70">
+              <ico name="check" [size]="17"/><span>{{ pt }}</span>
+            </li>
+          }
+        </ul>
+        <div class="gen-cta reveal">
+          <a class="btn btn-gen" [routerLink]="['/', lang(), 'generateur-facture']">
+            <span class="btn-gen-shine" aria-hidden="true"></span>
+            <ico name="file" [size]="19"/> {{ g.cta }}
+          </a>
+          <span class="note">{{ g.micro }}</span>
+        </div>
+      </div>
+
+      <div class="gen-visual reveal" aria-hidden="true">
+        <div class="gsheet">
+          <div class="gs-head">
+            <span class="gs-dot"></span>
+            <b>FACTURE</b>
+            <i>FAT-2026-0042</i>
+          </div>
+          <div class="gs-row" style="--i:0"><span>{{ g.demo.seller }}</span></div>
+          <div class="gs-row" style="--i:1"><span>{{ g.demo.client }}</span></div>
+          <div class="gs-line" style="--i:2">{{ g.demo.line }}</div>
+          <div class="gs-tot">
+            <div class="gs-t" style="--i:3"><span>{{ g.demo.ht }}</span><b>4 500,00</b></div>
+            <div class="gs-t" style="--i:4"><span>{{ g.demo.vat }}</span><b>900,00</b></div>
+            <div class="gs-t gs-grand" style="--i:5"><span>{{ g.demo.ttc }}</span><b>5 400,00 DH</b></div>
+          </div>
+          <div class="gs-words" style="--i:6">{{ g.demo.words }}</div>
+          <div class="gs-print"><ico name="check" [size]="14"/> PDF</div>
+        </div>
+        <span class="gs-free">0 DH</span>
+      </div>
+    </div>
+  </section>
+}
+
 <section id="pricing" class="pricing">
   <div class="wrap">
     <div class="center reveal">

@@ -27,6 +27,11 @@ import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, legalMenu, siteMenu } from './site-l
         <a [routerLink]="['/', lang()]" fragment="pricing" (click)="open.set(false)">{{ d().nav.pricing }}</a>
         <a [routerLink]="['/', lang()]" fragment="faq" (click)="open.set(false)">{{ d().nav.faq }}</a>
         <a [routerLink]="['/', lang(), 'guides']" (click)="open.set(false)">{{ ui().navGuides }}</a>
+        @if (lang() === 'fr' || lang() === 'ar') {
+          <a class="nav-gen" [routerLink]="['/', lang(), 'generateur-facture']" (click)="open.set(false)">
+            {{ lang() === 'ar' ? 'مولد فواتير مجاني' : 'Générateur gratuit' }}
+          </a>
+        }
         <div class="dd">
           <a class="dd-top" [routerLink]="['/', lang(), 'api']" (click)="open.set(false)">API <span class="caret">▾</span></a>
           <div class="dd-menu">
@@ -182,7 +187,13 @@ export class SiteHeader {
   .foot-base { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
     padding-top: 22px; font-size: .82rem; color: #7c8496; }
   @media (max-width: 720px) { .wrap { padding: 0 16px; } }
-  `]
+  
+    .nav-gen { position: relative; color: #0f7a42 !important; font-weight: 700; }
+    .nav-gen::after { content: 'GRATUIT'; position: absolute; top: -9px; right: -6px;
+      background: #17a55c; color: #fff; font-size: 8px; font-weight: 800; letter-spacing: .06em;
+      padding: 2px 5px; border-radius: 4px; }
+    [dir='rtl'] .nav-gen::after { right: auto; left: -6px; }
+`]
 })
 export class SiteFooter {
   lang = input<Lang>('fr');

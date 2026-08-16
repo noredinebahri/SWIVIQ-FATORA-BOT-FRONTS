@@ -13,6 +13,7 @@ import { Showcase } from '../showcase/showcase';
 import { SeoSection } from '../seo/seo-section';
 import { CONTENT_UI } from '../content/ui';
 import { ABOUT_LABEL, FOOT_GROUPS, apiMenu, legalMenu } from '../shell/site-links';
+import { GEN_TEASER } from './gen-teaser';
 
 const SITE = 'https://fatora.swiviq.com';
 const CONTACT_API = 'https://bot.swiviq.com/lead';
@@ -33,6 +34,8 @@ export class Landing implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
 
   readonly waLink = WA_LINK;
+  /** Textes du générateur gratuit — non nul seulement là où la page existe (fr, ar). */
+  gen = computed(() => GEN_TEASER[this.lang()] ?? null);
   readonly langs = LANGS;
   lang = signal<Lang>('fr');
   t = computed<Dict>(() => DICT[this.lang()]);
@@ -195,6 +198,20 @@ export class Landing implements OnInit, OnDestroy {
             availableLanguage: ['ar', 'fr', 'en', 'es']
           }]
         },
+        ...(this.gen() ? [{
+          '@type': 'WebApplication',
+          '@id': `${SITE}/${this.lang()}/generateur-facture#app`,
+          name: this.lang() === 'ar' ? 'مولد الفواتير المجاني' : 'Générateur de facture gratuit',
+          url: `${SITE}/${this.lang()}/generateur-facture`,
+          applicationCategory: 'FinanceApplication',
+          operatingSystem: 'Web',
+          browserRequirements: 'JavaScript',
+          inLanguage: this.lang(),
+          isAccessibleForFree: true,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'MAD' },
+          featureList: this.gen()!.points,
+          publisher: { '@id': `${SITE}/#org` }
+        }] : []),
         {
           '@type': 'WebSite',
           '@id': `${SITE}/#site`,
